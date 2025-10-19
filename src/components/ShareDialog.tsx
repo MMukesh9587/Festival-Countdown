@@ -42,7 +42,7 @@ export function ShareDialog({ festival }: ShareDialogProps) {
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   
-  const festivalUrl = `https://festivalcountdown.netlify.app//festivals/${festival.slug}`;
+  const festivalUrl = `https://festivalcountdown.netlify.app/festivals/${festival.slug}`;
   const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
   const shareText = `Check out the countdown for ${name}!`;
 
