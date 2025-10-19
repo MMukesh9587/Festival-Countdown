@@ -49,7 +49,7 @@ export function AddEventDialog({ children, onAddEvent }: AddEventDialogProps) {
 
   function onSubmit(values: AddEventFormValues) {
     const { name, date, time } = values;
-    const dateTimeString = `${date}T${time}:00`;
+    const dateTimeString = `${date}T${time}`;
     const targetDate = new Date(dateTimeString);
 
     if (isNaN(targetDate.getTime())) {
@@ -59,7 +59,7 @@ export function AddEventDialog({ children, onAddEvent }: AddEventDialogProps) {
 
     onAddEvent({
       name: { en: name, hi: name },
-      date_rule: targetDate.toISOString(),
+      date_rule: dateTimeString,
     });
 
     toast({

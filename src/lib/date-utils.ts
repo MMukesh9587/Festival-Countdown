@@ -3,7 +3,8 @@ import { Festival } from './types';
 export function getNextOccurrence(dateRule: string): Date {
   const now = new Date();
   
-  if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/.test(dateRule)) {
+  // ISO string or custom event format 'YYYY-MM-DDTHH:mm'
+  if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(dateRule)) {
     return new Date(dateRule);
   }
 
