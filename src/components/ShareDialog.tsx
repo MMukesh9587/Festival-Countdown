@@ -15,24 +15,32 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { ShareCanvas } from './ShareCanvas';
 import type { FestivalWithDate } from '@/lib/types';
-import { Share2, Link as LinkIcon, Check } from 'lucide-react';
+import { Share2, Twitter, Facebook } from 'lucide-react';
 
 interface ShareDialogProps {
   festival: FestivalWithDate;
 }
 
+const WhatsAppIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2
+ 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+)
+
 export function ShareDialog({ festival }: ShareDialogProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [customMessage, setCustomMessage] = useState('');
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
-  const [copied, setCopied] = useState(false);
-
+  
   const festivalUrl = typeof window !== 'undefined' ? `${window.location.origin}/festivals/${festival.slug}` : '';
+  const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
+  const shareText = `Check out the countdown for ${name}!`;
 
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(festivalUrl);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const shareLinks = {
+      whatsapp: `https://wa.me/?text=${encodeURIComponent(`${shareText} ${festivalUrl}`)}`,
+      twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(festivalUrl)}&text=${encodeURIComponent(shareText)}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(festivalUrl)}`,
   };
 
   return (
@@ -44,19 +52,31 @@ export function ShareDialog({ festival }: ShareDialogProps) {
         <DialogHeader>
           <DialogTitle>{t('share_countdown')}</DialogTitle>
           <DialogDescription>
-            Share a link to this countdown or generate a custom image.
+            Share this countdown on social media or create a custom image.
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="share-link">Share Link</Label>
-            <div className="flex gap-2">
-              <Input id="share-link" value={festivalUrl} readOnly />
-              <Button onClick={handleCopyLink} variant="outline" size="icon" aria-label="Copy link">
-                {copied ? <Check className="h-4 w-4 text-green-500" /> : <LinkIcon className="h-4 w-4" />}
-              </Button>
+            <div className="space-y-2">
+                <Label>Share on Social Media</Label>
+                <div className="flex gap-2">
+                    <Button asChild variant="outline" className="flex-1" >
+                        <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer">
+                            <WhatsAppIcon /> WhatsApp
+                        </a>
+                    </Button>
+                    <Button asChild variant="outline" className="flex-1" >
+                        <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer">
+                            <Twitter className="h-5 w-5"/> Twitter
+                        </a>
+                    </Button>
+                    <Button asChild variant="outline" className="flex-1" >
+                        <a href={shareLinks.facebook} target="_blank" rel="noopener noreferrer">
+                            <Facebook className="h-5 w-5"/> Facebook
+                        </a>
+                    </Button>
+                </div>
             </div>
-          </div>
+
 
           <div className="relative my-4">
             <div className="absolute inset-0 flex items-center">
