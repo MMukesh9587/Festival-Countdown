@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, type ReactNode } from 'react';
@@ -24,13 +25,14 @@ const formSchema = z.object({
   name: z.string().min(2, { message: 'Event name must be at least 2 characters.' }),
   date: z.string().nonempty({ message: 'Date is required.' }),
   time: z.string().nonempty({ message: 'Time is required.' }),
+  image: z.string().url({ message: 'Please enter a valid image URL.' }).optional().or(z.literal('')),
 });
 
 type AddEventFormValues = z.infer<typeof formSchema>;
 
 interface AddEventDialogProps {
   children: ReactNode;
-  onAddEvent: (event: Omit<Festival, 'id' | 'slug' | 'custom' | 'is_fixed' | 'image'>) => void;
+  onAddEvent: (event: Omit<Festival, 'id' | 'slug' | 'custom' | 'is_fixed'>) => void;
 }
 
 export function AddEventDialog({ children, onAddEvent }: AddEventDialogProps) {
@@ -44,11 +46,12 @@ export function AddEventDialog({ children, onAddEvent }: AddEventDialogProps) {
       name: '',
       date: '',
       time: '00:00',
+      image: '',
     },
   });
 
   function onSubmit(values: AddEventFormValues) {
-    const { name, date, time } = values;
+    const { name, date, time, image } = values;
     const dateTimeString = `${date}T${time}`;
     const targetDate = new Date(dateTimeString);
 
@@ -60,6 +63,7 @@ export function AddEventDialog({ children, onAddEvent }: AddEventDialogProps) {
     onAddEvent({
       name: { en: name, hi: name },
       date_rule: dateTimeString,
+      image: image || 'event-default',
     });
 
     toast({
@@ -79,7 +83,7 @@ export function AddEventDialog({ children, onAddEvent }: AddEventDialogProps) {
           <DialogTitle>{t('add_custom_event')}</DialogTitle>
         </DialogHeader>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
               control={form.control}
               name="name"
@@ -88,6 +92,19 @@ export function AddEventDialog({ children, onAddEvent }: AddEventDialogProps) {
                   <FormLabel>{t('event_name')}</FormLabel>
                   <FormControl>
                     <Input placeholder={t('event_name_placeholder')} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+             <FormField
+              control={form.control}
+              name="image"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Image URL (Optional)</FormLabel>
+                  <FormControl>
+                    <Input placeholder="https://example.com/image.png" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

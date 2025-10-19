@@ -64,7 +64,6 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
     
     const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
     const description = typeof festival.description === 'string' ? festival.description : festival.description?.[language];
-    const imagePlaceholder = placeholderImages.placeholderImages.find(p => p.id === festival.image);
 
     const isFav = isClient && favorites.includes(festival.id);
     const formattedDate = festival.targetDate.toLocaleDateString(language, {
@@ -101,20 +100,36 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
         <h3>${t('blog_title_7')}</h3>
         <p>${t('blog_p_7')}</p>
     `;
+    
+    let imageUrl: string;
+    let imageHint: string | undefined;
+
+    const imagePlaceholder = placeholderImages.placeholderImages.find(p => p.id === festival.image);
+
+    if (festival.custom && festival.image.startsWith('http')) {
+        imageUrl = festival.image;
+        imageHint = 'custom event';
+    } else if (imagePlaceholder) {
+        imageUrl = imagePlaceholder.imageUrl;
+        imageHint = imagePlaceholder.imageHint;
+    } else {
+        const defaultImage = placeholderImages.placeholderImages.find(p => p.id === 'event-default');
+        imageUrl = defaultImage?.imageUrl || "https://picsum.photos/seed/default/1200/630";
+        imageHint = defaultImage?.imageHint;
+    }
+
 
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="relative rounded-xl overflow-hidden min-h-[40vh] md:min-h-[50vh] flex flex-col justify-end p-8 md:p-12 text-white bg-card">
-                {imagePlaceholder && (
-                    <Image
-                    src={imagePlaceholder.imageUrl}
-                    alt={name}
-                    fill
-                    className="object-cover"
-                    priority
-                    data-ai-hint={imagePlaceholder.imageHint}
-                    />
-                )}
+                <Image
+                src={imageUrl}
+                alt={name}
+                fill
+                className="object-cover"
+                priority
+                data-ai-hint={imageHint}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
                 <div className="relative z-10">
                     {festival.custom && <Badge className="mb-2 bg-accent text-accent-foreground">{t('custom_event')}</Badge>}

@@ -23,7 +23,6 @@ export function FestivalCard({ festival, onDelete }: FestivalCardProps) {
   const { language, t } = useLanguage();
   const { isFavorite, toggleFavorite } = useFavorites();
   const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
-  const imagePlaceholder = placeholderImagesData.placeholderImages.find(p => p.id === festival.image);
   
   const [isClient, setIsClient] = useState(false);
   
@@ -32,21 +31,37 @@ export function FestivalCard({ festival, onDelete }: FestivalCardProps) {
   }, []);
 
   const isFav = isClient && isFavorite(festival.id);
+  
+  let imageUrl: string;
+  let imageHint: string | undefined;
+
+  const imagePlaceholder = placeholderImagesData.placeholderImages.find(p => p.id === festival.image);
+
+  if (festival.custom && festival.image.startsWith('http')) {
+      imageUrl = festival.image;
+      imageHint = 'custom event';
+  } else if (imagePlaceholder) {
+      imageUrl = imagePlaceholder.imageUrl;
+      imageHint = imagePlaceholder.imageHint;
+  } else {
+      const defaultImage = placeholderImagesData.placeholderImages.find(p => p.id === 'event-default');
+      imageUrl = defaultImage?.imageUrl || "https://picsum.photos/seed/default/600/400";
+      imageHint = defaultImage?.imageHint;
+  }
+
 
   return (
     <Card className="flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-1">
       <CardHeader className="p-0">
         <div className="relative h-48">
-            {imagePlaceholder && (
-                <Image
-                src={imagePlaceholder.imageUrl}
-                alt={name}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                data-ai-hint={imagePlaceholder.imageHint}
-                />
-            )}
+            <Image
+            src={imageUrl}
+            alt={name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            data-ai-hint={imageHint}
+            />
            <div className="absolute top-3 right-3 flex gap-2">
              {festival.custom && onDelete && (
                 <Button
