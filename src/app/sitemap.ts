@@ -8,30 +8,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const festivalUrls = allFestivalsWithDates.map((festival) => ({
     url: `${siteUrl}festivals/${festival.slug}`,
-    lastModified: new Date(),
     changeFrequency: 'daily' as 'daily',
   }));
 
   const staticUrls = [
     {
       url: siteUrl,
-      lastModified: new Date(),
       changeFrequency: 'daily' as 'daily',
     },
     {
       url: `${siteUrl}about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as 'monthly',
+      changeFrequency: 'daily' as 'daily',
     },
     {
         url: `${siteUrl}privacy-policy`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as 'monthly',
+        changeFrequency: 'daily' as 'daily',
     },
     {
         url: `${siteUrl}terms-and-conditions`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as 'monthly',
+        changeFrequency: 'daily' as 'daily',
     }
   ];
  
