@@ -9,7 +9,33 @@ export const festivals: Festival[] = [
     date_rule: '2025-10-21',
     is_fixed: false,
     image: 'diwali',
-    slug: 'diwali-countdown'
+    slug: 'diwali-countdown',
+    blog: {
+        en: `
+            <h1>The Story of Diwali: The Festival of Lights</h1>
+            <p>Diwali, also known as Deepavali, is one of the most significant festivals in India and is celebrated by millions of Hindus, Jains, and Sikhs across the world. The name "Diwali" is derived from the Sanskrit term "Deepavali," which means "row of lighted lamps."</p>
+            
+            <h2>Why is Diwali Celebrated?</h2>
+            <p>The festival spiritually signifies the victory of light over darkness, good over evil, and knowledge over ignorance. The most popular tradition associates Diwali with the return of Lord Rama to his kingdom of Ayodhya after defeating the demon king Ravana. The people of Ayodhya lit rows of clay lamps (diyas) to welcome him, an act that symbolizes the triumph of righteousness.</p>
+            <h3>Other Regional Significance</h3>
+            <p>In other parts of India, Diwali marks different historical events. In Southern India, it commemorates the day Lord Krishna defeated the demon Narakasura. For Sikhs, it is associated with Bandi Chhor Divas, marking the day Guru Hargobind was released from prison.</p>
+
+            <h2>Where is Diwali Celebrated?</h2>
+            <p>Diwali is a pan-Indian festival celebrated with great enthusiasm throughout the country. Major celebrations can be witnessed in cities like Ayodhya, Varanasi, Jaipur, and Delhi. It is also an official holiday in several other countries with large Indian diaspora populations, including Nepal, Sri Lanka, Singapore, Malaysia, and Fiji.</p>
+        `,
+        hi: `
+            <h1>दिवाली की कहानी: रोशनी का त्योहार</h1>
+            <p>दिवाली, जिसे दीपावली भी कहा जाता है, भारत के सबसे महत्वपूर्ण त्योहारों में से एक है और इसे दुनिया भर में लाखों हिंदू, जैन और सिख मनाते हैं। "दिवाली" नाम संस्कृत शब्द "दीपावली" से लिया गया है, जिसका अर्थ है "जले हुए दीयों की पंक्ति।"</p>
+            
+            <h2>दिवाली क्यों मनाई जाती है?</h2>
+            <p>यह त्योहार आध्यात्मिक रूप से अंधकार पर प्रकाश की, बुराई पर अच्छाई की और अज्ञान पर ज्ञान की विजय का प्रतीक है। सबसे लोकप्रिय परंपरा दिवाली को राक्षस राजा रावण को हराने के बाद भगवान राम के अपने राज्य अयोध्या लौटने से जोड़ती है। अयोध्या के लोगों ने उनके स्वागत के लिए मिट्टी के दीयों की पंक्तियाँ जलाईं, यह एक ऐसा कार्य है जो धर्म की विजय का प्रतीक है।</p>
+            <h3>अन्य क्षेत्रीय महत्व</h3>
+            <p>भारत के अन्य भागों में, दिवाली अलग-अलग ऐतिहासिक घटनाओं का प्रतीक है। दक्षिण भारत में, यह उस दिन का स्मरण कराता है जब भगवान कृष्ण ने राक्षस नरकासुर का वध किया था। सिखों के लिए, यह बंदी छोड़ दिवस से जुड़ा है, जिस दिन गुरु हरगोबिंद को जेल से रिहा किया गया था।</p>
+
+            <h2>दिवाली कहाँ मनाई जाती है?</h2>
+            <p>दिवाली एक अखिल भारतीय त्योहार है जो पूरे देश में बड़े उत्साह के साथ मनाया जाता है। अयोध्या, वाराणसी, जयपुर और दिल्ली जैसे शहरों में प्रमुख उत्सव देखे जा सकते हैं। यह नेपाल, श्रीलंका, सिंगापुर, मलेशिया और फिजी सहित बड़ी भारतीय प्रवासी आबादी वाले कई अन्य देशों में भी एक आधिकारिक अवकाश है।</p>
+        `
+    }
   },
    {
     id: 'holi',

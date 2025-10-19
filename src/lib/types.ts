@@ -13,6 +13,9 @@ export interface Festival {
   image: string;
   slug: string;
   custom?: boolean;
+  blog?: {
+    [key in Language]: string;
+  }
 }
 
 export interface FestivalWithDate extends Festival {

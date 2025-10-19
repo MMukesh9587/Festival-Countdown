@@ -56,6 +56,23 @@ export function FestivalClientPage({ festival }: FestivalClientPageProps) {
         }
     };
 
+    const blogContent = festival.blog ? festival.blog[language] : `
+        <h1>${t('blog_title_1')}</h1>
+        <p>${t('blog_p_1')}</p>
+        <h2>${t('blog_title_2')}</h2>
+        <p>${t('blog_p_2')}</p>
+        <h3>${t('blog_title_3')}</h3>
+        <p>${t('blog_p_3')}</p>
+        <h2>${t('blog_title_4')}</h2>
+        <p>${t('blog_p_4')}</p>
+        <h3>${t('blog_title_5')}</h3>
+        <p>${t('blog_p_5')}</p>
+        <h2>${t('blog_title_6')}</h2>
+        <p>${t('blog_p_6')}</p>
+        <h3>${t('blog_title_7')}</h3>
+        <p>${t('blog_p_7')}</p>
+    `;
+
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="relative rounded-xl overflow-hidden min-h-[40vh] md:min-h-[50vh] flex flex-col justify-end p-8 md:p-12 text-white bg-card">
@@ -107,28 +124,10 @@ export function FestivalClientPage({ festival }: FestivalClientPageProps) {
                 )}
             </div>
 
-            <div className="mt-16 prose prose-invert max-w-none prose-headings:text-foreground prose-h1:text-primary prose-h1:font-headline prose-p:text-muted-foreground">
-                <h1>{t('blog_title_1')}</h1>
-                <p>{t('blog_p_1')}</p>
-
-                <h2>{t('blog_title_2')}</h2>
-                <p>{t('blog_p_2')}</p>
-
-                <h3>{t('blog_title_3')}</h3>
-                <p>{t('blog_p_3')}</p>
-
-                <h2>{t('blog_title_4')}</h2>
-                <p>{t('blog_p_4')}</p>
-
-                <h3>{t('blog_title_5')}</h3>
-                <p>{t('blog_p_5')}</p>
-
-                <h2>{t('blog_title_6')}</h2>
-                <p>{t('blog_p_6')}</p>
-                
-                <h3>{t('blog_title_7')}</h3>
-                <p>{t('blog_p_7')}</p>
-            </div>
+            <div 
+                className="mt-16 prose prose-invert max-w-none prose-headings:text-foreground prose-h1:text-primary prose-h1:font-headline prose-p:text-muted-foreground prose-h2:text-foreground prose-h3:text-foreground"
+                dangerouslySetInnerHTML={{ __html: blogContent }}
+            />
         </div>
     );
 }
