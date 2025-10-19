@@ -5,7 +5,7 @@ export const festivals: Festival[] = [
   {
     id: 'diwali',
     name: { en: 'Diwali', hi: 'दिवाली' },
-    description: { en: 'Symbolizing the victory of good over evil, it\'s celebrated with lamps, fireworks, and sweets across India and by Hindus worldwide.', hi: 'बुराई पर अच्छाई की जीत का प्रतीक, यह पूरे भारत में और दुनिया भर में हिंदुओं द्वारा दीयों, आतिशबाजी और मिठाइयों के साथ मनाया जाता है।' },
+    description: { en: 'Symbolizing the victory of good over evil, it is celebrated with lamps, fireworks, and sweets across India and by Hindus worldwide.', hi: 'बुराई पर अच्छाई की जीत का प्रतीक, यह पूरे भारत में और दुनिया भर में हिंदुओं द्वारा दीयों, आतिशबाजी और मिठाइयों के साथ मनाया जाता है।' },
     date_rule: '2025-10-21',
     is_fixed: false,
     image: 'diwali',
@@ -122,14 +122,13 @@ export const festivals: Festival[] = [
 ];
 
 export function getFestivalsWithTargetDate(customEvents: Festival[] = []) {
-  const now = new Date();
   const allFestivals = [...festivals, ...customEvents];
   
   const allFestivalsWithDates = allFestivals
     .map(f => ({ ...f, targetDate: getNextOccurrence(f.date_rule) }))
     .sort((a, b) => a.targetDate.getTime() - b.targetDate.getTime());
 
-  const upcomingFestivals = allFestivalsWithDates.filter(f => f.targetDate.getTime() >= now.getTime());
+  const upcomingFestivals = allFestivalsWithDates.filter(f => f.targetDate.getTime() >= new Date().getTime());
 
   return { upcomingFestivals, allFestivalsWithDates };
 }

@@ -1,61 +1,44 @@
-import { getFestivalBySlug, festivals } from '@/lib/festivals';
+
+"use client";
+
+import { getFestivalBySlug } from '@/lib/festivals';
 import { notFound } from 'next/navigation';
-import { Countdown } from '@/components/Countdown';
-import { LanguageProvider, useLanguage } from '@/context/LanguageContext';
 import { FestivalClientPage } from './FestivalClientPage';
-import type { Metadata } from 'next';
-import placeholderImagesData from '@/lib/placeholder-images.json';
+import { useCustomEvents } from '@/hooks/use-custom-events';
+import { useEffect, useState } from 'react';
+import type { FestivalWithDate } from '@/lib/types';
+import { Frown } from 'lucide-react';
 
+export default function FestivalPage({ params }: { params: { slug: string } }) {
+  const { customEvents } = useCustomEvents();
+  const [festival, setFestival] = useState<FestivalWithDate | null | undefined>(undefined);
 
-export async function generateStaticParams() {
-  return festivals.map((festival) => ({
-    slug: festival.slug,
-  }));
-}
+  useEffect(() => {
+    // This code runs only on the client
+    const foundFestival = getFestivalBySlug(params.slug, customEvents);
+    setFestival(foundFestival);
+  }, [params.slug, customEvents]);
 
-type Props = {
-  params: { slug: string };
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const festival = getFestivalBySlug(params.slug);
-  
-  if (!festival) {
-    return {
-      title: 'Festival Not Found',
-    }
-  }
-  
-  const nameEn = typeof festival.name === 'string' ? festival.name : festival.name['en'];
-  const descEn = typeof festival.description === 'string' ? festival.description : festival.description?.['en'] || `Countdown to ${nameEn}`;
-  const imagePlaceholder = placeholderImagesData.placeholderImages.find(p => p.id === festival.image);
-
-  return {
-    title: `${nameEn} Countdown`,
-    description: descEn,
-    openGraph: {
-      title: `${nameEn} Countdown`,
-      description: descEn,
-      images: imagePlaceholder ? [
-        {
-          url: imagePlaceholder.imageUrl,
-          width: 1200,
-          height: 630,
-          alt: nameEn,
-        }
-      ] : [],
-    }
-  };
-}
-
-
-export default function FestivalPage({ params }: Props) {
-  // We can't use hooks in Server Components, so we'll pass data to a client component
-  const festival = getFestivalBySlug(params.slug);
-
-  if (!festival) {
-    notFound();
+  // Loading state
+  if (festival === undefined) {
+    return (
+        <div className="container mx-auto px-4 py-20 text-center">
+            <p>Loading...</p>
+        </div>
+    );
   }
 
+  // Not found state
+  if (!festival) {
+    return (
+        <div className="container mx-auto px-4 py-20 text-center">
+          <Frown className="mx-auto h-24 w-24 text-primary" />
+          <h1 className="mt-8 font-headline text-5xl text-primary">404 - Not Found</h1>
+          <p className="mt-4 text-lg text-muted-foreground">The festival or page you are looking for does not exist.</p>
+        </div>
+      );
+  }
+
+  // Render the page once the festival is found
   return <FestivalClientPage festival={festival} />;
 }
