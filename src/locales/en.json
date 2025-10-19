@@ -1,3 +1,4 @@
+
 {
   "appTitle": "Festival Countdown Central",
   "appDescription": "Live countdowns for your favorite festivals & events",
@@ -34,5 +35,19 @@
   "not_found_description": "The festival or page you're looking for doesn't exist.",
   "go_home": "Go to Homepage",
   "event_name_placeholder": "e.g., Birthday Party",
-  "custom_message_placeholder": "e.g., Can't wait to celebrate!"
+  "custom_message_placeholder": "e.g., Can't wait to celebrate!",
+  "blog_title_1": "Never Miss a Moment",
+  "blog_p_1": "Our countdown timer is more than just a clock. It's your personal portal to the celebrations that matter most. Here's how you can make the most of it.",
+  "blog_title_2": "Personalize Your Experience with Favorites",
+  "blog_p_2": "Click the \"Add to Favorites\" button to save this countdown. Your favorite events are always just a click away, making it easy to keep track of multiple upcoming celebrations.",
+  "blog_title_3": "How it Works",
+  "blog_p_3": "When you favorite an event, we save it in your browser. The next time you visit, you can filter to see just your favorited events, creating a personalized dashboard of anticipation.",
+  "blog_title_4": "Share the Excitement",
+  "blog_p_4": "Anticipation is better when shared! Use the \"Share Countdown\" feature to spread the excitement with friends and family.",
+  "blog_title_5": "Share a Link or a Custom Image",
+  "blog_p_5": "You can copy a direct link to this countdown page or generate a beautiful, shareable image with a custom message. It's perfect for social media, messaging apps, or anywhere you want to build hype.",
+  "blog_title_6": "Embed on Your Website",
+  "blog_p_6": "Are you a blogger, event organizer, or just want to feature this countdown on your own site? The \"Embed Countdown\" feature gives you a simple snippet of code to do just that.",
+  "blog_title_7": "Simple and Customizable",
+  "blog_p_7": "Just copy the provided HTML code and paste it into your website's editor. The embedded countdown is a lightweight, stylish, and live-updating widget that brings the energy of the countdown directly to your audience."
 }

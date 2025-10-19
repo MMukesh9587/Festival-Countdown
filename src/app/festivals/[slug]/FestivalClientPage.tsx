@@ -12,6 +12,7 @@ import { useFavorites } from '@/hooks/use-favorites';
 import { ShareDialog } from '@/components/ShareDialog';
 import { EmbedCode } from '@/components/EmbedCode';
 import { Badge } from '@/components/ui/badge';
+import { useEffect, useState } from 'react';
 
 interface FestivalClientPageProps {
     festival: FestivalWithDate;
@@ -19,13 +20,18 @@ interface FestivalClientPageProps {
 
 export function FestivalClientPage({ festival }: FestivalClientPageProps) {
     const { language, t } = useLanguage();
-    const { isFavorite, toggleFavorite } = useFavorites();
+    const { favorites, toggleFavorite } = useFavorites();
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
     
     const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
     const description = typeof festival.description === 'string' ? festival.description : festival.description?.[language];
     const imagePlaceholder = placeholderImages.placeholderImages.find(p => p.id === festival.image);
 
-    const isFav = isFavorite(festival.id);
+    const isFav = isClient && favorites.includes(festival.id);
     const formattedDate = festival.targetDate.toLocaleDateString(language, {
         weekday: 'long',
         year: 'numeric',
@@ -74,40 +80,26 @@ export function FestivalClientPage({ festival }: FestivalClientPageProps) {
             </div>
 
             <div className="mt-16 prose prose-invert max-w-none prose-headings:text-foreground prose-h1:text-primary prose-h1:font-headline prose-p:text-muted-foreground">
-                <h1>Never Miss a Moment</h1>
-                <p>
-                    Our countdown timer is more than just a clock. It&apos;s your personal portal to the celebrations that matter most. Here&apos;s how you can make the most of it.
-                </p>
+                <h1>{t('blog_title_1')}</h1>
+                <p>{t('blog_p_1')}</p>
 
-                <h2>Personalize Your Experience with Favorites</h2>
-                <p>
-                    Click the &quot;Add to Favorites&quot; button to save this countdown. Your favorite events are always just a click away, making it easy to keep track of multiple upcoming celebrations.
-                </p>
+                <h2>{t('blog_title_2')}</h2>
+                <p>{t('blog_p_2')}</p>
 
-                <h3>How it Works</h3>
-                <p>
-                    When you favorite an event, we save it in your browser. The next time you visit, you can filter to see just your favorited events, creating a personalized dashboard of anticipation.
-                </p>
+                <h3>{t('blog_title_3')}</h3>
+                <p>{t('blog_p_3')}</p>
 
-                <h2>Share the Excitement</h2>
-                <p>
-                    Anticipation is better when shared! Use the &quot;Share Countdown&quot; feature to spread the excitement with friends and family.
-                </p>
+                <h2>{t('blog_title_4')}</h2>
+                <p>{t('blog_p_4')}</p>
 
-                <h3>Share a Link or a Custom Image</h3>
-                <p>
-                    You can copy a direct link to this countdown page or generate a beautiful, shareable image with a custom message. It&apos;s perfect for social media, messaging apps, or anywhere you want to build hype.
-                </p>
+                <h3>{t('blog_title_5')}</h3>
+                <p>{t('blog_p_5')}</p>
 
-                <h2>Embed on Your Website</h2>
-                <p>
-                    Are you a blogger, event organizer, or just want to feature this countdown on your own site? The &quot;Embed Countdown&quot; feature gives you a simple snippet of code to do just that.
-                </p>
+                <h2>{t('blog_title_6')}</h2>
+                <p>{t('blog_p_6')}</p>
                 
-                <h3>Simple and Customizable</h3>
-                <p>
-                    Just copy the provided HTML code and paste it into your website&apos;s editor. The embedded countdown is a lightweight, stylish, and live-updating widget that brings the energy of the countdown directly to your audience.
-                </p>
+                <h3>{t('blog_title_7')}</h3>
+                <p>{t('blog_p_7')}</p>
             </div>
         </div>
     );
