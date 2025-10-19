@@ -1,3 +1,82 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "diwali",
+      "description": "Golden lamps for Diwali",
+      "imageUrl": "https://images.unsplash.com/photo-1700245463044-43baea3194e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkaXdhbGklMjBsYW1wc3xlbnwwfHx8fDE3NjA4Mjg2ODh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "diwali lamps"
+    },
+    {
+      "id": "holi",
+      "description": "Colorful powders for Holi festival",
+      "imageUrl": "https://images.unsplash.com/photo-1650690053200-e7cb1537d3ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxob2xpJTIwY29sb3JzfGVufDB8fHx8MTc2MDg1OTA0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "holi colors"
+    },
+    {
+      "id": "eid",
+      "description": "Mosque silhouette during sunset for Eid",
+      "imageUrl": "https://images.unsplash.com/photo-1652013771927-336b24c9cd10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlaWQlMjBtb3NxdWV8ZW58MHx8fHwxNzYwODU5MDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "eid mosque"
+    },
+    {
+      "id": "christmas",
+      "description": "Decorated Christmas tree",
+      "imageUrl": "https://images.unsplash.com/photo-1612176963909-3fdb62cdc67c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaHJpc3RtYXMlMjB0cmVlfGVufDB8fHx8MTc2MDgxODQ2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "christmas tree"
+    },
+    {
+      "id": "new-year",
+      "description": "Fireworks celebrating the New Year",
+      "imageUrl": "https://images.unsplash.com/photo-1514876246314-d9a231ea21db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxuZXclMjB5ZWFyfGVufDB8fHx8MTc2MDgyMDA1OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "new year"
+    },
+    {
+      "id": "raksha-bandhan",
+      "description": "A decorative rakhi for Raksha Bandhan",
+      "imageUrl": "https://images.unsplash.com/photo-1693040529894-84457eb2a571?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxyYWtoaXxlbnwwfHx8fDE3NjA4NTkwNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rakhi"
+    },
+    {
+      "id": "navratri",
+      "description": "People dancing Garba during Navratri",
+      "imageUrl": "https://images.unsplash.com/photo-1754244575428-8123e0d27ef3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxnYXJiYSUyMGRhbmNlfGVufDB8fHx8MTc2MDg1OTA0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "garba dance"
+    },
+    {
+      "id": "dussehra",
+      "description": "Effigy of Ravana for Dussehra",
+      "imageUrl": "https://images.unsplash.com/photo-1687380729350-54ca4b02d125?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkdXNzZWhyYXxlbnwwfHx8fDE3NjA4NTkwNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dussehra"
+    },
+    {
+      "id": "ganesh-chaturthi",
+      "description": "Idol of Lord Ganesha",
+      "imageUrl": "https://images.unsplash.com/photo-1567591391293-f9a99c77e128?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnYW5lc2hhfGVufDB8fHx8MTc2MDg1OTA0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ganesha"
+    },
+    {
+      "id": "pongal",
+      "description": "Traditional Pongal dish preparation",
+      "imageUrl": "https://images.unsplash.com/photo-1576394435759-02a2674ff6e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb25nYWwlMjBwb3R8ZW58MHx8fHwxNzYwODU5MDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pongal pot"
+    },
+    {
+      "id": "onam",
+      "description": "Floral carpet (Pookalam) for Onam",
+      "imageUrl": "https://images.unsplash.com/photo-1708110238738-a9c8db0e29f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8b25hbSUyMGZsb3dlcnxlbnwwfHx8fDE3NjA4NTkwNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "onam flower"
+    },
+    {
+      "id": "guru-nanak-jayanti",
+      "description": "Golden Temple Amritsar",
+      "imageUrl": "https://images.unsplash.com/photo-1606301762185-bb0256e01eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxnb2xkZW4lMjB0ZW1wbGV8ZW58MHx8fHwxNzYwNzc3MTIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "golden temple"
+    },
+    {
+      "id": "event-default",
+      "description": "Abstract festive background",
+      "imageUrl": "https://images.unsplash.com/photo-1760628354559-558f78a30079?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGZlc3RpdmV8ZW58MHx8fHwxNzYwODU5MDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract festive"
+    }
+  ]
 }
