@@ -2,22 +2,27 @@
 "use client";
 
 import { getFestivalBySlug } from '@/lib/festivals';
-import { notFound } from 'next/navigation';
 import { FestivalClientPage } from './FestivalClientPage';
 import { useCustomEvents } from '@/hooks/use-custom-events';
 import { useEffect, useState } from 'react';
 import type { FestivalWithDate } from '@/lib/types';
 import { Frown } from 'lucide-react';
+import { useParams } from 'next/navigation';
 
-export default function FestivalPage({ params }: { params: { slug: string } }) {
+export default function FestivalPage() {
+  const params = useParams();
+  const slug = typeof params.slug === 'string' ? params.slug : '';
+
   const { customEvents } = useCustomEvents();
   const [festival, setFestival] = useState<FestivalWithDate | null | undefined>(undefined);
 
   useEffect(() => {
-    // This code runs only on the client
-    const foundFestival = getFestivalBySlug(params.slug, customEvents);
-    setFestival(foundFestival);
-  }, [params.slug, customEvents]);
+    if (slug) {
+      // This code runs only on the client
+      const foundFestival = getFestivalBySlug(slug, customEvents);
+      setFestival(foundFestival);
+    }
+  }, [slug, customEvents]);
 
   // Loading state
   if (festival === undefined) {
