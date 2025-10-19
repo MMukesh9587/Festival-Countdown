@@ -7,31 +7,60 @@ import { Countdown } from '@/components/Countdown';
 import Image from 'next/image';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
-import { Heart, Trash2 } from 'lucide-react';
+import { Heart, Trash2, Frown } from 'lucide-react';
 import { useFavorites } from '@/hooks/use-favorites';
 import { ShareDialog } from '@/components/ShareDialog';
 import { EmbedCode } from '@/components/EmbedCode';
 import { Badge } from '@/components/ui/badge';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useCustomEvents } from '@/hooks/use-custom-events';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
+import { getFestivalBySlug } from '@/lib/festivals';
+
 
 interface FestivalClientPageProps {
-    festival: FestivalWithDate;
+    festival: FestivalWithDate | null;
+    slug: string;
 }
 
-export function FestivalClientPage({ festival }: FestivalClientPageProps) {
+export function FestivalClientPage({ festival: initialFestival, slug }: FestivalClientPageProps) {
     const { language, t } = useLanguage();
     const { favorites, toggleFavorite } = useFavorites();
     const [isClient, setIsClient] = useState(false);
-    const { removeCustomEvent } = useCustomEvents();
+    const { customEvents, removeCustomEvent } = useCustomEvents();
     const router = useRouter();
     const { toast } = useToast();
 
     useEffect(() => {
         setIsClient(true);
     }, []);
+
+    const festival = useMemo(() => {
+        if (initialFestival) return initialFestival;
+        if (!isClient) return null; // Wait for client to check custom events
+        return getFestivalBySlug(slug, customEvents);
+    }, [initialFestival, slug, customEvents, isClient]);
+
+    // Loading state
+    if (!isClient || festival === undefined) {
+        return (
+            <div className="container mx-auto px-4 py-20 text-center">
+                <p>Loading...</p>
+            </div>
+        );
+    }
+    
+    // Not found state
+    if (!festival) {
+      return (
+          <div className="container mx-auto px-4 py-20 text-center">
+            <Frown className="mx-auto h-24 w-24 text-primary" />
+            <h1 className="mt-8 font-headline text-5xl text-primary">404 - Not Found</h1>
+            <p className="mt-4 text-lg text-muted-foreground">The festival or page you are looking for does not exist.</p>
+          </div>
+        );
+    }
     
     const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
     const description = typeof festival.description === 'string' ? festival.description : festival.description?.[language];

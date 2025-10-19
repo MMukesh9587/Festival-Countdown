@@ -1,17 +1,21 @@
 
 import type { Metadata, ResolvingMetadata } from 'next';
-import { getFestivalBySlug } from '@/lib/festivals';
+import { getFestivalBySlug, getFestivalsWithTargetDate } from '@/lib/festivals';
 import { FestivalClientPage } from './FestivalClientPage';
-import { useCustomEvents } from '@/hooks/use-custom-events';
-import { useEffect, useState } from 'react';
 import type { FestivalWithDate } from '@/lib/types';
 import { Frown } from 'lucide-react';
-import { useParams } from 'next/navigation';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { notFound } from 'next/navigation';
 
 type Props = {
   params: { slug: string }
+}
+
+export async function generateStaticParams() {
+    const { allFestivalsWithDates } = getFestivalsWithTargetDate();
+    return allFestivalsWithDates.map((festival) => ({
+      slug: festival.slug,
+    }));
 }
 
 export async function generateMetadata(
@@ -63,42 +67,18 @@ export async function generateMetadata(
 }
 
 
-export default function FestivalPage() {
-  const params = useParams();
-  const slug = typeof params.slug === 'string' ? params.slug : '';
+export default function FestivalPage({ params }: Props) {
+  const slug = params.slug;
 
-  const { customEvents } = useCustomEvents();
-  const [festival, setFestival] = useState<FestivalWithDate | null | undefined>(undefined);
+  // We fetch the default festival data on the server.
+  // Custom events will be checked on the client.
+  const festival = getFestivalBySlug(slug);
 
-  useEffect(() => {
-    if (slug) {
-      // This code runs only on the client
-      const foundFestival = getFestivalBySlug(slug, customEvents);
-      setFestival(foundFestival);
-    }
-  }, [slug, customEvents]);
-
-  // Loading state
-  if (festival === undefined) {
-    return (
-        <div className="container mx-auto px-4 py-20 text-center">
-            <p>Loading...</p>
-        </div>
-    );
-  }
-
-  // Not found state
+  // If the festival doesn't exist in the static list, it might be a custom one.
+  // We'll pass the slug to the client component to handle it.
   if (!festival) {
-    return (
-        <div className="container mx-auto px-4 py-20 text-center">
-          <Frown className="mx-auto h-24 w-24 text-primary" />
-          <h1 className="mt-8 font-headline text-5xl text-primary">404 - Not Found</h1>
-          <p className="mt-4 text-lg text-muted-foreground">The festival or page you are looking for does not exist.</p>
-        </div>
-      );
+    return <FestivalClientPage festival={null} slug={slug} />;
   }
 
-  // Render the page once the festival is found
-  return <FestivalClientPage festival={festival} />;
+  return <FestivalClientPage festival={festival} slug={slug} />;
 }
-
