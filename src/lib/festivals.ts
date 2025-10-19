@@ -6,7 +6,7 @@ export const festivals: Festival[] = [
     id: 'diwali',
     name: { en: 'Diwali', hi: 'दिवाली' },
     description: { en: 'Festival of lights', hi: 'दीयों का त्योहार' },
-    date_rule: '2024-11-01',
+    date_rule: '2025-10-21',
     is_fixed: false,
     image: 'diwali',
     slug: 'diwali-countdown'
