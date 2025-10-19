@@ -5,7 +5,7 @@ export const festivals: Festival[] = [
   {
     id: 'diwali',
     name: { en: 'Diwali', hi: 'दिवाली' },
-    description: { en: 'Festival of lights', hi: 'दीयों का त्योहार' },
+    description: { en: 'Symbolizing the victory of good over evil, it\'s celebrated with lamps, fireworks, and sweets across India and by Hindus worldwide.', hi: 'बुराई पर अच्छाई की जीत का प्रतीक, यह पूरे भारत में और दुनिया भर में हिंदुओं द्वारा दीयों, आतिशबाजी और मिठाइयों के साथ मनाया जाता है।' },
     date_rule: '2025-10-21',
     is_fixed: false,
     image: 'diwali',
