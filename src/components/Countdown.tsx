@@ -11,22 +11,32 @@ interface CountdownProps {
 }
 
 export function Countdown({ targetDate, className, size = 'medium' }: CountdownProps) {
-  const [remaining, setRemaining] = useState(() => getTimeRemaining(targetDate));
+  const [remaining, setRemaining] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0, expired: false });
+  const [isClient, setIsClient] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
-    if (remaining.expired) return;
+    setIsClient(true);
+    
+    const calculateRemaining = () => {
+        const newRemaining = getTimeRemaining(targetDate);
+        setRemaining(newRemaining);
+        return newRemaining;
+    }
+
+    // Set initial time on mount
+    const initialRemaining = calculateRemaining();
+    if (initialRemaining.expired) return;
 
     const interval = setInterval(() => {
-      const newRemaining = getTimeRemaining(targetDate);
-      setRemaining(newRemaining);
+      const newRemaining = calculateRemaining();
       if (newRemaining.expired) {
         clearInterval(interval);
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [targetDate, remaining.expired]);
+  }, [targetDate]);
 
   const sizeClasses = {
     small: {
@@ -47,6 +57,30 @@ export function Countdown({ targetDate, className, size = 'medium' }: CountdownP
   }
   
   const currentSize = sizeClasses[size];
+
+  if (!isClient) {
+    // Render a placeholder or nothing on the server
+    return (
+        <div className={`flex justify-center ${currentSize.wrapper} text-center ${className}`}>
+          <div>
+            <div className={currentSize.time}>--</div>
+            <div className={currentSize.label}>{t('days')}</div>
+          </div>
+          <div>
+            <div className={currentSize.time}>--</div>
+            <div className={currentSize.label}>{t('hours')}</div>
+          </div>
+          <div>
+            <div className={currentSize.time}>--</div>
+            <div className={currentSize.label}>{t('minutes')}</div>
+          </div>
+          <div>
+            <div className={currentSize.time}>--</div>
+            <div className={currentSize.label}>{t('seconds')}</div>
+          </div>
+        </div>
+      );
+  }
 
   if (remaining.expired) {
     return (
