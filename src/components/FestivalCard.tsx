@@ -11,6 +11,7 @@ import Image from 'next/image';
 import placeholderImagesData from '@/lib/placeholder-images.json';
 import { useFavorites } from '@/hooks/use-favorites';
 import { Badge } from './ui/badge';
+import { useEffect, useState } from 'react';
 
 interface FestivalCardProps {
   festival: FestivalWithDate;
@@ -22,7 +23,13 @@ export function FestivalCard({ festival }: FestivalCardProps) {
   const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
   const imagePlaceholder = placeholderImagesData.placeholderImages.find(p => p.id === festival.image);
   
-  const isFav = isFavorite(festival.id);
+  const [isClient, setIsClient] = useState(false);
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const isFav = isClient && isFavorite(festival.id);
 
   return (
     <Card className="flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-1">
