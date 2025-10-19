@@ -6,13 +6,16 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react"
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || new URL('https://festival-countdown-central.com');
+
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
   title: "Festival Countdown Central",
   description: "Live countdowns for your favorite festivals and events. Create custom timers, share with friends, and never miss a celebration.",
   openGraph: {
     title: 'Festival Countdown Central',
     description: 'Live countdowns for your favorite festivals and events.',
-    url: 'https://festival-countdown-central.com',
+    url: siteUrl,
     siteName: 'Festival Countdown Central',
     images: [
       {
