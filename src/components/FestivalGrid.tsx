@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { FestivalCard } from './FestivalCard';
 import type { FestivalWithDate } from '@/lib/types';
 import { Input } from './ui/input';
@@ -25,14 +25,22 @@ export function FestivalGrid({ initialFestivals }: FestivalGridProps) {
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   const { favorites } = useFavorites();
   const { language } = useLanguage();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const allFestivals = useMemo(() => {
+    if (!isClient) {
+      return initialFestivals;
+    }
     const customEventsWithDates = customEvents.map(event => ({
       ...event,
       targetDate: getNextOccurrence(event.date_rule),
     }));
     return [...initialFestivals, ...customEventsWithDates].sort((a,b) => a.targetDate.getTime() - b.targetDate.getTime());
-  }, [initialFestivals, customEvents]);
+  }, [initialFestivals, customEvents, isClient]);
 
 
   const filteredFestivals = useMemo(() => {
