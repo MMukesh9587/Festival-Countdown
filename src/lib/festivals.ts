@@ -114,7 +114,7 @@ export const festivals: Festival[] = [
     id: 'bhai-dooj',
     name: { en: 'Bhai Dooj', hi: 'भाई दूज' },
     description: { en: 'Festival celebrating the bond between brother and sister', hi: 'भाई-बहन के बंधन का उत्सव' },
-    date_rule: '2025-11-03',
+    date_rule: '2025-10-23',
     is_fixed: false,
     image: 'bhai-dooj',
     slug: 'bhai-dooj-countdown'
