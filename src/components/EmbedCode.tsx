@@ -21,8 +21,7 @@ export function EmbedCode({ slug }: EmbedCodeProps) {
   const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
 
-  // Use a placeholder for the domain, it should be replaced with the actual domain in production
-  const domain = typeof window !== 'undefined' ? window.location.origin : 'https://your-domain.com';
+  const domain = "https://festivalcountdown.netlify.app/";
   const embedCode = `<iframe src="${domain}/embed/${slug}" width="320" height="150" style="border:none; border-radius: 0.5rem; overflow:hidden;" title="${slug} countdown"></iframe>`;
 
   const handleCopy = () => {

@@ -6,10 +6,10 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || new URL('https://festival-countdown-central.com');
+const siteUrl = "https://festivalcountdown.netlify.app/";
 
 export const metadata: Metadata = {
-  metadataBase: siteUrl,
+  metadataBase: new URL(siteUrl),
   title: "Festival Countdown Central",
   description: "Live countdowns for your favorite festivals and events. Create custom timers, share with friends, and never miss a celebration.",
   openGraph: {

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from 'react';
@@ -43,7 +42,7 @@ export function ShareDialog({ festival }: ShareDialogProps) {
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   
-  const festivalUrl = typeof window !== 'undefined' ? `${window.location.origin}/festivals/${festival.slug}` : '';
+  const festivalUrl = `https://festivalcountdown.netlify.app//festivals/${festival.slug}`;
   const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
   const shareText = `Check out the countdown for ${name}!`;
 

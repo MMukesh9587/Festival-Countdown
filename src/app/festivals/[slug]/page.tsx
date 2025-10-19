@@ -1,4 +1,3 @@
-
 import type { Metadata, ResolvingMetadata } from 'next';
 import { getFestivalBySlug, getFestivalsWithTargetDate } from '@/lib/festivals';
 import { FestivalClientPage } from './FestivalClientPage';
@@ -38,7 +37,7 @@ export async function generateMetadata(
   const name = typeof festival.name === 'string' ? festival.name : festival.name['en'];
   const description = (typeof festival.description === 'string' ? festival.description : festival.description?.['en']) || (await parent).description;
   const imagePlaceholder = placeholderImages.placeholderImages.find(p => p.id === festival.image);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || new URL('https://festival-countdown-central.com');
+  const siteUrl = "https://festivalcountdown.netlify.app/";
   const ogImage = imagePlaceholder ? imagePlaceholder.imageUrl : `${siteUrl}/og-image.png`;
 
   return {
