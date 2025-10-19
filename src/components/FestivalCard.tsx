@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -15,9 +16,10 @@ import { useEffect, useState } from 'react';
 
 interface FestivalCardProps {
   festival: FestivalWithDate;
+  onDelete?: (id: string) => void;
 }
 
-export function FestivalCard({ festival }: FestivalCardProps) {
+export function FestivalCard({ festival, onDelete }: FestivalCardProps) {
   const { language, t } = useLanguage();
   const { isFavorite, toggleFavorite } = useFavorites();
   const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
@@ -45,7 +47,21 @@ export function FestivalCard({ festival }: FestivalCardProps) {
                 data-ai-hint={imagePlaceholder.imageHint}
                 />
             )}
-           <div className="absolute top-3 right-3">
+           <div className="absolute top-3 right-3 flex gap-2">
+             {festival.custom && onDelete && (
+                <Button
+                    variant={'destructive'}
+                    size="icon"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onDelete(festival.id);
+                    }}
+                    aria-label={'Delete event'}
+                    className='rounded-full h-9 w-9 bg-black/50 hover:bg-black/70 border-none'
+                >
+                    <Trash2 className="h-5 w-5 text-white" />
+                </Button>
+             )}
              <Button
                 variant={isFav ? 'destructive' : 'secondary'}
                 size="icon"

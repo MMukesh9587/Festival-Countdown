@@ -7,12 +7,15 @@ import { Countdown } from '@/components/Countdown';
 import Image from 'next/image';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
-import { Heart } from 'lucide-react';
+import { Heart, Trash2 } from 'lucide-react';
 import { useFavorites } from '@/hooks/use-favorites';
 import { ShareDialog } from '@/components/ShareDialog';
 import { EmbedCode } from '@/components/EmbedCode';
 import { Badge } from '@/components/ui/badge';
 import { useEffect, useState } from 'react';
+import { useCustomEvents } from '@/hooks/use-custom-events';
+import { useRouter } from 'next/navigation';
+import { useToast } from '@/hooks/use-toast';
 
 interface FestivalClientPageProps {
     festival: FestivalWithDate;
@@ -22,6 +25,9 @@ export function FestivalClientPage({ festival }: FestivalClientPageProps) {
     const { language, t } = useLanguage();
     const { favorites, toggleFavorite } = useFavorites();
     const [isClient, setIsClient] = useState(false);
+    const { removeCustomEvent } = useCustomEvents();
+    const router = useRouter();
+    const { toast } = useToast();
 
     useEffect(() => {
         setIsClient(true);
@@ -38,6 +44,17 @@ export function FestivalClientPage({ festival }: FestivalClientPageProps) {
         month: 'long',
         day: 'numeric',
     });
+
+    const handleDelete = () => {
+        if (festival.custom) {
+            removeCustomEvent(festival.id);
+            toast({
+                title: 'Event Removed',
+                description: 'The custom event has been deleted.',
+            });
+            router.push('/');
+        }
+    };
 
     return (
         <div className="container mx-auto px-4 py-8">
@@ -77,6 +94,17 @@ export function FestivalClientPage({ festival }: FestivalClientPageProps) {
                 </Button>
                 <ShareDialog festival={festival} />
                 <EmbedCode slug={festival.slug} />
+                {festival.custom && (
+                    <Button
+                        variant="destructive"
+                        size="lg"
+                        onClick={handleDelete}
+                        aria-label="Delete event"
+                    >
+                        <Trash2 className="mr-2 h-5 w-5" />
+                        Delete Event
+                    </Button>
+                )}
             </div>
 
             <div className="mt-16 prose prose-invert max-w-none prose-headings:text-foreground prose-h1:text-primary prose-h1:font-headline prose-p:text-muted-foreground">

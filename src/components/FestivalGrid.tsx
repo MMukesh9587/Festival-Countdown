@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo, useEffect } from 'react';
@@ -13,6 +14,7 @@ import { getNextOccurrence } from '@/lib/date-utils';
 import { useFavorites } from '@/hooks/use-favorites';
 import { Label } from './ui/label';
 import { Switch } from './ui/switch';
+import { useToast } from '@/hooks/use-toast';
 
 interface FestivalGridProps {
   initialFestivals: FestivalWithDate[];
@@ -20,12 +22,13 @@ interface FestivalGridProps {
 
 export function FestivalGrid({ initialFestivals }: FestivalGridProps) {
   const { t } = useLanguage();
-  const { customEvents, addCustomEvent } = useCustomEvents();
+  const { customEvents, addCustomEvent, removeCustomEvent } = useCustomEvents();
   const [searchQuery, setSearchQuery] = useState('');
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   const { favorites } = useFavorites();
   const { language } = useLanguage();
   const [isClient, setIsClient] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     setIsClient(true);
@@ -51,6 +54,14 @@ export function FestivalGrid({ initialFestivals }: FestivalGridProps) {
       return matchesSearch && matchesFavorites;
     });
   }, [allFestivals, searchQuery, language, showFavoritesOnly, favorites]);
+
+  const handleDelete = (id: string) => {
+    removeCustomEvent(id);
+    toast({
+        title: 'Event Removed',
+        description: 'The custom event has been deleted.',
+    });
+  };
 
   return (
     <div className='@container'>
@@ -86,7 +97,7 @@ export function FestivalGrid({ initialFestivals }: FestivalGridProps) {
       {filteredFestivals.length > 0 ? (
         <div className="grid grid-cols-1 @lg:grid-cols-2 @4xl:grid-cols-3 gap-6">
           {filteredFestivals.map(festival => (
-            <FestivalCard key={festival.id} festival={festival} />
+            <FestivalCard key={festival.id} festival={festival} onDelete={festival.custom ? handleDelete : undefined} />
           ))}
         </div>
       ) : (

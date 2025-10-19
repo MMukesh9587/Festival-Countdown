@@ -1,3 +1,4 @@
+
 "use client";
 
 import useLocalStorage from './use-local-storage';
@@ -18,5 +19,9 @@ export const useCustomEvents = () => {
     setCustomEvents([...customEvents, newEvent]);
   };
 
-  return { customEvents, addCustomEvent };
+  const removeCustomEvent = (eventId: string) => {
+    setCustomEvents(customEvents.filter(event => event.id !== eventId));
+  };
+
+  return { customEvents, addCustomEvent, removeCustomEvent };
 };
