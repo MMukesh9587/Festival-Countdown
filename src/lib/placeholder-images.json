@@ -73,6 +73,12 @@
       "imageHint": "golden temple"
     },
     {
+      "id": "bhai-dooj",
+      "description": "A sister applying tilak to her brother's forehead",
+      "imageUrl": "https://images.unsplash.com/photo-1678846399066-857c07386348?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiaGFpJTIwZGFvYmp8ZW58MHx8fHwxNzYwODU5MDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian celebration"
+    },
+    {
       "id": "event-default",
       "description": "Abstract festive background",
       "imageUrl": "https://images.unsplash.com/photo-1760628354559-558f78a30079?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGZlc3RpdmV8ZW58MHx8fHwxNzYwODU5MDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",

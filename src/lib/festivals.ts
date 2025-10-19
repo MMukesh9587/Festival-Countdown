@@ -109,6 +109,15 @@ export const festivals: Festival[] = [
     is_fixed: false,
     image: 'onam',
     slug: 'onam-countdown'
+  },
+  {
+    id: 'bhai-dooj',
+    name: { en: 'Bhai Dooj', hi: 'भाई दूज' },
+    description: { en: 'Festival celebrating the bond between brother and sister', hi: 'भाई-बहन के बंधन का उत्सव' },
+    date_rule: '2025-11-03',
+    is_fixed: false,
+    image: 'bhai-dooj',
+    slug: 'bhai-dooj-countdown'
   }
 ];
 
