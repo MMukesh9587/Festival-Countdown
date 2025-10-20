@@ -22,7 +22,7 @@ interface FestivalCardProps {
 export function FestivalCard({ festival, onDelete }: FestivalCardProps) {
   const { language, t } = useLanguage();
   const { isFavorite, toggleFavorite } = useFavorites();
-  const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
+  const name = typeof festival.name === 'string' ? festival.name : (festival.name[language] || festival.name['en']);
   
   const [isClient, setIsClient] = useState(false);
   
@@ -56,7 +56,7 @@ export function FestivalCard({ festival, onDelete }: FestivalCardProps) {
         <div className="relative h-48">
             <Image
             src={imageUrl}
-            alt={name}
+            alt={name || ''}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -15,7 +15,7 @@ interface HeroProps {
 
 export function Hero({ festival }: HeroProps) {
   const { language, t } = useLanguage();
-  const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
+  const name = typeof festival.name === 'string' ? festival.name : (festival.name[language] || festival.name['en']);
   const imagePlaceholder = placeholderImages.placeholderImages.find(p => p.id === festival.image);
 
   return (
@@ -23,7 +23,7 @@ export function Hero({ festival }: HeroProps) {
       {imagePlaceholder && (
         <Image
           src={imagePlaceholder.imageUrl}
-          alt={name}
+          alt={name || ''}
           fill
           className="object-cover"
           priority

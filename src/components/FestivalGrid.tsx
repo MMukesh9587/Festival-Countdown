@@ -48,7 +48,7 @@ export function FestivalGrid({ initialFestivals }: FestivalGridProps) {
 
   const filteredFestivals = useMemo(() => {
     return allFestivals.filter(festival => {
-      const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
+      const name = typeof festival.name === 'string' ? festival.name : (festival.name[language] || festival.name['en']);
       const matchesSearch = name.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesFavorites = !showFavoritesOnly || favorites.includes(festival.id);
       return matchesSearch && matchesFavorites;

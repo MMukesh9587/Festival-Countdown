@@ -62,8 +62,8 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
         );
     }
     
-    const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
-    const description = typeof festival.description === 'string' ? festival.description : festival.description?.[language];
+    const name = typeof festival.name === 'string' ? festival.name : (festival.name[language] || festival.name['en']);
+    const description = typeof festival.description === 'string' ? festival.description : (festival.description?.[language] || festival.description?.['en']);
 
     const isFav = isClient && favorites.includes(festival.id);
     const formattedDate = festival.targetDate.toLocaleDateString(language, {
@@ -84,7 +84,7 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
         }
     };
 
-    const blogContent = festival.blog ? festival.blog[language] : `
+    const blogContent = festival.blog?.[language] || festival.blog?.['en'] || `
         <h1>${t('blog_title_1')}</h1>
         <p>${t('blog_p_1')}</p>
         <h2>${t('blog_title_2')}</h2>
@@ -124,7 +124,7 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
             <div className="relative rounded-xl overflow-hidden min-h-[40vh] md:min-h-[50vh] flex flex-col justify-end p-8 md:p-12 text-white bg-card">
                 <Image
                 src={imageUrl}
-                alt={name}
+                alt={name || ''}
                 fill
                 className="object-cover"
                 priority

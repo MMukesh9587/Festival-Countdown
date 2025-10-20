@@ -1,7 +1,7 @@
-export type Language = 'en' | 'hi';
+export type Language = 'en' | 'hi' | 'bn' | 'mr' | 'te';
 
 export type LocalizedString = {
-  [key in Language]: string;
+  [key in Language]?: string;
 };
 
 export interface Festival {
@@ -14,7 +14,7 @@ export interface Festival {
   slug: string;
   custom?: boolean;
   blog?: {
-    [key in Language]: string;
+    [key in Language]?: string;
   }
 }
 

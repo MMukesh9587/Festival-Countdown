@@ -28,7 +28,7 @@ export function ShareCanvas({ festival, customMessage, onImageGenerated }: Share
     canvas.width = width;
     canvas.height = height;
 
-    const name = typeof festival.name === 'string' ? festival.name : festival.name[language];
+    const name = typeof festival.name === 'string' ? festival.name : (festival.name[language] || festival.name['en']);
     const remaining = getTimeRemaining(festival.targetDate);
     const imagePlaceholder = placeholderImagesData.placeholderImages.find(p => p.id === festival.image);
 
@@ -47,7 +47,7 @@ export function ShareCanvas({ festival, customMessage, onImageGenerated }: Share
       ctx.fillStyle = '#FFD700'; // primary
       ctx.font = 'bold 96px "Playfair Display", serif';
       ctx.textAlign = 'center';
-      ctx.fillText(name, width / 2, 180);
+      ctx.fillText(name || '', width / 2, 180);
 
       // Countdown Days
       if (!remaining.expired) {
@@ -84,7 +84,7 @@ export function ShareCanvas({ festival, customMessage, onImageGenerated }: Share
         ctx.fillStyle = '#FFD700';
         ctx.font = 'bold 96px "Playfair Display", serif';
         ctx.textAlign = 'center';
-        ctx.fillText(name, width / 2, 180);
+        ctx.fillText(name || '', width / 2, 180);
         //... and so on
         onImageGenerated(canvas.toDataURL('image/png'));
     }

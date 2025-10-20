@@ -4,8 +4,11 @@ import React, { createContext, useState, useContext, useEffect, ReactNode } from
 import type { Language } from '@/lib/types';
 import en from '@/locales/en.json';
 import hi from '@/locales/hi.json';
+import bn from '@/locales/bn.json';
+import mr from '@/locales/mr.json';
+import te from '@/locales/te.json';
 
-const translations = { en, hi };
+const translations = { en, hi, bn, mr, te };
 
 interface LanguageContextType {
   language: Language;
@@ -20,11 +23,14 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const storedLang = localStorage.getItem('language') as Language;
-    const browserLang = navigator.language.startsWith('hi') ? 'hi' : 'en';
-    if (storedLang && ['en', 'hi'].includes(storedLang)) {
+    const browserLang = navigator.language.split('-')[0] as Language;
+    
+    if (storedLang && Object.keys(translations).includes(storedLang)) {
       setLanguageState(storedLang);
-    } else {
+    } else if (Object.keys(translations).includes(browserLang)) {
       setLanguageState(browserLang);
+    } else {
+      setLanguageState('en');
     }
   }, []);
 
@@ -34,7 +40,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const t = (key: keyof typeof en): string => {
-    return translations[language][key] || translations['en'][key];
+    return translations[language]?.[key] || translations['en'][key];
   };
 
   return (

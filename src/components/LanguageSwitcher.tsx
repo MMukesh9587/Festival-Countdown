@@ -10,6 +10,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import type { Language } from '@/lib/types';
 
 export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
@@ -23,9 +24,12 @@ export function LanguageSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuRadioGroup value={language} onValueChange={(value) => setLanguage(value as 'en' | 'hi')}>
+        <DropdownMenuRadioGroup value={language} onValueChange={(value) => setLanguage(value as Language)}>
           <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="hi">हिन्दी</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="bn">বাংলা</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="mr">मराठी</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="te">తెలుగు</DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>

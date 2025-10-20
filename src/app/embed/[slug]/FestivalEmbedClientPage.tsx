@@ -5,7 +5,7 @@ import type { FestivalWithDate } from '@/lib/types';
 import Link from 'next/link';
 
 export function FestivalEmbedClientPage({ festival }: { festival: FestivalWithDate }) {
-    const name = typeof festival.name === 'string' ? festival.name : festival.name['en'];
+    const name = typeof festival.name === 'string' ? festival.name : (festival.name['en'] || Object.values(festival.name)[0]);
 
     return (
         <div className="h-full w-full flex flex-col items-center justify-center p-2 bg-card rounded-lg text-center">
