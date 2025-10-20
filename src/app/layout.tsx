@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react"
 import { ThemeProvider } from "@/context/ThemeProvider";
+import { FirebaseClientProvider } from "@/firebase";
 
 const siteUrl = "https://festivalcountdown.netlify.app/";
 
@@ -44,6 +45,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col">
         <ThemeProvider
@@ -52,14 +54,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LanguageProvider>
-            <div className="flex-grow">
-              <Header />
-              <main>{children}</main>
-            </div>
-            <Footer />
-            <Toaster />
-          </LanguageProvider>
+          <FirebaseClientProvider>
+            <LanguageProvider>
+              <div className="flex-grow">
+                <Header />
+                <main>{children}</main>
+              </div>
+              <Footer />
+              <Toaster />
+            </LanguageProvider>
+          </FirebaseClientProvider>
         </ThemeProvider>
         <Analytics />
       </body>

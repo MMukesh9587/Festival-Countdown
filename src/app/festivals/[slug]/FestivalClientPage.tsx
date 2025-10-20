@@ -17,6 +17,7 @@ import { useCustomEvents } from '@/hooks/use-custom-events';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 import { getFestivalBySlug } from '@/lib/festivals';
+import { RemindMeButton } from '@/components/RemindMeButton';
 
 
 interface FestivalClientPageProps {
@@ -154,6 +155,7 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
                     {isFav ? t('favorited') : t('add_to_favorites')}
                 </Button>
                 <ShareDialog festival={festival} />
+                <RemindMeButton festival={festival} />
                 <EmbedCode slug={festival.slug} />
                 {festival.custom && (
                     <Button
