@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -40,7 +41,21 @@ const nextConfig: NextConfig = {
     allowedDevOrigins: [
       'https://6000-firebase-studio-1760858577017.cluster-aic6jbiihrhmyrqafasatvzbwe.cloudworkstations.dev'
     ]
-  }
+  },
+   webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        child_process: false,
+        fs: false,
+        'aws-sdk': false,
+        'fast-xml-parser': false,
+        'mock-aws-s3': false,
+        nock: false,
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;

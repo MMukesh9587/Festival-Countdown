@@ -1,32 +1,39 @@
 
-// This file must be in the public directory
+// Give the service worker access to Firebase Messaging.
+// Note that you can only use Firebase Messaging here, other Firebase libraries
+// are not available in the service worker.
+importScripts('https://www.gstatic.com/firebasejs/11.9.1/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/11.9.1/firebase-messaging-compat.js');
 
-// Scripts for firebase and firebase messaging
-importScripts('https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js');
-importScripts('https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js');
-
-// Your web app's Firebase configuration
+// Initialize the Firebase app in the service worker by passing in
+// your app's Firebase config object.
+// https://firebase.google.com/docs/web/setup#config-object
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  "projectId": "studio-2039701027-271ab",
+  "appId": "1:441235110655:web:3b108873248da72ee3aaca",
+  "apiKey": "AIzaSyAiqmC6pS7LbOaUvVqahmHDz7_soeJICa8",
+  "authDomain": "studio-2039701027-271ab.firebaseapp.com",
+  "measurementId": "",
+  "messagingSenderId": "441235110655",
+  "storageBucket": "studio-2039701027-271ab.appspot.com",
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+// Retrieve an instance of Firebase Messaging so that it can handle background
+// messages.
 const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage((payload) => {
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
-
+  console.log(
+    '[firebase-messaging-sw.js] Received background message ',
+    payload
+  );
+  // Customize notification here
   const notificationTitle = payload.notification.title;
   const notificationOptions = {
     body: payload.notification.body,
-    icon: payload.notification.image || '/icon-192x192.png'
+    icon: '/favicon.ico',
   };
 
   self.registration.showNotification(notificationTitle, notificationOptions);

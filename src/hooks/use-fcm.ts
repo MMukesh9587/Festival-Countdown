@@ -30,7 +30,7 @@ export const useFCM = () => {
           // Request permission if not granted or denied
           if (Notification.permission === 'default') {
             const permission = await Notification.requestPermission();
-            setNotificationPermission(permission);
+            setNotificationpermission(permission);
             if (permission !== 'granted') {
               console.log('Notification permission not granted.');
               return;
@@ -39,9 +39,7 @@ export const useFCM = () => {
           
           if(Notification.permission === 'granted') {
              // Get FCM token
-            const currentToken = await getToken(messaging, {
-                vapidKey: 'YOUR_VAPID_KEY', // Replace with your VAPID key
-            });
+            const currentToken = await getToken(messaging);
 
             if (currentToken) {
                 setToken(currentToken);
@@ -58,7 +56,7 @@ export const useFCM = () => {
 
     retrieveToken();
     
-    if (firebaseApp) {
+    if (firebaseApp && typeof window !== 'undefined' && 'serviceWorker' in navigator) {
         const messaging = getMessaging(firebaseApp);
         const unsubscribe = onMessage(messaging, (payload) => {
             console.log('Foreground message received.', payload);
