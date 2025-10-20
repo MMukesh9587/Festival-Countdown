@@ -98,7 +98,7 @@ export function FestivalCard({ festival, onDelete }: FestivalCardProps) {
         <Countdown targetDate={festival.targetDate} size="medium" />
       </CardContent>
       <CardFooter>
-        <Button asChild variant="link" className="text-primary p-0">
+        <Button asChild variant="link" className="p-0">
           <Link href={`/festivals/${festival.slug}`}>
             View Details <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
