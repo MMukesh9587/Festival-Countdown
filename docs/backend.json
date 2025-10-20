@@ -1,0 +1,198 @@
+{
+  "entities": {
+    "Festival": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Festival",
+      "type": "object",
+      "description": "Represents a festival or event with associated details for countdown and display.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the festival. (Primary Key)"
+        },
+        "nameEn": {
+          "type": "string",
+          "description": "Festival name in English."
+        },
+        "nameHi": {
+          "type": "string",
+          "description": "Festival name in Hindi."
+        },
+        "descriptionEn": {
+          "type": "string",
+          "description": "Description of the festival in English."
+        },
+        "descriptionHi": {
+          "type": "string",
+          "description": "Description of the festival in Hindi."
+        },
+        "dateRule": {
+          "type": "string",
+          "description": "Rule for determining the festival date (e.g., 'MM-DD' for fixed, 'YYYY-MM-DD' for specific year)."
+        },
+        "isFixed": {
+          "type": "boolean",
+          "description": "Indicates if the festival date is fixed (true) or calculated (false)."
+        },
+        "tags": {
+          "type": "array",
+          "description": "Tags associated with the festival (e.g., 'india', 'hindu', 'public').",
+          "items": {
+            "type": "string"
+          }
+        },
+        "image": {
+          "type": "string",
+          "description": "URL or path to the festival image.",
+          "format": "uri"
+        },
+        "slug": {
+          "type": "string",
+          "description": "URL-friendly slug for the festival (e.g., 'diwali-countdown')."
+        }
+      },
+      "required": [
+        "id",
+        "nameEn",
+        "dateRule",
+        "isFixed",
+        "tags",
+        "image",
+        "slug"
+      ]
+    },
+    "CustomEvent": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "CustomEvent",
+      "type": "object",
+      "description": "Represents a custom event added by the user.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the custom event. (Primary Key)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the custom event."
+        },
+        "datetime": {
+          "type": "string",
+          "description": "Date and time of the custom event in ISO format.",
+          "format": "date-time"
+        },
+        "timezone": {
+          "type": "string",
+          "description": "Timezone of the custom event (e.g., 'America/Los_Angeles')."
+        },
+        "repeatYearly": {
+          "type": "boolean",
+          "description": "Indicates if the event repeats yearly."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "datetime",
+        "timezone",
+        "repeatYearly"
+      ]
+    },
+    "PushSubscription": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "PushSubscription",
+      "type": "object",
+      "description": "Represents a user's subscription for push notifications using Firebase Cloud Messaging (FCM).",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the push subscription. (Primary Key)"
+        },
+        "fcmToken": {
+          "type": "string",
+          "description": "The FCM token for sending push notifications to the user's device."
+        },
+        "festivalId": {
+          "type": "string",
+          "description": "Reference to Festival. (Relationship: Festival 1:N PushSubscription) The ID of the festival for which the user wants reminders."
+        },
+        "reminderTime": {
+          "type": "string",
+          "description": "The preferred time for sending reminders (e.g., '09:00' for 9:00 AM)."
+        }
+      },
+      "required": [
+        "id",
+        "fcmToken",
+        "festivalId",
+        "reminderTime"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/festivals/{festivalId}",
+        "definition": {
+          "entityName": "Festival",
+          "schema": {
+            "$ref": "#/backend/entities/Festival"
+          },
+          "description": "Stores information about global festivals.  'festivalId' is the document ID.",
+          "params": [
+            {
+              "name": "festivalId",
+              "description": "The unique identifier of the festival."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/customEvents/{customEventId}",
+        "definition": {
+          "entityName": "CustomEvent",
+          "schema": {
+            "$ref": "#/backend/entities/CustomEvent"
+          },
+          "description": "Stores custom events created by users.  'userId' identifies the user, and 'customEventId' is the ID of the event.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "customEventId",
+              "description": "The unique identifier of the custom event."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/pushSubscriptions/{pushSubscriptionId}",
+        "definition": {
+          "entityName": "PushSubscription",
+          "schema": {
+            "$ref": "#/backend/entities/PushSubscription"
+          },
+          "description": "Stores push subscription tokens for users. Includes denormalized 'festivalId' for authorization independence.  'userId' identifies the user, and 'pushSubscriptionId' is the ID of the subscription.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "pushSubscriptionId",
+              "description": "The unique identifier of the push subscription."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to support the Festival Countdown Timer application, emphasizing authorization independence, clarity, and scalability. It separates concerns by segregating festival data, user-specific custom events, and push subscription information. Festivals are stored in a top-level collection `festivals` since they are global. User-specific data (custom events and push subscriptions) is stored in subcollections under the `/users/{userId}` path, ensuring private access. This design allows for secure listing and management of user-specific data without requiring complex rule logic.\n\n**Authorization Independence:**\n\n*   The `pushSubscriptions` subcollection includes the `festivalId`. This denormalization is CRUCIAL. Without it, security rules would need to `get()` the festival document to check the validity, violating Authorization Independence and complicating atomic operations.  By storing the `festivalId` within the `pushSubscriptions` document, the security rules can directly validate the subscription against the allowed festivals without needing to read other documents.\n\n**QAPs (Rules are not Filters):**\n\n*   The segregation of data into top-level `festivals` and user-owned `customEvents` collections allows for simple and secure list operations. Publicly available festivals can be listed without user authentication, while listing custom events requires authentication and is scoped to the specific user's path (`/users/{userId}/customEvents`).\n\n**Invariants:**\n\n*   The user-owned subcollections (`customEvents`, `pushSubscriptions`) enforce ownership invariants by using the path-based ownership pattern `/users/{userId}/...`.  This ensures that only the authenticated user can create, read, update, or delete data within their respective paths.  Timestamps (if used) can be enforced server-side via Firebase Functions or client-side (with security rules ensuring they are only set on create)."
+  }
+}

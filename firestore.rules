@@ -1,0 +1,80 @@
+/**
+ * @file Firestore Security Rules for "Remind Me" App
+ *
+ * Core Philosophy:
+ * This ruleset implements a hybrid security model. Festivals are public, while custom events and push subscriptions are private and user-owned.
+ *
+ * Data Structure:
+ * - /festivals/{festivalId}: Stores public festival data.
+ * - /users/{userId}/customEvents/{customEventId}: Stores user-specific custom events.
+ * - /users/{userId}/pushSubscriptions/{pushSubscriptionId}: Stores user's push subscriptions.
+ *
+ * Key Security Decisions:
+ * - Public festivals are readable by anyone.
+ * - Custom events and push subscriptions are only accessible to the owning user.
+ * - Listing of custom events and push subscriptions is restricted to the owning user.
+ * - `festivalId` is denormalized in `pushSubscriptions` to avoid costly `get()` operations in security rules.
+ * - The rules do NOT implement full schema validation during the prototyping phase, focusing instead on ownership and relational integrity.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Allows public read access to festival data.
+     * @path /festivals/{festivalId}
+     * @allow (get, list) - Any user can read festival data.
+     * @deny (create, update, delete) - No one can create, update, or delete festival data through client-side rules.
+     * @principle Public read access for global festival data.
+     */
+    match /festivals/{festivalId} {
+      allow get, list: if true;
+      allow create, update, delete: if false;
+    }
+
+    /**
+     * @description Enforces user-ownership for custom events.
+     * @path /users/{userId}/customEvents/{customEventId}
+     * @allow (create) - User can create a custom event if the userId matches their auth UID.
+     * @allow (get, list, update, delete) - User can only access their own custom events.
+     * @deny (create) - User cannot create an event for another user.
+     * @deny (get, list, update, delete) - User cannot access another user's custom events.
+     * @principle Enforces document ownership for writes.
+     */
+    match /users/{userId}/customEvents/{customEventId} {
+      allow create: if isSignedIn() && isOwner(userId);
+      allow get, list: if isSignedIn() && isOwner(userId);
+      allow update: if isSignedIn() && isExistingOwner(userId);
+      allow delete: if isSignedIn() && isExistingOwner(userId);
+    }
+
+    /**
+     * @description Enforces user-ownership for push subscriptions.
+     * @path /users/{userId}/pushSubscriptions/{pushSubscriptionId}
+     * @allow (create) - User can create a push subscription if the userId matches their auth UID.
+     * @allow (get, list, update, delete) - User can only access their own push subscriptions.
+     * @deny (create) - User cannot create a subscription for another user.
+     * @deny (get, list, update, delete) - User cannot access another user's subscriptions.
+     * @principle Enforces document ownership for writes.
+     */
+    match /users/{userId}/pushSubscriptions/{pushSubscriptionId} {
+      allow create: if isSignedIn() && isOwner(userId);
+      allow get, list: if isSignedIn() && isOwner(userId);
+      allow update: if isSignedIn() && isExistingOwner(userId);
+      allow delete: if isSignedIn() && isExistingOwner(userId);
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    function isExistingOwner(userId) {
+        return isOwner(userId) && resource != null;
+    }
+  }
+}
