@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { CalendarClock } from 'lucide-react';
 import { ThemeSwitcher } from './ThemeSwitcher';
+import { AuthButton } from './AuthButton';
 
 export function Header() {
   return (
@@ -16,6 +17,7 @@ export function Header() {
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
           <ThemeSwitcher />
+          <AuthButton />
         </div>
       </div>
     </header>
