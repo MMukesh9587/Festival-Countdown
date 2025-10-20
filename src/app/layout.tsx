@@ -5,6 +5,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react"
+import { ThemeProvider } from "@/context/ThemeProvider";
 
 const siteUrl = "https://festivalcountdown.netlify.app/";
 
@@ -38,21 +39,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col">
-        <LanguageProvider>
-          <div className="flex-grow">
-            <Header />
-            <main>{children}</main>
-          </div>
-          <Footer />
-          <Toaster />
-        </LanguageProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LanguageProvider>
+            <div className="flex-grow">
+              <Header />
+              <main>{children}</main>
+            </div>
+            <Footer />
+            <Toaster />
+          </LanguageProvider>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
