@@ -30,7 +30,7 @@ export const useFCM = () => {
           // Request permission if not granted or denied
           if (Notification.permission === 'default') {
             const permission = await Notification.requestPermission();
-            setNotificationpermission(permission);
+            setNotificationPermission(permission);
             if (permission !== 'granted') {
               console.log('Notification permission not granted.');
               return;
