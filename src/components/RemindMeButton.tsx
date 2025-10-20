@@ -8,9 +8,8 @@ import { useUser } from '@/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { Festival } from '@/lib/types';
 import { addDocumentNonBlocking } from '@/firebase/non-blocking-updates';
-import { useFirestore, useCollection } from '@/firebase';
+import { useFirestore, useCollection, useMemoFirebase } from '@/firebase';
 import { collection, query, where } from 'firebase/firestore';
-import { useMemo } from 'react';
 
 export function RemindMeButton({ festival }: { festival: Festival }) {
   const { token, notificationPermission } = useFCM();
@@ -18,7 +17,7 @@ export function RemindMeButton({ festival }: { festival: Festival }) {
   const { toast } = useToast();
   const firestore = useFirestore();
 
-  const subscriptionsQuery = useMemo(() => {
+  const subscriptionsQuery = useMemoFirebase(() => {
     if (!user || !firestore) return null;
     return query(
       collection(firestore, `users/${user.uid}/pushSubscriptions`),
