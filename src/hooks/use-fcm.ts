@@ -41,7 +41,7 @@ export const useFCM = () => {
       if (typeof window !== 'undefined' && 'serviceWorker' in navigator && user && notificationPermission === 'granted') {
         try {
           const messaging = getMessaging(firebaseApp);
-          const swRegistration = await navigator.serviceWorker.ready;
+          const swRegistration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
           const currentToken = await getToken(messaging, { 
               vapidKey: 'BFIXI5c9g5f58s43x5R8s_E1xQhB-n2XwYJgKl8Z1v5f2X2Y7p1h9C3mF4jJ3kL3h5J2g1cR0n4mY2w9O1',
               serviceWorkerRegistration: swRegistration
@@ -63,3 +63,4 @@ export const useFCM = () => {
 
   return { token, notificationPermission, setNotificationPermission };
 };
+
