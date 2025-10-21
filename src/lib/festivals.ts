@@ -87,7 +87,7 @@ export const festivals: Festival[] = [
     id: 'ganesh-chaturthi',
     name: { en: 'Ganesh Chaturthi', hi: 'गणेश चतुर्थी', bn: 'গণেশ চতুর্থী', mr: 'गणेश चतुर्थी', te: 'గణేష్ చతుర్థి' },
     description: { en: 'Birth of Lord Ganesha', hi: 'भगवान गणेश का जन्मदिन', bn: 'ভগবান গণেশের জন্মদিন', mr: 'गणेश देवाचा वाढदिवस', te: 'గణేశుడి పుట్టినరోజు' },
-    date_rule: '2026-09-14T07:06:00',
+    date_rule: '2026-08-28',
     is_fixed: false,
     image: 'ganesh-chaturthi',
     slug: 'ganesh-chaturthi-countdown'
