@@ -60,7 +60,7 @@ export const festivals: Festival[] = [
     id: 'raksha-bandhan',
     name: { en: 'Raksha Bandhan', hi: 'रक्षा बंधन', bn: 'রাখি বন্ধন', mr: 'रक्षा बंधन', te: 'రక్షా బంధన్' },
     description: { en: 'Festival of siblings', hi: 'भाई-बहन का त्योहार', bn: 'ভাই-বোনের উৎসব', mr: 'भावंडांचा सण', te: 'సోదర సోదరీమణుల పండుగ' },
-    date_rule: '2024-08-19',
+    date_rule: '2026-08-28',
     is_fixed: false,
     image: 'raksha-bandhan',
     slug: 'raksha-bandhan-countdown'
