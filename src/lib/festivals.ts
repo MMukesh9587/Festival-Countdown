@@ -132,7 +132,7 @@ export const festivals: Festival[] = [
     id: 'onam',
     name: { en: 'Onam', hi: 'ओणम', bn: 'ওনাম', mr: 'ओणम', te: 'ఓనం' },
     description: { en: 'Harvest festival of Kerala', hi: 'केरल का फसल उत्सव', bn: 'কেরালার ফসল উৎসব', mr: 'केरळचा कापणीचा सण', te: 'కేరళ పంటల పండుగ' },
-    date_rule: '2024-09-15',
+    date_rule: '2026-08-16',
     is_fixed: false,
     image: 'onam',
     slug: 'onam-countdown'
