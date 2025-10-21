@@ -34,6 +34,18 @@ export const metadata: Metadata = {
   }
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Festival Countdown",
+  "url": "https://festivalcountdown.netlify.app",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://festivalcountdown.netlify.app/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -46,6 +58,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
         <link rel="manifest" href="/manifest.json" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col">
         <ThemeProvider
