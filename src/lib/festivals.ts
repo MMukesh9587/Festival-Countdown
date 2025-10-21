@@ -48,13 +48,13 @@ export const festivals: Festival[] = [
     slug: 'holi-countdown'
   },
   {
-    id: 'eid-al-fitr-2025',
+    id: 'eid-al-fitr-2026',
     name: { en: 'Eid al-Fitr', hi: 'ईद उल-फ़ित्र', bn: 'ঈদ উল-ফিতর', mr: 'ईद उल-फित्र', te: 'ఈద్ అల్-ఫితర్' },
     description: { en: 'Marks the end of Ramadan', hi: 'रमजान के अंत का प्रतीक', bn: 'রমজানের সমাপ্তি চিহ্নিত করে', mr: 'रमजानच्या समाप्तीचे प्रतीक', te: 'రంజాన్ ముగింపును సూచిస్తుంది' },
-    date_rule: '2025-03-30',
+    date_rule: '2026-03-19',
     is_fixed: false,
     image: 'eid',
-    slug: 'eid-al-fitr-2025-countdown'
+    slug: 'eid-al-fitr-2026-countdown'
   },
   {
     id: 'raksha-bandhan',
