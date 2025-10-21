@@ -40,7 +40,10 @@ export const useFCM = () => {
           if(Notification.permission === 'granted') {
              // Get FCM token
             const swRegistration = await navigator.serviceWorker.ready;
-            const currentToken = await getToken(messaging, { serviceWorkerRegistration: swRegistration });
+            const currentToken = await getToken(messaging, { 
+                vapidKey: 'BFIXI5c9g5f58s43x5R8s_E1xQhB-n2XwYJgKl8Z1v5f2X2Y7p1h9C3mF4jJ3kL3h5J2g1cR0n4mY2w9O1',
+                serviceWorkerRegistration: swRegistration
+            });
 
             if (currentToken) {
                 setToken(currentToken);
