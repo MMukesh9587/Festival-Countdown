@@ -31,11 +31,19 @@ export function ShareCanvas({ festival, customMessage, onImageGenerated }: Share
     const name = typeof festival.name === 'string' ? festival.name : (festival.name[language] || festival.name['en']);
     const remaining = getTimeRemaining(festival.targetDate);
     const imagePlaceholder = placeholderImagesData.placeholderImages.find(p => p.id === festival.image);
+    
+    let imageUrl: string;
+    if (festival.image.startsWith('http')) {
+        imageUrl = festival.image;
+    } else {
+        imageUrl = imagePlaceholder?.imageUrl || "https://picsum.photos/seed/default/1200/630";
+    }
+
 
     // Background
     const bg = new Image();
     bg.crossOrigin = "anonymous";
-    bg.src = imagePlaceholder?.imageUrl || "https://picsum.photos/seed/default/1200/630";
+    bg.src = imageUrl;
     
     bg.onload = () => {
       ctx.drawImage(bg, 0, 0, width, height);
@@ -72,7 +80,7 @@ export function ShareCanvas({ festival, customMessage, onImageGenerated }: Share
       // Footer
       ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
       ctx.font = '28px "PT Sans", sans-serif';
-      ctx.fillText('FestivalCountdown.com', width / 2, 590);
+      ctx.fillText('festivalcountdown.netlify.app', width / 2, 590);
 
       onImageGenerated(canvas.toDataURL('image/png'));
     };
@@ -86,12 +94,36 @@ export function ShareCanvas({ festival, customMessage, onImageGenerated }: Share
         ctx.textAlign = 'center';
         ctx.fillText(name || '', width / 2, 180);
         //... and so on
+        if (!remaining.expired) {
+          ctx.fillStyle = '#FFFFFF';
+          ctx.font = 'bold 180px "PT Sans", sans-serif';
+          ctx.fillText(String(remaining.days), width / 2, 380);
+          ctx.font = '48px "PT Sans", sans-serif';
+          ctx.fillText(t('days'), width / 2, 450);
+        } else {
+          ctx.fillStyle = '#FF8C00'; // accent
+          ctx.font = 'bold 96px "PT Sans", sans-serif';
+          ctx.fillText(t('happening_now'), width / 2, 380);
+        }
+
+        if (customMessage) {
+          ctx.fillStyle = '#FFFFFF';
+          ctx.font = 'italic 36px "PT Sans", sans-serif';
+          ctx.fillText(customMessage, width / 2, 520);
+        }
+        
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.font = '28px "PT Sans", sans-serif';
+        ctx.fillText('festivalcountdown.netlify.app', width / 2, 590);
         onImageGenerated(canvas.toDataURL('image/png'));
     }
   };
 
   useEffect(() => {
-    draw();
+    // We need to make sure the fonts are loaded before drawing
+    document.fonts.ready.then(() => {
+        draw();
+    });
   }, [festival, customMessage, language]);
 
   return (
