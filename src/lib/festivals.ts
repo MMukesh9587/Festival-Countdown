@@ -8,6 +8,7 @@
 
 
 
+
 import { Festival, FestivalWithDate } from './types';
 import { getNextOccurrence } from './date-utils';
 
@@ -899,6 +900,90 @@ export const festivals: Festival[] = [
       }
     ]
   },
+   {
+    id: 'ram-navami',
+    name: { en: 'Ram Navami', hi: 'राम नवमी', bn: 'রাম নবমী', mr: 'राम नवमी', te: 'శ్రీరామ నవమి' },
+    description: { en: 'Birth of Lord Rama', hi: 'भगवान राम का जन्मदिन', bn: 'ভগবান রামের জন্মদিন', mr: 'भगवान रामाचा वाढदिवस', te: 'శ్రీరాముని పుట్టినరోజు' },
+    date_rule: '2026-03-26',
+    is_fixed: false,
+    image: 'ram-navami',
+    slug: 'ram-navami-countdown',
+    tags: ['hindu', 'india', 'rama'],
+    blog: {
+      en: `
+        <h1>Ram Navami: Celebrating the Birth of Lord Rama</h1>
+        <p>Ram Navami is a significant Hindu festival that celebrates the birth of Lord Rama, the seventh avatar of Vishnu. It falls on the ninth day of the Chaitra month, in the bright half (Shukla Paksha).</p>
+        <h2>Why is Ram Navami Celebrated?</h2>
+        <p>The festival marks the birth of Rama, who is considered the epitome of righteousness, morality, and virtue (Maryada Purushottama). His life, as chronicled in the epic Ramayana, is a guide to dharma and righteous living. Devotees celebrate this day to seek his blessings and to remember his ideals.</p>
+        <h3>How is it Celebrated?</h3>
+        <p>Celebrations include prayers, fasting, and reading of the Ramayana. Temples are decorated, and special pujas are performed. Many devotees observe a strict fast, breaking it only at midnight, the time of Rama's birth. In some places, processions with idols of Rama, Sita, Lakshmana, and Hanuman are taken out. The city of Ayodhya, Rama's birthplace, sees grand celebrations.</p>
+        <h2>Where is it Celebrated?</h2>
+        <p>Ram Navami is celebrated by Hindus all over India and across the world. The most significant celebrations take place in Ayodhya (Uttar Pradesh), Sita Samahit Sthal (Bihar), Rameswaram, and Bhadrachalam (Telangana).</p>
+      `,
+      hi: `
+        <h1>राम नवमी: भगवान राम के जन्म का उत्सव</h1>
+        <p>राम नवमी एक महत्वपूर्ण हिंदू त्योहार है जो भगवान विष्णु के सातवें अवतार भगवान राम के जन्म का जश्न मनाता है। यह चैत्र महीने के शुक्ल पक्ष में नौवें दिन पड़ता है।</p>
+        <h2>राम नवमी क्यों मनाई जाती है?</h2>
+        <p>यह त्योहार राम के जन्म का प्रतीक है, जिन्हें धार्मिकता, नैतिकता और पुण्य (मर्यादा पुरुषोत्तम) का प्रतीक माना जाता है। महाकाव्य रामायण में वर्णित उनका जीवन, धर्म और धर्मी जीवन के लिए एक मार्गदर्शक है। भक्त इस दिन को उनका आशीर्वाद लेने और उनके आदर्शों को याद करने के लिए मनाते हैं।</p>
+        <h3>यह कैसे मनाया जाता है?</h3>
+        <p>उत्सव में प्रार्थना, उपवास और रामायण का पाठ शामिल है। मंदिरों को सजाया जाता है, और विशेष पूजा की जाती है। कई भक्त कठोर उपवास रखते हैं, इसे केवल आधी रात को तोड़ते हैं, जो राम के जन्म का समय है। कुछ स्थानों पर, राम, सीता, लक्ष्मण और हनुमान की मूर्तियों के साथ जुलूस निकाले जाते हैं। राम की जन्मभूमि अयोध्या शहर में भव्य उत्सव होते हैं।</p>
+        <h2>यह कहाँ मनाया जाता है?</h2>
+        <p>राम नवमी पूरे भारत और दुनिया भर में हिंदुओं द्वारा मनाई जाती है। सबसे महत्वपूर्ण उत्सव अयोध्या (उत्तर प्रदेश), सीता समाहित स्थल (बिहार), रामेश्वरम और भद्राचलम (तेलंगाना) में होते हैं।</p>
+      `
+    },
+    faq: [
+      {
+        question: { en: 'When is Ram Navami?', hi: 'राम नवमी कब है?' },
+        answer: { en: 'Ram Navami is on Thursday, March 26, 2026.', hi: 'राम नवमी गुरुवार, 26 मार्च, 2026 को है।' }
+      },
+      {
+        question: { en: 'Why is Ram Navami celebrated?', hi: 'राम नवमी क्यों मनाई जाती है?' },
+        answer: { en: 'It celebrates the birth of Lord Rama, the seventh avatar of Vishnu, who is revered as the ideal man and an epitome of dharma.', hi: 'यह भगवान विष्णु के सातवें अवतार भगवान राम के जन्म का जश्न मनाता है, जिन्हें आदर्श पुरुष और धर्म का प्रतीक माना जाता है।' }
+      }
+    ]
+  },
+   {
+    id: 'krishna-janmashtami',
+    name: { en: 'Krishna Janmashtami', hi: 'कृष्ण जन्माष्टमी', bn: 'কৃষ্ণ জন্মাষ্টমী', mr: 'कृष्ण जन्माष्टमी', te: 'కృష్ణాష్టమి' },
+    description: { en: 'Birth of Lord Krishna', hi: 'भगवान कृष्ण का जन्मदिन', bn: 'ভগবান কৃষ্ণের জন্মদিন', mr: 'भगवान कृष्णाचा वाढदिवस', te: 'శ్రీకృష్ణుని పుట్టినరోజు' },
+    date_rule: '2026-08-16',
+    is_fixed: false,
+    image: 'krishna-janmashtami',
+    slug: 'krishna-janmashtami-countdown',
+    tags: ['hindu', 'india', 'krishna'],
+    blog: {
+      en: `
+        <h1>Krishna Janmashtami: Celebrating the Birth of Lord Krishna</h1>
+        <p>Krishna Janmashtami, also known simply as Janmashtami or Gokulashtami, is an annual Hindu festival that celebrates the birth of Krishna, the eighth avatar of Vishnu.</p>
+        <h2>Why is it Celebrated?</h2>
+        <p>The festival celebrates the birth of Krishna, who is revered for his teachings in the Bhagavad Gita and his role in the epic Mahabharata. His birth is seen as a symbol of the victory of good over evil, and his life offers lessons in love, duty, and devotion.</p>
+        <h3>How is it Celebrated?</h3>
+        <p>Devotees observe a fast and stay up until midnight, the time Krishna is believed to have been born. Temples are decorated, and scenes from Krishna's life are enacted. A popular tradition in Maharashtra is the 'Dahi Handi' event, where teams of young men form human pyramids to break a high-hanging pot of curd, mimicking Krishna's childhood antics.</p>
+        <h2>Where is it Celebrated?</h2>
+        <p>Janmashtami is celebrated throughout India, especially in Mathura and Vrindavan, which are considered Krishna's birthplace and childhood home, respectively. It is also celebrated by Hindus across the world with great devotion.</p>
+      `,
+      hi: `
+        <h1>कृष्ण जन्माष्टमी: भगवान कृष्ण के जन्म का उत्सव</h1>
+        <p>कृष्ण जन्माष्टमी, जिसे केवल जन्माष्टमी या गोकुलाष्टमी के रूप में भी जाना जाता है, एक वार्षिक हिंदू त्योहार है जो विष्णु के आठवें अवतार कृष्ण के जन्म का जश्न मनाता है।</p>
+        <h2>यह क्यों मनाया जाता है?</h2>
+        <p>यह त्योहार कृष्ण के जन्म का जश्न मनाता है, जिन्हें भगवद गीता में उनकी शिक्षाओं और महाकाव्य महाभारत में उनकी भूमिका के लिए सम्मानित किया जाता है। उनके जन्म को बुराई पर अच्छाई की जीत का प्रतीक माना जाता है, और उनका जीवन प्रेम, कर्तव्य और भक्ति में सबक प्रदान करता है।</p>
+        <h3>यह कैसे मनाया जाता है?</h3>
+        <p>भक्त उपवास रखते हैं और आधी रात तक जागते रहते हैं, जिस समय माना जाता है कि कृष्ण का जन्म हुआ था। मंदिरों को सजाया जाता है, और कृष्ण के जीवन के दृश्यों का अभिनय किया जाता है। महाराष्ट्र में एक लोकप्रिय परंपरा 'दही हांडी' कार्यक्रम है, जिसमें युवकों की टीमें दही के ऊंचे लटके हुए बर्तन को तोड़ने के लिए मानव पिरामिड बनाती हैं, जो कृष्ण के बचपन की शरारतों की नकल करता है।</p>
+        <h2>यह कहाँ मनाया जाता है?</h2>
+        <p>जन्माष्टमी पूरे भारत में मनाई जाती है, खासकर मथुरा और वृंदावन में, जिन्हें क्रमशः कृष्ण का जन्मस्थान और बचपन का घर माना जाता है। यह दुनिया भर के हिंदुओं द्वारा भी बड़ी भक्ति के साथ मनाया जाता है।</p>
+      `
+    },
+     faq: [
+      {
+        question: { en: 'When is Krishna Janmashtami?', hi: 'कृष्ण जन्माष्टमी कब है?' },
+        answer: { en: 'Krishna Janmashtami is on Sunday, August 16, 2026.', hi: 'कृष्ण जन्माष्टमी रविवार, 16 अगस्त, 2026 को है।' }
+      },
+      {
+        question: { en: 'Why is it celebrated?', hi: 'यह क्यों मनाया जाता है?' },
+        answer: { en: 'It celebrates the birth of Lord Krishna, the eighth avatar of Vishnu.', hi: 'यह विष्णु के आठवें अवतार भगवान कृष्ण के जन्म का जश्न मनाता है।' }
+      }
+    ]
+  },
   {
     id: 'bhai-dooj',
     name: { en: 'Bhai Dooj', hi: 'भाई दूज', bn: 'ভাইফোঁটা', mr: 'भाऊबीज', te: 'భాయ్ దూజ్' },
@@ -1005,6 +1090,7 @@ export function getFestivalBySlug(slug: string, customEvents: Festival[] = []): 
     targetDate: getNextOccurrence(festival.date_rule),
   };
 }
+
 
 
 
