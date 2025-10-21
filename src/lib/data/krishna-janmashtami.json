@@ -1,0 +1,16 @@
+{
+    "blog": {
+      "en": "\n        <h1>Krishna Janmashtami: Celebrating the Birth of Lord Krishna</h1>\n        <p>Krishna Janmashtami, also known simply as Janmashtami or Gokulashtami, is an annual Hindu festival that celebrates the birth of Krishna, the eighth avatar of Vishnu.</p>\n        <h2>Why is it Celebrated?</h2>\n        <p>The festival celebrates the birth of Krishna, who is revered for his teachings in the Bhagavad Gita and his role in the epic Mahabharata. His birth is seen as a symbol of the victory of good over evil, and his life offers lessons in love, duty, and devotion.</p>\n        <h3>How is it Celebrated?</h3>\n        <p>Devotees observe a fast and stay up until midnight, the time Krishna is believed to have been born. Temples are decorated, and scenes from Krishna's life are enacted. A popular tradition in Maharashtra is the 'Dahi Handi' event, where teams of young men form human pyramids to break a high-hanging pot of curd, mimicking Krishna's childhood antics.</p>\n        <h2>Where is it Celebrated?</h2>\n        <p>Janmashtami is celebrated throughout India, especially in Mathura and Vrindavan, which are considered Krishna's birthplace and childhood home, respectively. It is also celebrated by Hindus across the world with great devotion.</p>\n      ",
+      "hi": "\n        <h1>कृष्ण जन्माष्टमी: भगवान कृष्ण के जन्म का उत्सव</h1>\n        <p>कृष्ण जन्माष्टमी, जिसे केवल जन्माष्टमी या गोकुलाष्टमी के रूप में भी जाना जाता है, एक वार्षिक हिंदू त्योहार है जो विष्णु के आठवें अवतार कृष्ण के जन्म का जश्न मनाता है।</p>\n        <h2>यह क्यों मनाया जाता है?</h2>\n        <p>यह त्योहार कृष्ण के जन्म का जश्न मनाता है, जिन्हें भगवद गीता में उनकी शिक्षाओं और महाकाव्य महाभारत में उनकी भूमिका के लिए सम्मानित किया जाता है। उनके जन्म को बुराई पर अच्छाई की जीत का प्रतीक माना जाता है, और उनका जीवन प्रेम, कर्तव्य और भक्ति में सबक प्रदान करता है।</p>\n        <h3>यह कैसे मनाया जाता है?</h3>\n        <p>भक्त उपवास रखते हैं और आधी रात तक जागते रहते हैं, जिस समय माना जाता है कि कृष्ण का जन्म हुआ था। मंदिरों को सजाया जाता है, और कृष्ण के जीवन के दृश्यों का अभिनय किया जाता है। महाराष्ट्र में एक लोकप्रिय परंपरा 'दही हांडी' कार्यक्रम है, जिसमें युवकों की टीमें दही के ऊंचे लटके हुए बर्तन को तोड़ने के लिए मानव पिरामिड बनाती हैं, जो कृष्ण के बचपन की शरारतों की नकल करता है।</p>\n        <h2>यह कहाँ मनाया जाता है?</h2>\n        <p>जन्माष्टमी पूरे भारत में मनाई जाती है, खासकर मथुरा और वृंदावन में, जिन्हें क्रमशः कृष्ण का जन्मस्थान और बचपन का घर माना जाता है। यह दुनिया भर के हिंदुओं द्वारा भी बड़ी भक्ति के साथ मनाया जाता है।</p>\n      "
+    },
+     "faq": [
+      {
+        "question": { "en": "When is Krishna Janmashtami?", "hi": "कृष्ण जन्माष्टमी कब है?" },
+        "answer": { "en": "Krishna Janmashtami is on Sunday, August 16, 2026.", "hi": "कृष्ण जन्माष्टमी रविवार, 16 अगस्त, 2026 को है।" }
+      },
+      {
+        "question": { "en": "Why is it celebrated?", "hi": "यह क्यों मनाया जाता है?" },
+        "answer": { "en": "It celebrates the birth of Lord Krishna, the eighth avatar of Vishnu.", "hi": "यह विष्णु के आठवें अवतार भगवान कृष्ण के जन्म का जश्न मनाता है।" }
+      }
+    ]
+  }

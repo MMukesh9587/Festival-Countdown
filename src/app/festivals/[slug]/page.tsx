@@ -1,18 +1,49 @@
 import type { Metadata, ResolvingMetadata } from 'next';
-import { getFestivalBySlug, getFestivalsWithTargetDate } from '@/lib/festivals';
+import { festivals, getFestivalBySlug as getFestivalInfoBySlug } from '@/lib/festivals';
 import { FestivalClientPage } from './FestivalClientPage';
-import type { FestivalWithDate } from '@/lib/types';
+import type { Festival, FestivalWithDate } from '@/lib/types';
 import { Frown } from 'lucide-react';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { notFound } from 'next/navigation';
+import fs from 'fs';
+import path from 'path';
+import { getNextOccurrence } from '@/lib/date-utils';
 
 type Props = {
   params: { slug: string }
 }
 
+// Function to read detailed festival data from JSON files.
+function getFestivalDetails(festivalId: string): Pick<Festival, 'blog' | 'faq'> | null {
+  const filePath = path.join(process.cwd(), 'src', 'lib', 'data', `${festivalId}.json`);
+  try {
+    if (fs.existsSync(filePath)) {
+      const fileContent = fs.readFileSync(filePath, 'utf-8');
+      return JSON.parse(fileContent);
+    }
+  } catch (error) {
+    console.error(`Error reading or parsing festival details for ${festivalId}:`, error);
+  }
+  return { blog: {}, faq: [] };
+}
+
+
+function getFestivalBySlug(slug: string): FestivalWithDate | null {
+  const festivalInfo = festivals.find(f => f.slug === slug);
+  if (!festivalInfo) return null;
+
+  const details = getFestivalDetails(festivalInfo.id);
+
+  return {
+    ...festivalInfo,
+    ...details, // This will add 'blog' and 'faq' properties
+    targetDate: getNextOccurrence(festivalInfo.date_rule),
+  };
+}
+
+
 export async function generateStaticParams() {
-    const { allFestivalsWithDates } = getFestivalsWithTargetDate();
-    return allFestivalsWithDates.map((festival) => ({
+    return festivals.map((festival) => ({
       slug: festival.slug,
     }));
 }
@@ -77,8 +108,11 @@ export async function generateMetadata(
 export default function FestivalPage({ params }: Props) {
   const slug = params.slug;
 
+  // We fetch server-side data here, including blog/faq
   const festival = getFestivalBySlug(slug);
 
+  // If a static festival isn't found, we'll let the client page handle it
+  // This allows the client to check for custom events from local storage.
   if (!festival) {
     return <FestivalClientPage festival={null} slug={slug} />;
   }
