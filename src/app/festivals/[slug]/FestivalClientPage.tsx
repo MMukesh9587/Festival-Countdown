@@ -162,16 +162,20 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
 
     return (
         <>
-            {festival.faq && (
-                 <Head>
-                    <script type="application/ld+json">
-                        {JSON.stringify(faqSchema)}
-                    </script>
-                    <script type="application/ld+json">
-                        {JSON.stringify(howToSchema)}
-                    </script>
-                </Head>
-            )}
+            <Head>
+                <title>{name} Countdown</title>
+                <meta name="description" content={`Live countdown to ${name}. Find out the date, time, and traditions of this festival.`} />
+                 {festival.faq && (
+                    <>
+                        <script type="application/ld+json">
+                            {JSON.stringify(faqSchema)}
+                        </script>
+                        <script type="application/ld+json">
+                            {JSON.stringify(howToSchema)}
+                        </script>
+                    </>
+                )}
+            </Head>
             <div className="container mx-auto px-4 py-8">
                 <div className="relative rounded-xl overflow-hidden min-h-[40vh] md:min-h-[50vh] flex flex-col justify-end p-8 md:p-12 text-white bg-card">
                     <Image
