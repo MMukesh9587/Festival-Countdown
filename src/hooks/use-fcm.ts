@@ -16,21 +16,21 @@ export const useFCM = () => {
   // Effect for handling service worker registration and foreground messages
   useEffect(() => {
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
-      if (Notification.permission !== 'default') {
+        // Set initial permission status
         setNotificationPermission(Notification.permission);
-      }
-    }
-    
-    if (firebaseApp && typeof window !== 'undefined' && 'serviceWorker' in navigator) {
-        const messaging = getMessaging(firebaseApp);
-        const unsubscribe = onMessage(messaging, (payload) => {
-            console.log('Foreground message received.', payload);
-            toast({
-                title: payload.notification?.title,
-                description: payload.notification?.body,
+
+        // Set up foreground message listener
+        if (firebaseApp) {
+            const messaging = getMessaging(firebaseApp);
+            const unsubscribe = onMessage(messaging, (payload) => {
+                console.log('Foreground message received.', payload);
+                toast({
+                    title: payload.notification?.title,
+                    description: payload.notification?.body,
+                });
             });
-        });
-        return () => unsubscribe();
+            return () => unsubscribe();
+        }
     }
   }, [firebaseApp, toast]);
 
@@ -41,9 +41,11 @@ export const useFCM = () => {
       if (typeof window !== 'undefined' && 'serviceWorker' in navigator && user && notificationPermission === 'granted') {
         try {
           const messaging = getMessaging(firebaseApp);
+          // Register the service worker
           const swRegistration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
-          const currentToken = await getToken(messaging, { 
-              vapidKey: 'BFIXI5c9g5f58s43x5R8s_E1xQhB-n2XwYJgKl8Z1v5f2X2Y7p1h9C3mF4jJ3kL3h5J2g1cR0n4mY2w9O1',
+          
+          // Get token
+          const currentToken = await getToken(messaging, {
               serviceWorkerRegistration: swRegistration
           });
 
@@ -54,6 +56,7 @@ export const useFCM = () => {
           }
         } catch (error) {
           console.error('An error occurred while retrieving token. ', error);
+          // This error is often due to an invalid VAPID key or service worker issues.
         }
       }
     };
@@ -63,4 +66,3 @@ export const useFCM = () => {
 
   return { token, notificationPermission, setNotificationPermission };
 };
-
