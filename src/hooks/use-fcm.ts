@@ -13,52 +13,13 @@ export const useFCM = () => {
   const [token, setToken] = useState<string | null>(null);
   const [notificationPermission, setNotificationPermission] = useState<NotificationPermission | null>(null);
 
+  // Effect for handling service worker registration and foreground messages
   useEffect(() => {
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       if (Notification.permission !== 'default') {
         setNotificationPermission(Notification.permission);
       }
     }
-  }, []);
-
-  useEffect(() => {
-    const retrieveToken = async () => {
-      if (typeof window !== 'undefined' && 'serviceWorker' in navigator && user) {
-        try {
-          const messaging = getMessaging(firebaseApp);
-
-          // Request permission if not granted or denied
-          if (Notification.permission === 'default') {
-            const permission = await Notification.requestPermission();
-            setNotificationPermission(permission);
-            if (permission !== 'granted') {
-              console.log('Notification permission not granted.');
-              return;
-            }
-          }
-          
-          if(Notification.permission === 'granted') {
-             // Get FCM token
-            const swRegistration = await navigator.serviceWorker.ready;
-            const currentToken = await getToken(messaging, { 
-                vapidKey: 'BFIXI5c9g5f58s43x5R8s_E1xQhB-n2XwYJgKl8Z1v5f2X2Y7p1h9C3mF4jJ3kL3h5J2g1cR0n4mY2w9O1',
-                serviceWorkerRegistration: swRegistration
-            });
-
-            if (currentToken) {
-                setToken(currentToken);
-            } else {
-                console.log('No registration token available. Request permission to generate one.');
-            }
-          }
-
-        } catch (error) {
-          console.error('An error occurred while retrieving token. ', error);
-        }
-      }
-    };
-
-    retrieveToken();
     
     if (firebaseApp && typeof window !== 'undefined' && 'serviceWorker' in navigator) {
         const messaging = getMessaging(firebaseApp);
@@ -71,8 +32,34 @@ export const useFCM = () => {
         });
         return () => unsubscribe();
     }
+  }, [firebaseApp, toast]);
 
-  }, [firebaseApp, user, toast]);
 
-  return { token, notificationPermission };
+  // Effect for retrieving the FCM token, depends on user and permission status
+  useEffect(() => {
+    const retrieveToken = async () => {
+      if (typeof window !== 'undefined' && 'serviceWorker' in navigator && user && notificationPermission === 'granted') {
+        try {
+          const messaging = getMessaging(firebaseApp);
+          const swRegistration = await navigator.serviceWorker.ready;
+          const currentToken = await getToken(messaging, { 
+              vapidKey: 'BFIXI5c9g5f58s43x5R8s_E1xQhB-n2XwYJgKl8Z1v5f2X2Y7p1h9C3mF4jJ3kL3h5J2g1cR0n4mY2w9O1',
+              serviceWorkerRegistration: swRegistration
+          });
+
+          if (currentToken) {
+              setToken(currentToken);
+          } else {
+              console.log('No registration token available. Request permission to generate one.');
+          }
+        } catch (error) {
+          console.error('An error occurred while retrieving token. ', error);
+        }
+      }
+    };
+
+    retrieveToken();
+  }, [firebaseApp, user, notificationPermission]);
+
+  return { token, notificationPermission, setNotificationPermission };
 };

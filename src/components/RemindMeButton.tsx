@@ -6,13 +6,13 @@ import { Button } from './ui/button';
 import { useFCM } from '@/hooks/use-fcm';
 import { useUser } from '@/firebase';
 import { useToast } from '@/hooks/use-toast';
-import { Festival } from '@/lib/types';
+import type { Festival } from '@/lib/types';
 import { addDocumentNonBlocking } from '@/firebase/non-blocking-updates';
 import { useFirestore, useCollection, useMemoFirebase } from '@/firebase';
 import { collection, query, where } from 'firebase/firestore';
 
 export function RemindMeButton({ festival }: { festival: Festival }) {
-  const { token, notificationPermission } = useFCM();
+  const { token, notificationPermission, setNotificationPermission } = useFCM();
   const { user, isUserLoading } = useUser();
   const { toast } = useToast();
   const firestore = useFirestore();
@@ -52,13 +52,33 @@ export function RemindMeButton({ festival }: { festival: Festival }) {
     }
 
     if (notificationPermission === 'default') {
-      toast({
-        title: 'Permission Required',
-        description:
-          'Please allow notifications to receive reminders.',
-      });
-      // The useFCM hook already requested permission, browser prompt is likely visible
-      return;
+      try {
+        const permission = await Notification.requestPermission();
+        setNotificationPermission(permission); // Update the state in the hook
+        if (permission !== 'granted') {
+          toast({
+            variant: 'destructive',
+            title: 'Permission Required',
+            description: 'You must allow notifications to receive reminders.',
+          });
+          return;
+        }
+        // If permission is granted, the token will be fetched by the useFCM hook.
+        // We can show a pending toast and let the user click again.
+        toast({
+            title: 'Permission Granted!',
+            description: 'Please click "Remind Me" again to confirm.',
+        });
+        return; // Return here, user will click again
+      } catch (error) {
+        console.error("Error requesting notification permission:", error);
+        toast({
+          variant: 'destructive',
+          title: 'Permission Error',
+          description: 'An error occurred while requesting notification permission.',
+        });
+        return;
+      }
     }
 
     if (token) {
@@ -78,7 +98,7 @@ export function RemindMeButton({ festival }: { festival: Festival }) {
 
         toast({
           title: 'Reminder Set!',
-          description: `You will be notified before ${festival.name.en}.`,
+          description: `You will be notified before ${typeof festival.name === 'string' ? festival.name : festival.name.en}.`,
         });
       } catch (error: any) {
         toast({
@@ -91,7 +111,7 @@ export function RemindMeButton({ festival }: { festival: Festival }) {
         toast({
             variant: 'destructive',
             title: 'Could not get notification token.',
-            description: 'Please try again.',
+            description: 'Please click again, or try refreshing the page.',
         });
     }
   };
