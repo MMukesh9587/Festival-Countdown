@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
  
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = "https://festivalcountdown.netlify.app/";
+  const siteUrl = "https://festivalcountdown.netlify.app";
   
   return {
     rules: {
