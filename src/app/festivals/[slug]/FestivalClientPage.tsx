@@ -18,6 +18,7 @@ import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 import { getFestivalBySlug } from '@/lib/festivals';
 import { RemindMeButton } from '@/components/RemindMeButton';
+import { FounderBio } from '@/components/FounderBio';
 
 
 interface FestivalClientPageProps {
@@ -174,6 +175,8 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
                 className="mt-16 prose prose-invert max-w-none prose-headings:text-foreground prose-h1:text-primary prose-h1:font-headline prose-p:text-muted-foreground prose-h2:text-foreground prose-h3:text-foreground"
                 dangerouslySetInnerHTML={{ __html: blogContent }}
             />
+            
+            {festival.blog && <FounderBio />}
         </div>
     );
 }
