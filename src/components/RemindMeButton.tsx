@@ -51,25 +51,25 @@ export function RemindMeButton({ festival }: { festival: Festival }) {
       return;
     }
 
+    // If permission has not been asked yet, request it.
     if (notificationPermission === 'default') {
       try {
         const permission = await Notification.requestPermission();
-        setNotificationPermission(permission); // Update the state in the hook
-        if (permission !== 'granted') {
+        // The useFCM hook will automatically update the permission state and get the token.
+        setNotificationPermission(permission); 
+        
+        if (permission === 'granted') {
           toast({
+              title: 'Permission Granted!',
+              description: 'Please click "Remind Me" again to confirm.',
+          });
+        } else {
+           toast({
             variant: 'destructive',
             title: 'Permission Required',
             description: 'You must allow notifications to receive reminders.',
           });
-          return;
         }
-        // If permission is granted, the token will be fetched by the useFCM hook.
-        // We can show a pending toast and let the user click again.
-        toast({
-            title: 'Permission Granted!',
-            description: 'Please click "Remind Me" again to confirm.',
-        });
-        return; // Return here, user will click again
       } catch (error) {
         console.error("Error requesting notification permission:", error);
         toast({
@@ -77,11 +77,22 @@ export function RemindMeButton({ festival }: { festival: Festival }) {
           title: 'Permission Error',
           description: 'An error occurred while requesting notification permission.',
         });
-        return;
       }
+      return;
     }
 
-    if (token) {
+    // If permission is granted, but we don't have a token yet, ask user to try again.
+    if (!token) {
+        toast({
+            variant: 'destructive',
+            title: 'Could not get notification token.',
+            description: 'Please click again, or try refreshing the page.',
+        });
+        return;
+    }
+
+    // If we have permission and a token, create the subscription.
+    if (notificationPermission === 'granted' && token) {
       const subscription = {
         fcmToken: token,
         festivalId: festival.id,
@@ -107,12 +118,6 @@ export function RemindMeButton({ festival }: { festival: Festival }) {
           description: error.message,
         });
       }
-    } else {
-        toast({
-            variant: 'destructive',
-            title: 'Could not get notification token.',
-            description: 'Please click again, or try refreshing the page.',
-        });
     }
   };
 
