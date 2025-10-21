@@ -78,7 +78,7 @@ export const festivals: Festival[] = [
     id: 'dussehra',
     name: { en: 'Dussehra', hi: 'दशहरा', bn: 'দশেরা', mr: 'दसरा', te: 'దసరా' },
     description: { en: 'Victory of good over evil', hi: 'बुराई पर अच्छाई की विजय', bn: 'অশুভের ওপর শুভর বিজয়', mr: 'वाईटावर चांगल्याचा विजय', te: 'చెడుపై మంచి సాధించిన విజయం' },
-    date_rule: '2024-10-12',
+    date_rule: '2026-10-20',
     is_fixed: false,
     image: 'dussehra',
     slug: 'dussehra-countdown'
