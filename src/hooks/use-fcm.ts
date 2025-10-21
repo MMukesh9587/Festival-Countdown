@@ -39,7 +39,8 @@ export const useFCM = () => {
           
           if(Notification.permission === 'granted') {
              // Get FCM token
-            const currentToken = await getToken(messaging);
+            const swRegistration = await navigator.serviceWorker.ready;
+            const currentToken = await getToken(messaging, { serviceWorkerRegistration: swRegistration });
 
             if (currentToken) {
                 setToken(currentToken);
