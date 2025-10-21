@@ -69,7 +69,7 @@ export const festivals: Festival[] = [
     id: 'navratri',
     name: { en: 'Navratri', hi: 'नवरात्रि', bn: 'নবরাত্রি', mr: 'नवरात्री', te: 'నవరాత్రి' },
     description: { en: 'Nine nights of festivity', hi: 'उत्सव की नौ रातें', bn: 'নয় রাতের উৎসব', mr: 'नऊ रात्रींचा उत्सव', te: 'తొమ్మిది రాత్రుల పండుగ' },
-    date_rule: '2024-10-03',
+    date_rule: '2026-03-19',
     is_fixed: false,
     image: 'navratri',
     slug: 'navratri-countdown'
