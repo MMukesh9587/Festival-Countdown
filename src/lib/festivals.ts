@@ -10,6 +10,7 @@
 
 
 
+
 import { Festival, FestivalWithDate } from './types';
 import { getNextOccurrence } from './date-utils';
 
@@ -1014,7 +1015,7 @@ export const festivals: Festival[] = [
         <h2>भाई दूज क्यों मनाया जाता है?</h2>
         <p>यह त्योहार गहरा सांस्कृतिक और भावनात्मक महत्व रखता है। इस दिन, बहनें अपने भाइयों की लंबी आयु, कल्याण और समृद्धि के लिए प्रार्थना करती हैं। वे एक समारोह करती हैं जिसमें वे अपने भाई के माथे पर 'तिलक' या 'टीका' लगाती हैं। बदले में, भाई अपनी बहनों को उपहार देते हैं और उनकी रक्षा करने का वचन देते हैं।</p>
         <h3>त्योहार के पीछे की कथा</h3>
-        <p>भाई दूज से जुड़ी कई कथाएँ हैं। सबसे लोकप्रिय कहानियों में से एक मृत्यु के देवता यमराज के अपनी बहन यमुना से मिलने के बारे में है। यमुना ने तिलक समारोह और एक शानदार भोजन के साथ उनका स्वागत किया। उनके प्रेम से प्रसन्न होकर, यमराज ने घोषणा की कि इस दिन अपनी बहन से तिलक प्राप्त करने वाले किसी भी भाई को लंबी आयु प्रदान की जाएगी और उसे मृत्यु का भय नहीं होगा। एक अन्य कथा में राक्षस नरकासुर को हराने के बाद भगवान कृष्ण के अपनी बहन सुभद्रा से मिलने का उल्लेख है। सुभद्रा ने मिठाई और फूलों से उनका स्वागत किया और उनके माथे पर तिलक लगाया, जिससे यह परंपरा शुरू हुई।</p>
+        <p>भाई दूज से जुड़ी कई कथाएँ हैं। सबसे लोकप्रिय कहानियों में سے एक मृत्यु के देवता यमराज के अपनी बहन यमुना से मिलने के बारे में है। यमुना ने तिलक समारोह और एक शानदार भोजन के साथ उनका स्वागत किया। उनके प्रेम से प्रसन्न होकर, यमराज ने घोषणा की कि इस दिन अपनी बहन से तिलक प्राप्त करने वाले किसी भी भाई को लंबी आयु प्रदान की जाएगी और उसे मृत्यु का भय नहीं होगा। एक अन्य कथा में राक्षस नरकासुर को हराने के बाद भगवान कृष्ण के अपनी बहन सुभद्रा से मिलने का उल्लेख है। सुभद्रा ने मिठाई और फूलों से उनका स्वागत किया और उनके माथे पर तिलक लगाया, जिससे यह परंपरा शुरू हुई।</p>
 
         <h2>यह कैसे और कहाँ मनाया जाता है?</h2>
         <p>भाई दूज पूरे भारत और नेपाल में बड़े उत्साह के साथ मनाया जाता है। हालांकि अनुष्ठान क्षेत्र-दर-क्षेत्र थोड़े भिन्न हो सकते हैं, लेकिन सार एक ही रहता है। यह समारोह एक पारिवारिक मामला है, जहाँ पूरा परिवार इकट्ठा होता है। तिलक समारोह के बाद, एक भव्य दावत का आनंद लिया जाता है। यह एक ऐसा दिन है जो भाई-बहनों के बीच प्यार भरे रिश्ते को मजबूत करता है।</p>
@@ -1066,6 +1067,52 @@ export const festivals: Festival[] = [
           answer: { en: 'It is a festival that celebrates the bond between a brother and a sister. Sisters pray for their brothers\' long life and well-being.', hi: 'यह एक त्योहार है जो भाई और बहन के बीच के बंधन का जश्न मनाता है। बहनें अपने भाइयों की लंबी आयु और कल्याण के लिए प्रार्थना करती हैं।', bn: 'এটি একটি উৎসব যা ভাই ও বোনের মধ্যেকার বন্ধনকে উদযাপন করে। বোনেরা তাদের ভাইদের দীর্ঘ জীবন ও মঙ্গলের জন্য প্রার্থনা করে।', mr: 'हा एक सण आहे जो भाऊ आणि बहिणीच्या नात्याचा उत्सव साजरा करतो. बहिणी आपल्या भावांच्या दीर्घायुष्यासाठी आणि कल्याणासाठी प्रार्थना करतात।', te: 'ఇది ఒక సోదరుడు మరియు సోదరి మధ్య బంధాన్ని జరుపుకునే పండుగ. సోదరీమణులు తమ సోదరుల దీర్ఘాయువు మరియు శ్రేయస్సు కోసం ప్రార్థిస్తారు.' }
         }
     ]
+  },
+  {
+    id: 'makar-sankranti',
+    name: { en: 'Makar Sankranti', hi: 'मकर संक्रांति', bn: 'মকর সংক্রান্তি', mr: 'मकर संक्रांती', te: 'మకర సంక్రాంతి' },
+    description: { en: 'Hindu harvest festival and kite festival', hi: 'हिंदू फसल उत्सव और पतंग महोत्सव', bn: 'হিন্দু ফসল উৎসব এবং ঘুড়ি উৎসব', mr: 'हिंदू कापणीचा सण आणि पतंग महोत्सव', te: 'హిందూ పంటల పండుగ మరియు గాలిపటాల పండుగ' },
+    date_rule: '01-14',
+    is_fixed: true,
+    image: 'makar-sankranti',
+    slug: 'makar-sankranti-countdown',
+    tags: ['hindu', 'india', 'harvest', 'kites'],
+    blog: {
+      en: `
+        <h1>Makar Sankranti: The Festival of Kites and Harvest</h1>
+        <p>Makar Sankranti is a vibrant Hindu festival that marks the transition of the sun into the zodiac sign of Makara (Capricorn). It signifies the end of the winter solstice and the beginning of longer, warmer days. It is one of the few Hindu festivals based on the solar calendar.</p>
+        <h2>Why is it Celebrated?</h2>
+        <p>The festival is a celebration of the harvest and a time to offer thanks to the Sun God (Surya) for the agricultural abundance. It's a day of joy, social gatherings, and feasting. Different parts of India celebrate it under different names and with unique traditions, such as Lohri in Punjab, Bihu in Assam, and Pongal in Tamil Nadu.</p>
+        <h3>How is it Celebrated?</h3>
+        <p>One of the most popular traditions associated with Makar Sankranti is kite flying. Skies across many parts of India, especially in Gujarat and Rajasthan, are filled with colorful kites. People also prepare special sweets made of sesame seeds and jaggery, like 'tilgul', and exchange them while saying "Tilgul ghya, goad goad bola" (Eat this sweet and speak sweet words). Holy dips in rivers like the Ganga are also a common practice.</p>
+        <h2>Where is it Celebrated?</h2>
+        <p>Makar Sankranti is celebrated throughout India with regional variations. The International Kite Festival in Ahmedabad, Gujarat, is a major attraction. It is a day that brings people together, encouraging them to forget past conflicts and start afresh.</p>
+      `,
+      hi: `
+        <h1>मकर संक्रांति: पतंगों और फसल का त्योहार</h1>
+        <p>मकर संक्रांति एक जीवंत हिंदू त्योहार है जो सूर्य के मकर राशि में संक्रमण का प्रतीक है। यह शीतकालीन संक्रांति के अंत और लंबे, गर्म दिनों की शुरुआत का प्रतीक है। यह सौर कैलेंडर पर आधारित कुछ हिंदू त्योहारों में से một है।</p>
+        <h2>यह क्यों मनाया जाता है?</h2>
+        <p>यह त्योहार फसल का उत्सव है और कृषि बहुतायत के लिए सूर्य देव (सूर्य) को धन्यवाद देने का समय है। यह आनंद, सामाजिक समारोहों और दावतों का दिन है। भारत के विभिन्न हिस्से इसे अलग-अलग नामों और अनूठी परंपराओं के साथ मनाते हैं, जैसे पंजाब में लोहड़ी, असम में बिहू और तमिलनाडु में पोंगल।</p>
+        <h3>यह कैसे मनाया जाता है?</h3>
+        <p>मकर संक्रांति से जुड़ी सबसे लोकप्रिय परंपराओं में से एक पतंगबाजी है। भारत के कई हिस्सों, विशेष रूप से गुजरात और राजस्थान में, आसमान रंगीन पतंगों से भर जाता है। लोग तिल और गुड़ से बनी विशेष मिठाइयाँ भी बनाते हैं, जैसे 'तिलगुल', और उन्हें "तिलगुल घ्या, गोड गोड बोला" (यह मिठाई खाओ और मीठे शब्द बोलो) कहते हुए आदान-प्रदान करते हैं। गंगा जैसी नदियों में पवित्र डुबकी लगाना भी एक आम प्रथा है।</p>
+        <h2>यह कहाँ मनाया जाता है?</h2>
+        <p>मकर संक्रांति पूरे भारत में क्षेत्रीय विविधताओं के साथ मनाई जाती है। अहमदाबाद, गुजरात में अंतर्राष्ट्रीय पतंग महोत्सव एक प्रमुख आकर्षण है। यह एक ऐसा दिन है जो लोगों को एक साथ लाता है, उन्हें पिछले संघर्षों को भूलकर नए सिरे से शुरुआत करने के लिए प्रोत्साहित करता है।</p>
+      `
+    },
+    faq: [
+      {
+        question: { en: 'When is Makar Sankranti?', hi: 'मकर संक्रांति कब है?' },
+        answer: { en: 'Makar Sankranti is celebrated on January 14th or 15th each year. It is one of the few Hindu festivals that follows the solar calendar.', hi: 'मकर संक्रांति हर साल 14 या 15 जनवरी को मनाई जाती है। यह उन कुछ हिंदू त्योहारों में से एक है जो सौर कैलेंडर का पालन करता है।' }
+      },
+      {
+        question: { en: 'Why are kites flown on Makar Sankranti?', hi: 'मकर संक्रांति पर पतंग क्यों उड़ाई जाती हैं?' },
+        answer: { en: 'Kite flying is a popular tradition. It is believed that people flying kites in the early morning sun receive its beneficial rays, which help in getting rid of winter infections.', hi: 'पतंग उड़ाना एक लोकप्रिय परंपरा है। माना जाता है कि सुबह-सुबह धूप में पतंग उड़ाने वाले लोगों को इसकी फायदेमंद किरणें मिलती हैं, जो सर्दियों के संक्रमण से छुटकारा पाने में मदद करती हैं।' }
+      },
+      {
+        question: { en: 'What is the significance of "tilgul"?', hi: '"तिलगुल" का क्या महत्व है?' },
+        answer: { en: '"Tilgul" is a sweet made from sesame seeds and jaggery. It is exchanged among people as a symbol of goodwill, with the saying "Tilgul ghya, goad goad bola," which means "Eat this sweet and speak sweet words."', hi: '"तिलगुल" तिल और गुड़ से बनी एक मिठाई है। इसे सद्भावना के प्रतीक के रूप में लोगों के बीच आदान-प्रदान किया जाता है, इस कहावत के साथ "तिलगुल घ्या, गोड गोड बोला," जिसका अर्थ है "यह मिठाई खाओ और मीठे शब्द बोलो।"' }
+      }
+    ]
   }
 ];
 
@@ -1091,6 +1138,7 @@ export function getFestivalBySlug(slug: string, customEvents: Festival[] = []): 
     targetDate: getNextOccurrence(festival.date_rule),
   };
 }
+
 
 
 
