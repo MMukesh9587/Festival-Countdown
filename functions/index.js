@@ -50,6 +50,9 @@ exports.sendFestivalReminders = functions.pubsub
 
     const festivalDocs = await Promise.all(festivalPromises.map(p => p.promise));
 
+    const now = new Date();
+    const oneDay = 24 * 60 * 60 * 1000;
+
     for(let i = 0; i < festivalDocs.length; i++) {
         const festivalDoc = festivalDocs[i];
         const festivalId = festivalPromises[i].id;
@@ -60,9 +63,23 @@ exports.sendFestivalReminders = functions.pubsub
         }
 
         const festival = festivalDoc.data();
-        const festivalDate = new Date(festival.date_rule + "T00:00:00");
-        const now = new Date();
-        const oneDay = 24 * 60 * 60 * 1000;
+        
+        // तारीख की गणना करें
+        // यह date_rule के विभिन्न प्रारूपों को संभालता है
+        let festivalDate;
+        if (/^\d{4}-\d{2}-\d{2}/.test(festival.date_rule)) { // YYYY-MM-DD या YYYY-MM-DDTHH:mm
+            festivalDate = new Date(festival.date_rule.substring(0, 10) + "T00:00:00");
+        } else if (/^\d{2}-\d{2}$/.test(festival.date_rule)) { // MM-DD
+            const [month, day] = festival.date_rule.split('-').map(Number);
+            festivalDate = new Date(now.getFullYear(), month - 1, day);
+            if (festivalDate < now) {
+                festivalDate.setFullYear(now.getFullYear() + 1);
+            }
+        } else {
+             console.log(`त्योहार ${festivalId} के लिए अमान्य तारीख प्रारूप: ${festival.date_rule}`);
+             continue;
+        }
+
 
         // जांचें कि क्या त्योहार अगले 24 घंटों में है
         if (festivalDate.getTime() - now.getTime() < oneDay && festivalDate.getTime() > now.getTime()) {
@@ -70,8 +87,8 @@ exports.sendFestivalReminders = functions.pubsub
             if (tokens && tokens.length > 0) {
                 const payload = {
                     notification: {
-                        title: `🎉 ${festival.name.en} का रिमाइंडर!`,
-                        body: `याद रखें, ${festival.name.en} कल है! तैयारी शुरू करें!`,
+                        title: `🎉 ${festival.name.en || festival.name} का रिमाइंडर!`,
+                        body: `याद रखें, ${festival.name.en || festival.name} कल है! तैयारी शुरू करें!`,
                         icon: "https://festivalcountdown.netlify.app/icons/icon-192x192.png"
                     },
                     webpush: {
@@ -81,7 +98,7 @@ exports.sendFestivalReminders = functions.pubsub
                     }
                 };
 
-                console.log(`${tokens.length} यूज़र्स को ${festival.name.en} के लिए नोटिफिकेशन भेजा जा रहा है।`);
+                console.log(`${tokens.length} यूज़र्स को ${festival.name.en || festival.name} के लिए नोटिफिकेशन भेजा जा रहा है।`);
                 await messaging.sendToDevice(tokens, payload);
             }
         }
