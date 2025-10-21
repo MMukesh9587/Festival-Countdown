@@ -21,7 +21,7 @@
     {
       "id": "christmas",
       "description": "Decorated Christmas tree",
-      "imageUrl": "https://images.unsplash.com/photo-1612176963909-3fdb62cdc67c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaHJpc3RtYXMlMjB0cmVlfGVufDB8fHx8MTc2MDgxODQ2Mnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1612176963909-3fdb62cdc67c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaHJpc3RtYXMlMjB0cmVlfGVufDB8fHx8MTc2MDgxODQ2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "christmas tree"
     },
     {
@@ -39,19 +39,19 @@
     {
       "id": "navratri",
       "description": "People dancing Garba during Navratri",
-      "imageUrl": "https://images.unsplash.com/photo-1754244575428-8123e0d27ef3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxnYXJiYSUyMGRhbmNlfGVufDB8fHx8MTc2MDg1OTA0NHww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1754244575428-8123e0d27ef3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxnYXJiYSUyMGRhbmNlfGVufDB8fHx8MTc2MDg1OTA0NHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "garba dance"
     },
     {
       "id": "dussehra",
       "description": "Effigy of Ravana for Dussehra",
-      "imageUrl": "https://images.unsplash.com/photo-1687380729350-54ca4b02d125?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkdXNzZWhyYXxlbnwwfHx8fDE3NjA4NTkwNDR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1687380729350-54ca4b02d125?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkdXNzZWhyYXxlbnwwfHx8fDE3NjA4NTkwNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "dussehra"
     },
     {
       "id": "ganesh-chaturthi",
       "description": "Idol of Lord Ganesha",
-      "imageUrl": "https://images.unsplash.com/photo-1567591391293-f9a99c77e128?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnYW5lc2hhfGVufDB8fHx8MTc2MDg1OTA0NHww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1567591391293-f9a99c77e128?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnYW5lc2hhfGVufDB8fHx8MTc2MDg1OTA0NHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "ganesha"
     },
     {
@@ -63,7 +63,7 @@
     {
       "id": "onam",
       "description": "Floral carpet (Pookalam) for Onam",
-      "imageUrl": "https://images.unsplash.com/photo-1708110238738-a9c8db0e29f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8b25hbSUyMGZsb3dlcnxlbnwwfHx8fDE3NjA4NTkwNDR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1708110238738-a9c8db0e29f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8b25hbSUyMGZsb3dlcnxlbnwwfHx8fDE3NjA4NTkwNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "onam flower"
     },
     {
@@ -93,13 +93,13 @@
     {
       "id": "makar-sankranti",
       "description": "Colorful kites flying for Makar Sankranti",
-      "imageUrl": "https://images.unsplash.com/photo-1517524236983-504313b8a24c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYWthciUyMHNhbmtyYW50aSUyMGtpdGVzfGVufDB8fHx8MTc2MTEyNzQ0N3ww&ixlib-rb-4.0.3&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1673621748336-052445d4c965?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYWthciUyMHNhbmtyYW50aSUyMGtpdGVzfGVufDB8fHx8MTc2ODU4MTQzN3ww&ixlib=rb-4.0.3&q=80&w=1080",
       "imageHint": "kites flying"
     },
     {
       "id": "event-default",
       "description": "Abstract festive background",
-      "imageUrl": "https://images.unsplash.com/photo-1760628354559-558f78a30079?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGZlc3RpdmV8ZW58MHx8fHwxNzYwODU5MDQ0fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1760628354559-558f78a30079?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGZlc3RpdmV8ZW58MHx8fHwxNzYwODU5MDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "abstract festive"
     }
   ]
