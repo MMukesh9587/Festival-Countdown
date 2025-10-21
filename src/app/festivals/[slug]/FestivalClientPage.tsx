@@ -226,8 +226,8 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
                     dangerouslySetInnerHTML={{ __html: blogContent }}
                 />
                 
-                {festival.blog && <FounderBio />}
                 {festival.faq && <FAQ faqs={festival.faq} />}
+                {festival.blog && <FounderBio />}
             </div>
         </>
     );
