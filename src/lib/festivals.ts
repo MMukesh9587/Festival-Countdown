@@ -42,7 +42,7 @@ export const festivals: Festival[] = [
     id: 'holi',
     name: { en: 'Holi', hi: 'होली', bn: 'হোলি', mr: 'होळी', te: 'హోలీ' },
     description: { en: 'Festival of colours', hi: 'रंगों का त्योहार', bn: 'রঙের উৎসব', mr: 'रंगांचा सण', te: 'రంగుల పండుగ' },
-    date_rule: '2025-03-14',
+    date_rule: '2026-03-04',
     is_fixed: false,
     image: 'holi',
     slug: 'holi-countdown'
