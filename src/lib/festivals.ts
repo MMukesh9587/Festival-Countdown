@@ -99,7 +99,35 @@ export const festivals: Festival[] = [
     date_rule: '2025-11-05',
     is_fixed: false,
     image: 'guru-nanak-jayanti',
-    slug: 'guru-nanak-jayanti-countdown'
+    slug: 'guru-nanak-jayanti-countdown',
+    blog: {
+        en: `
+            <h1>Guru Nanak Jayanti: The Celebration of a Visionary</h1>
+            <p>Guru Nanak Jayanti, also known as Gurpurab, is one of the most sacred festivals in Sikhism. It celebrates the birth of the first Sikh Guru, Guru Nanak Dev Ji, who was the founder of Sikhism.</p>
+            
+            <h2>Why is it Celebrated?</h2>
+            <p>The festival is a celebration of Guru Nanak's life, achievements, and, most importantly, his legacy of teachings. He preached a message of 'Ik Onkar' (one God), the equality of all humankind, selfless service ('Sewa'), and social justice. This day is a reminder for devotees to follow his teachings and lead a life of honesty, compassion, and service.</p>
+            
+            <h3>How are Celebrations Conducted?</h3>
+            <p>Celebrations typically begin two days prior to the actual date with a 48-hour non-stop reading of the holy book, the Guru Granth Sahib (known as Akhand Path). A day before the birthday, a procession called 'Nagarkirtan' is organized, led by the Panj Pyare (Five Beloved Ones), carrying the Sikh flag and the Guru Granth Sahib in a palanquin. The procession includes devotees singing hymns and displaying martial arts skills.</p>
+
+            <h2>Where is it Most Prominently Celebrated?</h2>
+            <p>Guru Nanak Jayanti is celebrated with immense fervor and devotion by Sikhs all over the world. The grandest celebrations take place in Punjab, especially at the Golden Temple in Amritsar and at Nankana Sahib in Pakistan, which is Guru Nanak's birthplace. Gurdwaras are decorated, and 'Langar' (community kitchen) is served to everyone, regardless of caste, creed, or religion, embodying the principle of equality.</p>
+        `,
+        hi: `
+            <h1>गुरु नानक जयंती: एक दूरदर्शी का उत्सव</h1>
+            <p>गुरु नानक जयंती, जिसे गुरुपर्व भी कहा जाता है, सिख धर्म के सबसे पवित्र त्योहारों में से एक है। यह सिख धर्म के संस्थापक, पहले सिख गुरु, गुरु नानक देव जी के जन्म का जश्न मनाता है।</p>
+            
+            <h2>यह क्यों मनाया जाता है?</h2>
+            <p>यह त्योहार गुरु नानक के जीवन, उनकी उपलब्धियों और सबसे महत्वपूर्ण, उनकी शिक्षाओं की विरासत का उत्सव है। उन्होंने 'इक ओंकार' (एक ईश्वर), सभी मानव जाति की समानता, निस्वार्थ सेवा ('सेवा'), और सामाजिक न्याय का संदेश दिया। यह दिन भक्तों के लिए उनकी शिक्षाओं का पालन करने और ईमानदारी, करुणा और सेवा का जीवन जीने की याद दिलाता है।</p>
+            
+            <h3>उत्सव कैसे आयोजित किए जाते हैं?</h3>
+            <p>उत्सव आमतौर पर वास्तविक तारीख से दो दिन पहले पवित्र ग्रंथ, गुरु ग्रंथ साहिब के 48 घंटे के अखंड पाठ (जिसे अखंड पाठ कहा जाता है) के साथ शुरू होता है। जन्मदिन से एक दिन पहले, 'नगरकीर्तन' नामक एक जुलूस आयोजित किया जाता है, जिसका नेतृत्व पंज प्यारे (पांच प्यारे) करते हैं, जो एक पालकी में सिख ध्वज और गुरु ग्रंथ साहिब को ले जाते हैं। जुलूस में भक्त भजन गाते हैं और मार्शल आर्ट कौशल का प्रदर्शन करते हैं।</p>
+
+            <h2>यह सबसे प्रमुखता से कहाँ मनाया जाता है?</h2>
+            <p>गुरु नानक जयंती दुनिया भर के सिखों द्वारा अत्यधिक उत्साह और भक्ति के साथ मनाई जाती है। सबसे भव्य उत्सव पंजाब में, विशेष रूप से अमृतसर के स्वर्ण मंदिर और पाकिस्तान में ननकाना साहिब में होते हैं, जो गुरु नानक का जन्मस्थान है। गुरुद्वारों को सजाया जाता है, और जाति, पंथ या धर्म की परवाह किए बिना सभी को 'लंगर' (सामुदायिक रसोई) परोसा जाता है, जो समानता के सिद्धांत का प्रतीक है।</p>
+        `
+    }
   },
   {
     id: 'christmas',
