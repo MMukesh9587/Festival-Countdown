@@ -11,6 +11,7 @@ export const festivals: Festival[] = [
     is_fixed: false,
     image: 'diwali',
     slug: 'diwali-countdown',
+    tags: ['hindu', 'india', 'festival of lights'],
     blog: {
         en: `
             <h1>The Story of Diwali: The Festival of Lights</h1>
@@ -75,7 +76,8 @@ export const festivals: Festival[] = [
     date_rule: '2026-03-04',
     is_fixed: false,
     image: 'holi',
-    slug: 'holi-countdown'
+    slug: 'holi-countdown',
+    tags: ['hindu', 'india', 'festival of colors'],
   },
   {
     id: 'eid-al-fitr-2026',
@@ -84,7 +86,8 @@ export const festivals: Festival[] = [
     date_rule: '2026-03-19',
     is_fixed: false,
     image: 'eid',
-    slug: 'eid-al-fitr-2026-countdown'
+    slug: 'eid-al-fitr-2026-countdown',
+    tags: ['muslim', 'islamic', 'ramadan'],
   },
   {
     id: 'raksha-bandhan',
@@ -93,7 +96,8 @@ export const festivals: Festival[] = [
     date_rule: '2026-08-28',
     is_fixed: false,
     image: 'raksha-bandhan',
-    slug: 'raksha-bandhan-countdown'
+    slug: 'raksha-bandhan-countdown',
+    tags: ['hindu', 'india', 'siblings'],
   },
   {
     id: 'navratri',
@@ -102,7 +106,8 @@ export const festivals: Festival[] = [
     date_rule: '2026-03-19',
     is_fixed: false,
     image: 'navratri',
-    slug: 'navratri-countdown'
+    slug: 'navratri-countdown',
+    tags: ['hindu', 'india', 'durga puja'],
   },
   {
     id: 'dussehra',
@@ -111,7 +116,8 @@ export const festivals: Festival[] = [
     date_rule: '2026-10-20',
     is_fixed: false,
     image: 'dussehra',
-    slug: 'dussehra-countdown'
+    slug: 'dussehra-countdown',
+    tags: ['hindu', 'india', 'vijayadashami'],
   },
   {
     id: 'ganesh-chaturthi',
@@ -120,7 +126,8 @@ export const festivals: Festival[] = [
     date_rule: '2026-08-28',
     is_fixed: false,
     image: 'ganesh-chaturthi',
-    slug: 'ganesh-chaturthi-countdown'
+    slug: 'ganesh-chaturthi-countdown',
+    tags: ['hindu', 'india', 'ganesha'],
   },
   {
     id: 'guru-nanak-jayanti',
@@ -130,6 +137,7 @@ export const festivals: Festival[] = [
     is_fixed: false,
     image: 'guru-nanak-jayanti',
     slug: 'guru-nanak-jayanti-countdown',
+    tags: ['sikh', 'india', 'gurpurab'],
     blog: {
         en: `
             <h1>Guru Nanak Jayanti: The Celebration of a Visionary</h1>
@@ -161,7 +169,7 @@ export const festivals: Festival[] = [
             <h1>গুরু নানক জয়ন্তী: একজন স্বপ্নদর্শীর উদযাপন</h1>
             <p>গুরু নানক জয়ন্তী, যা গুরুপুরব নামেও পরিচিত, শিখ ধর্মের অন্যতম পবিত্র উৎসব। এটি শিখ ধর্মের প্রতিষ্ঠাতা, প্রথম শিখ গুরু, গুরু নানক দেব জির জন্ম উদযাপন করে।</p>
             <h2>এটি কেন উদযাপিত হয়?</h2>
-            <p>এই উৎসবটি গুরু নানকের জীবন, কৃতিত্ব এবং সবচেয়ে গুরুত্বপূর্ণভাবে, তাঁর শিক্ষার উত্তরাধিকারের উদযাপন। তিনি 'এক ওঙ্কার' (এক ঈশ্বর), সমস্ত मानवজাতির समानता, নিঃস্বার্থ সেবা ('सेवा'), এবং সামাজিক ন্যায়বিচারের বার্তা প্রচার করেছিলেন। এই দিনটি ভক্তদের জন্য তাঁর শিক্ষা অনুসরণ করতে এবং সততা, করুণা এবং সেবার জীবনযাপন করার জন্য একটি অনুস্মারক।</p>
+            <p>এই উৎসবটি গুরু নানকের জীবন, কৃতিত্ব এবং সবচেয়ে গুরুত্বপূর্ণভাবে, তাঁর শিক্ষার উত্তরাধিকারের উদযাপন। তিনি 'এক ওঙ্কার' (এক ঈশ্বর), সমস্ত মানবজাতির समानता, নিঃস্বার্থ সেবা ('सेवा'), এবং সামাজিক ন্যায়বিচারের বার্তা প্রচার করেছিলেন। এই দিনটি ভক্তদের জন্য তাঁর শিক্ষা অনুসরণ করতে এবং সততা, করুণা এবং সেবার জীবনযাপন করার জন্য একটি অনুস্মারক।</p>
             <h3>উদযাপন কীভাবে পরিচালিত হয়?</h3>
             <p>উদযাপন সাধারণত আসল তারিখের দুই দিন আগে পবিত্র গ্রন্থ, গুরু গ্রন্থ সাহেব (অখণ্ড পাঠ নামে পরিচিত) এর 48-ঘন্টা বিরতিহীন পাঠের মাধ্যমে শুরু হয়। জন্মদিনের আগের দিন, 'নগরকীর্তন' নামক একটি শোভাযাত্রা আয়োজন করা হয়, যার নেতৃত্বে থাকেন পাঞ্জ পেয়ারে (পাঁচ প্রিয়জন), যারা শিখ পতাকা এবং গুরু গ্রন্থ সাহেবকে একটি পালকিতে বহন করে নিয়ে যান। শোভাযাত্রায় ভক্তরা भजन গান এবং সামরিক कला প্রদর্শন করে।</p>
             <h2>এটি সবচেয়ে ప్రముఖভাবে কোথায় উদযাপিত হয়?</h2>
@@ -187,7 +195,21 @@ export const festivals: Festival[] = [
             <h2>ఇది అత్యంత ప్రముఖంగా ఎక్కడ జరుపుకుంటారు?</h2>
             <p>గురు నానక్ జయంతిని ప్రపంచవ్యాప్తంగా ఉన్న సిక్కులు అపారమైన ఉత్సాహంతో మరియు భక్తితో జరుపుకుంటారు. పంజాబ్‌లో, ముఖ్యంగా అమృత్‌సర్‌లోని స్వర్ణ దేవాలయం మరియు పాకిస్థాన్‌లోని నంకానా సాహిబ్ వద్ద అత్యంత ఘనమైన వేడుకలు జరుగుతాయి, ఇది గురు నానక్ జన్మస్థలం. గురుద్వారాలను అలంకరిస్తారు, మరియు కులం, మతం లేదా మతంతో సంబంధం లేకుండా ప్రతిఒక్కరికీ 'లంగర్' (సామూహిక వంటగది) వడ్డిస్తారు, ఇది సమానత్వ సూత్రాన్ని ప్రతిబింబిస్తుంది.</p>
         `
-    }
+    },
+    faq: [
+      {
+        question: { en: 'When is Guru Nanak Jayanti?', hi: 'गुरु नानक जयंती कब है?' },
+        answer: { en: 'Guru Nanak Jayanti is on Wednesday, November 5, 2025.', hi: 'गुरु नानक जयंती बुधवार, 5 नवंबर, 2025 को है।' }
+      },
+      {
+        question: { en: 'Why is Guru Nanak Jayanti celebrated?', hi: 'गुरु नानक जयंती क्यों मनाई जाती है?' },
+        answer: { en: 'It celebrates the birth of the first Sikh Guru, Guru Nanak Dev Ji, who founded Sikhism.', hi: 'यह पहले सिख गुरु, गुरु नानक देव जी के जन्म का जश्न मनाता है, जिन्होंने सिख धर्म की स्थापना की थी।' }
+      },
+      {
+        question: { en: 'What are the main teachings of Guru Nanak?', hi: 'गुरु नानक की मुख्य शिक्षाएं क्या हैं?' },
+        answer: { en: 'Guru Nanak preached the message of \'Ik Onkar\' (one God), equality of all humankind, selfless service (\'Sewa\'), and social justice.', hi: 'गुरु नानक ने \'इक ओंकार\' (एक ईश्वर), सभी मानव जाति की समानता, निस्वार्थ सेवा (\'सेवा\'), और सामाजिक न्याय का संदेश दिया।' }
+      }
+    ]
   },
   {
     id: 'christmas',
@@ -196,7 +218,8 @@ export const festivals: Festival[] = [
     date_rule: '12-25',
     is_fixed: true,
     image: 'christmas',
-    slug: 'christmas-countdown'
+    slug: 'christmas-countdown',
+    tags: ['christian', 'global'],
   },
   {
     id: 'new-year',
@@ -205,7 +228,8 @@ export const festivals: Festival[] = [
     date_rule: '01-01',
     is_fixed: true,
     image: 'new-year',
-    slug: 'new-year-countdown'
+    slug: 'new-year-countdown',
+    tags: ['global', 'celebration'],
   },
   {
     id: 'pongal',
@@ -214,7 +238,8 @@ export const festivals: Festival[] = [
     date_rule: '01-14',
     is_fixed: true,
     image: 'pongal',
-    slug: 'pongal-countdown'
+    slug: 'pongal-countdown',
+    tags: ['hindu', 'tamil', 'harvest'],
   },
   {
     id: 'onam',
@@ -223,7 +248,8 @@ export const festivals: Festival[] = [
     date_rule: '2026-08-16',
     is_fixed: false,
     image: 'onam',
-    slug: 'onam-countdown'
+    slug: 'onam-countdown',
+    tags: ['hindu', 'kerala', 'harvest'],
   },
   {
     id: 'bhai-dooj',
@@ -232,7 +258,8 @@ export const festivals: Festival[] = [
     date_rule: '2025-10-23',
     is_fixed: false,
     image: 'bhai-dooj',
-    slug: 'bhai-dooj-countdown'
+    slug: 'bhai-dooj-countdown',
+    tags: ['hindu', 'india', 'siblings'],
   }
 ];
 

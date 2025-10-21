@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import type { FestivalWithDate } from '@/lib/types';
@@ -19,6 +20,8 @@ import { useToast } from '@/hooks/use-toast';
 import { getFestivalBySlug } from '@/lib/festivals';
 import { RemindMeButton } from '@/components/RemindMeButton';
 import { FounderBio } from '@/components/FounderBio';
+import { FAQ } from '@/components/FAQ';
+import Head from 'next/head';
 
 
 interface FestivalClientPageProps {
@@ -120,63 +123,112 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
         imageHint = defaultImage?.imageHint;
     }
 
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": festival.faq?.map(item => ({
+            "@type": "Question",
+            "name": item.question[language] || item.question['en'],
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer[language] || item.answer['en']
+            }
+        }))
+    };
+
+    const howToSchema = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": `How to celebrate ${name}`,
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Visit a Gurdwara",
+                "text": "Participate in prayers and listen to kirtan (devotional songs)."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Participate in Langar",
+                "text": "Partake in the community meal served at Gurdwaras, symbolizing equality."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Light up your home",
+                "text": "Decorate your home with lights and candles to mark the festive occasion."
+            }
+        ]
+    };
+
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <div className="relative rounded-xl overflow-hidden min-h-[40vh] md:min-h-[50vh] flex flex-col justify-end p-8 md:p-12 text-white bg-card">
-                <Image
-                src={imageUrl}
-                alt={name || ''}
-                fill
-                className="object-cover"
-                priority
-                data-ai-hint={imageHint}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
-                <div className="relative z-10">
-                    {festival.custom && <Badge className="mb-2 bg-accent text-accent-foreground">{t('custom_event')}</Badge>}
-                    <h1 className="font-headline text-5xl md:text-7xl">{name}</h1>
-                    <p className="mt-2 text-lg text-muted-foreground">{description}</p>
-                    <p className="mt-1 font-semibold text-primary">{formattedDate}</p>
+        <>
+            {festival.faq && (
+                 <Head>
+                    <script type="application/ld+json">
+                        {JSON.stringify(faqSchema)}
+                    </script>
+                    <script type="application/ld+json">
+                        {JSON.stringify(howToSchema)}
+                    </script>
+                </Head>
+            )}
+            <div className="container mx-auto px-4 py-8">
+                <div className="relative rounded-xl overflow-hidden min-h-[40vh] md:min-h-[50vh] flex flex-col justify-end p-8 md:p-12 text-white bg-card">
+                    <Image
+                    src={imageUrl}
+                    alt={name || ''}
+                    fill
+                    className="object-cover"
+                    priority
+                    data-ai-hint={imageHint}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
+                    <div className="relative z-10">
+                        {festival.custom && <Badge className="mb-2 bg-accent text-accent-foreground">{t('custom_event')}</Badge>}
+                        <h1 className="font-headline text-5xl md:text-7xl">{name}</h1>
+                        <p className="mt-2 text-lg text-muted-foreground">{description}</p>
+                        <p className="mt-1 font-semibold text-primary">{formattedDate}</p>
+                    </div>
                 </div>
-            </div>
 
-            <div className="my-12">
-                <Countdown targetDate={festival.targetDate} size="large" />
-            </div>
+                <div className="my-12">
+                    <Countdown targetDate={festival.targetDate} size="large" />
+                </div>
 
-            <div className="flex justify-center items-center gap-4 flex-wrap">
-                <Button
-                    variant={isFav ? 'destructive' : 'outline'}
-                    size="lg"
-                    onClick={() => toggleFavorite(festival.id)}
-                    aria-label={isFav ? t('remove_from_favorites') : t('add_to_favorites')}
-                >
-                    <Heart className={`mr-2 h-5 w-5 ${isFav ? 'fill-current' : ''}`} />
-                    {isFav ? t('favorited') : t('add_to_favorites')}
-                </Button>
-                <ShareDialog festival={festival} />
-                <RemindMeButton festival={festival} />
-                <EmbedCode slug={festival.slug} />
-                {festival.custom && (
+                <div className="flex justify-center items-center gap-4 flex-wrap">
                     <Button
-                        variant="destructive"
+                        variant={isFav ? 'destructive' : 'outline'}
                         size="lg"
-                        onClick={handleDelete}
-                        aria-label="Delete event"
+                        onClick={() => toggleFavorite(festival.id)}
+                        aria-label={isFav ? t('remove_from_favorites') : t('add_to_favorites')}
                     >
-                        <Trash2 className="mr-2 h-5 w-5" />
-                        Delete Event
+                        <Heart className={`mr-2 h-5 w-5 ${isFav ? 'fill-current' : ''}`} />
+                        {isFav ? t('favorited') : t('add_to_favorites')}
                     </Button>
-                )}
-            </div>
+                    <ShareDialog festival={festival} />
+                    <RemindMeButton festival={festival} />
+                    <EmbedCode slug={festival.slug} />
+                    {festival.custom && (
+                        <Button
+                            variant="destructive"
+                            size="lg"
+                            onClick={handleDelete}
+                            aria-label="Delete event"
+                        >
+                            <Trash2 className="mr-2 h-5 w-5" />
+                            Delete Event
+                        </Button>
+                    )}
+                </div>
 
-            <div 
-                className="mt-16 prose prose-invert max-w-none prose-headings:text-foreground prose-h1:text-primary prose-h1:font-headline prose-p:text-muted-foreground prose-h2:text-foreground prose-h3:text-foreground"
-                dangerouslySetInnerHTML={{ __html: blogContent }}
-            />
-            
-            {festival.blog && <FounderBio />}
-        </div>
+                <div 
+                    className="mt-16 prose prose-invert max-w-none prose-headings:text-foreground prose-h1:text-primary prose-h1:font-headline prose-p:text-muted-foreground prose-h2:text-foreground prose-h3:text-foreground"
+                    dangerouslySetInnerHTML={{ __html: blogContent }}
+                />
+                
+                {festival.blog && <FounderBio />}
+                {festival.faq && <FAQ faqs={festival.faq} />}
+            </div>
+        </>
     );
 }

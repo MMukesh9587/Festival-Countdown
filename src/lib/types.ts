@@ -4,6 +4,11 @@ export type LocalizedString = {
   [key in Language]?: string;
 };
 
+export interface FAQItem {
+  question: LocalizedString;
+  answer: LocalizedString;
+}
+
 export interface Festival {
   id: string;
   name: LocalizedString | string;
@@ -15,7 +20,9 @@ export interface Festival {
   custom?: boolean;
   blog?: {
     [key in Language]?: string;
-  }
+  };
+  faq?: FAQItem[];
+  tags?: string[];
 }
 
 export interface FestivalWithDate extends Festival {

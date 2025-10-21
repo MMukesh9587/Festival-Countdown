@@ -22,11 +22,8 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const slug = params.slug;
-  // We can't use the useCustomEvents hook here as this is a server function.
-  // We will assume for metadata generation, we only care about the built-in festivals.
   const festival = getFestivalBySlug(slug);
 
-  // if no festival, we can return default metadata or notFound()
   if (!festival) {
     return {
       title: 'Festival Not Found',
@@ -40,12 +37,23 @@ export async function generateMetadata(
   const siteUrl = "https://festivalcountdown.netlify.app/";
   const ogImage = imagePlaceholder ? imagePlaceholder.imageUrl : `${siteUrl}/og-image.png`;
 
+  const keywords = [
+    name,
+    `${name} countdown`,
+    `${name} date`,
+    `when is ${name}`,
+    'Indian festivals',
+    'Hindu festivals',
+    ...(festival.tags || [])
+  ];
+
   return {
-    title: `${name} | Festival Countdown Central`,
-    description: `Countdown to ${name}. ${description}`,
+    title: `${name} ${new Date().getFullYear()} Countdown | Festival Countdown Central`,
+    description: `Countdown to ${name} ${new Date().getFullYear()}. ${description}. Get live countdown, date, and details.`,
+    keywords: keywords,
     openGraph: {
-      title: `${name} Countdown`,
-      description: description as string,
+      title: `${name} ${new Date().getFullYear()} Countdown`,
+      description: `Live countdown and details for ${name}.`,
       url: `${siteUrl}/festivals/${slug}`,
       images: [
         {
@@ -58,8 +66,8 @@ export async function generateMetadata(
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${name} Countdown`,
-      description: description as string,
+      title: `${name} ${new Date().getFullYear()} Countdown`,
+      description: `Live countdown and details for ${name}.`,
       images: [ogImage],
     },
   }
@@ -69,12 +77,8 @@ export async function generateMetadata(
 export default function FestivalPage({ params }: Props) {
   const slug = params.slug;
 
-  // We fetch the default festival data on the server.
-  // Custom events will be checked on the client.
   const festival = getFestivalBySlug(slug);
 
-  // If the festival doesn't exist in the static list, it might be a custom one.
-  // We'll pass the slug to the client component to handle it.
   if (!festival) {
     return <FestivalClientPage festival={null} slug={slug} />;
   }
