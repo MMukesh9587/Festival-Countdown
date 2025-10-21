@@ -96,7 +96,7 @@ export const festivals: Festival[] = [
     id: 'guru-nanak-jayanti',
     name: { en: 'Guru Nanak Jayanti', hi: 'गुरु नानक जयंती', bn: 'গুরু নানক জয়ন্তী', mr: 'गुरु नानक जयंती', te: 'గురు నానక్ జయంతి' },
     description: { en: 'Birth of the first Sikh Guru', hi: 'पहले सिख गुरु का जन्मदिन', bn: 'প্রথম শিখ গুরুর জন্মদিন', mr: 'पहिल्या शीख गुरूंचा वाढदिवस', te: 'మొదటి సిక్కు గురువు పుట్టినరోజు' },
-    date_rule: '2024-11-15',
+    date_rule: '2026-11-24',
     is_fixed: false,
     image: 'guru-nanak-jayanti',
     slug: 'guru-nanak-jayanti-countdown'
