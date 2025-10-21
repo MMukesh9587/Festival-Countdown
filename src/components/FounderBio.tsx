@@ -9,9 +9,9 @@ export function FounderBio() {
         imageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_BXmz0vq7Ke0_UTIVGnKxrlFUXzOU9jyv-EDwrtzR8Ib06sqbdm6D3BQMjOv4LHWhDjSi1G_9ELzDPOpGjm3U2GRNnRLc9-m4Sa_I-ByjJkXpuSHnaVwEWKCWRAS1vSdigM4mnvaEJttvytp-Anlb2-bndXVuhsTEXS3k94F-47EgnQVggQMtk_PYmmyB/s320/Mukesh%20Kumar%20Yogi.jpg',
         bio: "Mukesh is the visionary founder behind Festival Countdown Central. With a passion for technology and culture, he created this platform to help people connect with and celebrate the events that matter most to them.",
         socials: [
-            { name: 'Twitter', url: 'https://twitter.com/mukeshyogi', Icon: Twitter },
+            { name: 'Twitter', url: 'https://x.com/BajTimes', Icon: Twitter },
             { name: 'LinkedIn', url: 'https://linkedin.com/in/mukeshyogi', Icon: Linkedin },
-            { name: 'Website', url: 'https://mukeshyogi.com', Icon: Globe },
+            { name: 'Website', url: 'https://www.bajtimes.com', Icon: Globe },
         ]
     };
 
