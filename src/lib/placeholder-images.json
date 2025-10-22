@@ -15,7 +15,7 @@
     {
       "id": "eid",
       "description": "Mosque silhouette during sunset for Eid",
-      "imageUrl": "https://images.unsplash.com/photo-1652013771927-336b24c9cd10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlaWQlMjBtb3NxdWV8ZW58MHx8fHwxNzYwODU5MDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1652013771927-336b24c9cd10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlaWQlMjBtb3NxdWV8ZW58MHx8fHwxNzYwODU5MDQ0fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "eid mosque"
     },
     {
@@ -63,7 +63,7 @@
     {
       "id": "onam",
       "description": "Floral carpet (Pookalam) for Onam",
-      "imageUrl": "https://images.unsplash.com/photo-1708110238738-a9c8db0e29f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8b25hbSUyMGZsb3dlcnxlbnwwfHx8fDE3NjA4NTkwNDR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1708110238738-a9c8db0e29f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8b25hbSUyMGZsb3dlcnxlbnwwfHx8fDE3NjA4NTkwNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "onam flower"
     },
     {
@@ -99,7 +99,7 @@
     {
       "id": "karwa-chauth",
       "description": "A woman celebrating Karwa Chauth",
-      "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7b-A-v4_jA4p_v8x-C3Y8I4D4N0G5f0g8n0W9g5p2b7l8i3Y6S8v0F7r7c4J2w3t9x9g7Y2R8k3h4J4k0w2b4l5i8p0o9o8v3n1m1l1k1j1h1g1f1/s1600/karwa-chauth.jpg",
+      "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjy1RbIe5-KV25-ifWUMjHma5VoD1GmSSa8xN46Gz0pM47BFO40j1NM7A0aQZLQKx_P5k_lUZ60MurL9I6BKKgP_mEv16VG3xbLbfHypoKwxVtbDz0E7lpim8k-fxJm5qaNUA1QC0eDumI3kLiGsA1JEQpKrMuAQ-r0RywqnxaCNkIcLdpcYMGG1UcMSAYT/s320/1761134417.png",
       "imageHint": "karwa chauth"
     },
     {
