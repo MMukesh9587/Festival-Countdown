@@ -162,6 +162,16 @@ export const festivals: Omit<Festival, 'blog' | 'faq'>[] = [
     image: 'makar-sankranti',
     slug: 'makar-sankranti-countdown',
     tags: ['hindu', 'india', 'harvest', 'kites'],
+  },
+  {
+    id: 'karwa-chauth',
+    name: { en: 'Karwa Chauth', hi: 'करवा चौथ' },
+    description: { en: 'A fast kept by married Hindu women for the longevity of their husbands.', hi: 'विवाहित हिंदू महिलाओं द्वारा अपने पति की लंबी उम्र के लिए रखा जाने वाला व्रत।' },
+    date_rule: '2025-10-10',
+    is_fixed: false,
+    image: 'karwa-chauth',
+    slug: 'karwa-chauth-countdown',
+    tags: ['hindu', 'india', 'fasting', 'women'],
   }
 ];
 
