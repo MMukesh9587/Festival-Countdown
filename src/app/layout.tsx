@@ -7,6 +7,21 @@ import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react"
 import { ThemeProvider } from "@/context/ThemeProvider";
 import { FirebaseClientProvider } from "@/firebase";
+import { Playfair_Display, PT_Sans } from 'next/font/google';
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: '700',
+  variable: '--font-playfair-display',
+  display: 'swap',
+});
+
+const ptSans = PT_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-pt-sans',
+  display: 'swap',
+});
 
 const siteUrl = "https://festivalcountdown.netlify.app/";
 
@@ -52,11 +67,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${playfairDisplay.variable} ${ptSans.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
         <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"

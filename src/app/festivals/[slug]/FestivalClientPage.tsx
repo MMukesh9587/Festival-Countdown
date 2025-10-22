@@ -1,5 +1,6 @@
 
 
+
 "use client";
 
 import type { FestivalWithDate } from '@/lib/types';
@@ -10,7 +11,6 @@ import placeholderImages from '@/lib/placeholder-images.json';
 import { Button } from '@/components/ui/button';
 import { Heart, Trash2, Frown } from 'lucide-react';
 import { useFavorites } from '@/hooks/use-favorites';
-import { ShareDialog } from '@/components/ShareDialog';
 import { EmbedCode } from '@/components/EmbedCode';
 import { Badge } from '@/components/ui/badge';
 import { useEffect, useState, useMemo } from 'react';
@@ -22,7 +22,9 @@ import { RemindMeButton } from '@/components/RemindMeButton';
 import { FounderBio } from '@/components/FounderBio';
 import { FAQ } from '@/components/FAQ';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 
+const ShareDialog = dynamic(() => import('@/components/ShareDialog').then(mod => mod.ShareDialog), { ssr: false });
 
 interface FestivalClientPageProps {
     festival: FestivalWithDate | null;

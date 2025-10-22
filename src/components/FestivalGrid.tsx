@@ -8,13 +8,16 @@ import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { PlusCircle, Search } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
-import { AddEventDialog } from './AddEventDialog';
 import { useCustomEvents } from '@/hooks/use-custom-events';
 import { getNextOccurrence } from '@/lib/date-utils';
 import { useFavorites } from '@/hooks/use-favorites';
 import { Label } from './ui/label';
 import { Switch } from './ui/switch';
 import { useToast } from '@/hooks/use-toast';
+import dynamic from 'next/dynamic';
+
+const AddEventDialog = dynamic(() => import('./AddEventDialog').then(mod => mod.AddEventDialog), { ssr: false });
+
 
 interface FestivalGridProps {
   initialFestivals: FestivalWithDate[];

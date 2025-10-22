@@ -21,13 +21,15 @@ export default function FestivalEmbedPage({ params }: { params: { slug: string }
   return (
     <html lang="en" className="dark">
         <head>
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
             <style>{`
                 @tailwind base;
                 @tailwind components;
                 @tailwind utilities;
+
+                :root {
+                  --font-playfair-display: 'Playfair Display';
+                  --font-pt-sans: 'PT Sans';
+                }
 
                 @layer base {
                   :root {
@@ -46,6 +48,8 @@ export default function FestivalEmbedPage({ params }: { params: { slug: string }
                 @layer base {
                   * { @apply border-border; }
                   body { @apply bg-background text-foreground font-body; }
+                  .font-headline { font-family: var(--font-playfair-display), serif; }
+                  .font-body { font-family: var(--font-pt-sans), sans-serif; }
                 }
             `}</style>
         </head>
