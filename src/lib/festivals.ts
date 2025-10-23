@@ -148,7 +148,7 @@ export const festivals: Omit<Festival, 'blog' | 'faq'>[] = [
     id: 'bhai-dooj',
     name: { en: 'Bhai Dooj', hi: 'भाई दूज', bn: 'ভাইফোঁটা', mr: 'भाऊबीज', te: 'భాయ్ దూజ్' },
     description: { en: 'Festival celebrating the bond between brother and sister', hi: 'भाई-बहन के बंधन का उत्सव', bn: 'ভাই ও বোনের মধ্যে বন্ধন উদযাপনকারী উৎসব', mr: 'भाऊ-बहिणीच्या नात्याचा उत्सव साजरा करणारा सण', te: 'సోదరుడు మరియు సోదరి మధ్య బంధాన్ని జరుపుకునే పండుగ' },
-    date_rule: '2025-10-23',
+    date_rule: '2026-11-11',
     is_fixed: false,
     image: 'bhai-dooj',
     slug: 'bhai-dooj-countdown',
