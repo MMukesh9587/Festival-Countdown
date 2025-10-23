@@ -1,3 +1,4 @@
+
 import { Festival, FestivalWithDate } from './types';
 import { getNextOccurrence } from './date-utils';
 
@@ -7,7 +8,7 @@ export const festivals: Omit<Festival, 'blog' | 'faq'>[] = [
     id: 'diwali',
     name: { en: 'Diwali', hi: 'दिवाली', bn: 'দীপাবলি', mr: 'दिवाळी', te: 'దీపావళి' },
     description: { en: 'Symbolizing the victory of good over evil, it is celebrated with lamps, fireworks, and sweets across India and by Hindus worldwide.', hi: 'बुराई पर अच्छाई की जीत का प्रतीक, यह पूरे भारत में और दुनिया भर में हिंदुओं द्वारा दीयों, आतिशबाजी और मिठाइयों के साथ मनाया जाता है।', bn: 'অশুভের ওপর শুভর বিজয়কে চিহ্নিত করে, এটি সারা ভারত এবং বিশ্বজুড়ে হিন্দুদের দ্বারা প্রদীপ, আতশবাজি এবং মিষ্টি দিয়ে উদযাপিত হয়।', mr: 'वाईटावर चांगल्याच्या विजयाचे प्रतीक म्हणून, हा सण दिवे, फटाके आणि मिठाईने भारतभर आणि जगभरातील हिंदूंद्वारे साजरा केला जातो।', te: 'చెడుపై మంచి సాధించిన విజయానికి ప్రతీకగా, దీనిని భారతదేశమంతటా మరియు ప్రపంచవ్యాప్తంగా హిందువులు దీపాలు, బాణాసంచా మరియు స్వీట్లతో జరుపుకుంటారు।' },
-    date_rule: '2025-10-21',
+    date_rule: '2026-11-06',
     is_fixed: false,
     image: 'diwali',
     slug: 'diwali-countdown',
