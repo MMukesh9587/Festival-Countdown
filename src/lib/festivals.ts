@@ -167,7 +167,7 @@ export const festivals: Omit<Festival, 'blog' | 'faq'>[] = [
     id: 'karwa-chauth',
     name: { en: 'Karwa Chauth', hi: 'करवा चौथ' },
     description: { en: 'A fast kept by married Hindu women for the longevity of their husbands.', hi: 'विवाहित हिंदू महिलाओं द्वारा अपने पति की लंबी उम्र के लिए रखा जाने वाला व्रत।' },
-    date_rule: '2025-10-10',
+    date_rule: '2026-10-29',
     is_fixed: false,
     image: 'karwa-chauth',
     slug: 'karwa-chauth-countdown',
