@@ -133,6 +133,12 @@
       "imageHint": "amarnath cave"
     },
     {
+      "id": "chhath-puja",
+      "description": "Devotees worshiping the Sun God during Chhath Puja.",
+      "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuQqomKZbQ64Y6fYu6ViGrk4EGsnS7jqSECEyN34WPlKoxb588IfgvZsGje9IFt0rmedWgonIsX8OcG5sRWcEzeRW1_skeI3ef4Idl9ENa_sqXf8Gn-S-vpY-d4uq7_02rCiyQ7SbXxWagAziu1eN5LjdeORCdQc-nmSTK7nRuh6EfxyRcHD2uJgVZ99pC/s320/1761286118.png",
+      "imageHint": "chhath puja"
+    },
+    {
       "id": "event-default",
       "description": "Abstract festive background",
       "imageUrl": "https://images.unsplash.com/photo-1760628354559-558f78a30079?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGZlc3RpdmV8ZW58MHx8fHwxNzYwODU5MDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",

@@ -1,0 +1,60 @@
+{
+    "blog": {
+        "en": "<h1>Chhath Puja: A Festival of Gratitude to the Sun God</h1><p>Chhath Puja is an ancient Hindu Vedic festival historically native to the Indian subcontinent, more specifically, the Indian states of Bihar, Jharkhand, and Uttar Pradesh as well as the Madhesh region of Nepal. It is dedicated to the solar deity, Surya, and his wife, Usha (Chhathi Maiya), to thank them for bestowing the bounties of life on earth and to request the granting of certain wishes.</p><h2>The Rituals and Significance</h2><p>The festival is observed over four days and includes holy bathing, fasting (vrata), and abstaining from drinking water, standing in water for long periods, and offering prasad (prayer offerings) and arghya to the setting and rising sun. The rituals are rigorous and are seen as a way to achieve purity and show devotion.</p><h3>A Unique Bond with Nature</h3><p>Unlike many Hindu festivals that involve idol worship, Chhath Puja is centered around the worship of nature, primarily the sun and water. It emphasizes the importance of the elements that sustain life on the planet. The festival promotes environmental consciousness and the need to protect natural resources.</p><h2>A Celebration of Community and Family</h2><p>Chhath Puja is a time for family and community to come together. Family members return home to celebrate the festival together. The sharing of prasad and the collective participation in the rituals strengthen social bonds and create a sense of unity and shared faith.</p>",
+        "hi": "<h1>छठ पूजा: सूर्य देव को धन्यवाद देने का त्योहार</h1><p>छठ पूजा एक प्राचीन हिंदू वैदिक त्योहार है जो ऐतिहासिक रूप से भारतीय उपमहाद्वीप, विशेष रूप से भारतीय राज्यों बिहार, झारखंड और उत्तर प्रदेश के साथ-साथ नेपाल के मधेश क्षेत्र का मूल निवासी है। यह सौर देवता, सूर्य और उनकी पत्नी, उषा (छठी मैया) को समर्पित है, ताकि वे पृथ्वी पर जीवन के वरदान देने के लिए उन्हें धन्यवाद दे सकें और कुछ इच्छाओं को पूरा करने का अनुरोध कर सकें।</p><h2>अनुष्ठान और महत्व</h2><p>यह त्योहार चार दिनों तक मनाया जाता है और इसमें पवित्र स्नान, उपवास (व्रत), और पानी पीने से परहेज, लंबे समय तक पानी में खड़े रहना, और डूबते और उगते सूर्य को प्रसाद (प्रार्थना प्रसाद) और अर्घ्य देना शामिल है। अनुष्ठान कठोर होते हैं और इन्हें पवित्रता प्राप्त करने और भक्ति दिखाने के एक तरीके के रूप में देखा जाता है।</p><h3>प्रकृति के साथ एक अनूठा बंधन</h3><p>मूर्ति पूजा से जुड़े कई हिंदू त्योहारों के विपरीत, छठ पूजा प्रकृति, मुख्य रूप से सूर्य और पानी की पूजा के आसपास केंद्रित है। यह उन तत्वों के महत्व पर जोर देता है जो ग्रह पर जीवन को बनाए रखते हैं। यह त्योहार पर्यावरण चेतना और प्राकृतिक संसाधनों की रक्षा करने की आवश्यकता को बढ़ावा देता है।</p><h2>समुदाय और परिवार का उत्सव</h2><p>छठ पूजा परिवार और समुदाय के एक साथ आने का समय है। परिवार के सदस्य एक साथ त्योहार मनाने के लिए घर लौटते हैं। प्रसाद का साझाकरण और अनुष्ठानों में सामूहिक भागीदारी सामाजिक बंधनों को मजबूत करती है और एकता और साझा विश्वास की भावना पैदा करती है।"
+    },
+    "faq": [
+        {
+            "question": {
+                "en": "When is Chhath Puja?",
+                "hi": "छठ पूजा कब है?"
+            },
+            "answer": {
+                "en": "Chhath Puja is on Saturday, October 25, 2025.",
+                "hi": "छठ पूजा शनिवार, 25 अक्टूबर, 2025 को है।"
+            }
+        },
+        {
+            "question": {
+                "en": "Who is worshipped during Chhath Puja?",
+                "hi": "छठ पूजा के दौरान किसकी पूजा की जाती है?"
+            },
+            "answer": {
+                "en": "Chhath Puja is dedicated to the worship of the Sun God, Surya, and his wife, Usha, also known as Chhathi Maiya.",
+                "hi": "छठ पूजा सूर्य देव, सूर्य और उनकी पत्नी, उषा, जिन्हें छठी मैया के नाम से भी जाना जाता है, की पूजा के लिए समर्पित है।"
+            }
+        },
+        {
+            "question": {
+                "en": "What are the main rituals of Chhath Puja?",
+                "hi": "छठ पूजा के मुख्य अनुष्ठान क्या हैं?"
+            },
+            "answer": {
+                "en": "The main rituals include fasting, abstaining from water, standing in water for long periods, and offering prayers to the setting and rising sun.",
+                "hi": "मुख्य अनुष्ठानों में उपवास, पानी से परहेज, लंबे समय तक पानी में खड़े रहना, और डूबते और उगते सूर्य को प्रार्थना करना शामिल है।"
+            }
+        }
+    ],
+    "schema": {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Chhath Puja",
+        "description": "An ancient Hindu festival dedicated to the Sun God, Surya, and Chhathi Maiya.",
+        "startDate": "2025-10-25",
+        "endDate": "2025-10-28",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+            "@type": "Place",
+            "name": "Bihar, Jharkhand, Uttar Pradesh, India & Madhesh, Nepal"
+        },
+        "image": [
+            "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuQqomKZbQ64Y6fYu6ViGrk4EGsnS7jqSECEyN34WPlKoxb588IfgvZsGje9IFt0rmedWgonIsX8OcG5sRWcEzeRW1_skeI3ef4Idl9ENa_sqXf8Gn-S-vpY-d4uq7_02rCiyQ7SbXxWagAziu1eN5LjdeORCdQc-nmSTK7nRuh6EfxyRcHD2uJgVZ99pC/s320/1761286118.png"
+        ],
+        "organizer": {
+            "@type": "Organization",
+            "name": "Festival Countdown Central",
+            "url": "https://festivalcountdown.netlify.app"
+        }
+    }
+}

@@ -223,6 +223,16 @@ export const festivals: Omit<Festival, 'blog' | 'faq'>[] = [
     image: 'amarnath-yatra',
     slug: 'amarnath-yatra-countdown',
     tags: ['hindu', 'pilgrimage', 'himalayas', 'shiva'],
+  },
+  {
+    id: 'chhath-puja',
+    name: { en: 'Chhath Puja', hi: 'छठ पूजा' },
+    description: { en: 'An ancient Hindu festival dedicated to the Sun God.', hi: 'सूर्य देव को समर्पित एक प्राचीन हिंदू त्योहार।' },
+    date_rule: '2025-10-25',
+    is_fixed: false,
+    image: 'chhath-puja',
+    slug: 'chhath-puja-countdown',
+    tags: ['hindu', 'india', 'sun god', 'bihar'],
   }
 ];
 
