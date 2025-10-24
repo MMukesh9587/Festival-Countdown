@@ -103,6 +103,12 @@
       "imageHint": "karwa chauth"
     },
     {
+      "id": "shravan-somwar",
+      "description": "Shiva Lingam worship during Shravan",
+      "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhoB2pU-7B3gU7J_j1_1J3q_r2E9v3Y8F-wB4pI2Q8H7o9c_o_oG9h8Y2k-u_o_y-y8Y5x_j_w_x-h_k_l_m_n_p_q_r_s_t_u/s320/shiva_lingam_pooja.png",
+      "imageHint": "shiva lingam"
+    },
+    {
       "id": "event-default",
       "description": "Abstract festive background",
       "imageUrl": "https://images.unsplash.com/photo-1760628354559-558f78a30079?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGZlc3RpdmV8ZW58MHx8fHwxNzYwODU5MDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",

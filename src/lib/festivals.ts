@@ -173,6 +173,16 @@ export const festivals: Omit<Festival, 'blog' | 'faq'>[] = [
     image: 'karwa-chauth',
     slug: 'karwa-chauth-countdown',
     tags: ['hindu', 'india', 'fasting', 'women'],
+  },
+  {
+    id: 'shravan-somwar',
+    name: { "en": "Shravan Somwar", "hi": "श्रावण सोमवार" },
+    description: { "en": "A day of fasting and worship dedicated to Lord Shiva during the month of Shravan.", "hi": "श्रावण महीने के दौरान भगवान शिव को समर्पित उपवास और पूजा का दिन।" },
+    date_rule: "2026-08-03",
+    is_fixed: false,
+    image: "shravan-somwar",
+    slug: "shravan-somwar-countdown",
+    tags: ["hindu", "india", "shiva", "fasting"]
   }
 ];
 
@@ -203,3 +213,5 @@ export function getFestivalBySlug(slug: string, customEvents: Festival[] = []): 
     targetDate: getNextOccurrence(festivalInfo.date_rule),
   };
 }
+
+    

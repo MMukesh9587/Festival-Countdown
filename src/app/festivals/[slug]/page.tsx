@@ -1,3 +1,4 @@
+
 import type { Metadata, ResolvingMetadata } from 'next';
 import { festivals, getFestivalBySlug as getFestivalInfoBySlug } from '@/lib/festivals';
 import { FestivalClientPage } from './FestivalClientPage';
@@ -14,7 +15,7 @@ type Props = {
 }
 
 // Function to read detailed festival data from JSON files.
-function getFestivalDetails(festivalId: string): Pick<Festival, 'blog' | 'faq'> | null {
+function getFestivalDetails(festivalId: string): Pick<Festival, 'blog' | 'faq' | 'schema'> | null {
   const filePath = path.join(process.cwd(), 'src', 'lib', 'data', `${festivalId}.json`);
   try {
     if (fs.existsSync(filePath)) {
@@ -24,7 +25,7 @@ function getFestivalDetails(festivalId: string): Pick<Festival, 'blog' | 'faq'> 
   } catch (error) {
     console.error(`Error reading or parsing festival details for ${festivalId}:`, error);
   }
-  return { blog: {}, faq: [] };
+  return { blog: {}, faq: [], schema: {} };
 }
 
 
@@ -36,7 +37,7 @@ function getFestivalBySlug(slug: string): FestivalWithDate | null {
 
   return {
     ...festivalInfo,
-    ...details, // This will add 'blog' and 'faq' properties
+    ...details, // This will add 'blog', 'faq', and 'schema' properties
     targetDate: getNextOccurrence(festivalInfo.date_rule),
   };
 }
@@ -119,3 +120,5 @@ export default function FestivalPage({ params }: Props) {
 
   return <FestivalClientPage festival={festival} slug={slug} />;
 }
+
+    

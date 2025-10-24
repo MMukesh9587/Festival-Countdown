@@ -1,0 +1,63 @@
+
+{
+    "blog": {
+        "en": "<h1>Shravan Somwar: A Month of Devotion to Lord Shiva</h1><p>Shravan Somwar refers to the Mondays that fall in the Hindu month of Shravan. This period is highly auspicious and dedicated to the worship of Lord Shiva. Devotees observe fasts and perform special pujas to seek his blessings for health, prosperity, and happiness.</p><h2>Significance of Shravan Month</h2><p>The month of Shravan is considered the holiest month of the year in Hinduism. According to mythology, this was the month when the 'Samudra Manthan' (churning of the ocean) took place, and Lord Shiva consumed the poison 'halahala' to save the world. To soothe him from the poison's effects, the gods offered him water from the holy Ganges, a practice devotees follow to this day by offering 'Gangajal' to Shivlings.</p><h3>How is it Celebrated?</h3><p>Devotees, especially women, wake up early, bathe, and visit Shiva temples. They offer Bilva leaves, milk, water, and flowers to the Shiva Lingam while chanting mantras like 'Om Namah Shivaya'. Many observe a strict fast, consuming only fruits and milk. The evenings are spent listening to stories of Lord Shiva and singing bhajans.</p><h2>Spiritual Benefits</h2><p>Fasting on Shravan Somwar is believed to bestow great merits. It is said that unmarried women who observe this fast will find an ideal husband, while married women pray for the long life and well-being of their husbands and family. It is a time for spiritual cleansing, penance, and connecting with the divine.</p>",
+        "hi": "<h1>श्रावण सोमवार: भगवान शिव को समर्पित भक्ति का महीना</h1><p>श्रावण सोमवार का तात्पर्य हिंदू महीने श्रावण में पड़ने वाले सोमवारों से है। यह अवधि अत्यधिक शुभ मानी जाती है और भगवान शिव की पूजा के लिए समर्पित है। भक्त स्वास्थ्य, समृद्धि और खुशी के लिए उनका आशीर्वाद लेने के लिए व्रत रखते हैं और विशेष पूजा करते हैं।</p><h2>श्रावण मास का महत्व</h2><p>श्रावण मास को हिंदू धर्म में वर्ष का सबसे पवित्र महीना माना जाता है। पौराणिक कथाओं के अनुसार, इसी महीने में 'समुद्र मंथन' हुआ था, और भगवान शिव ने दुनिया को बचाने के लिए 'हलाहल' विष का सेवन किया था। विष के प्रभाव से उन्हें शांत करने के लिए, देवताओं ने उन्हें पवित्र गंगा का जल अर्पित किया, यह एक प्रथा है जिसे भक्त आज भी शिवलिंग पर 'गंगाजल' चढ़ाकर अपनाते हैं।</p><h3>यह कैसे मनाया जाता है?</h3><p>भक्त, विशेषकर महिलाएं, सुबह जल्दी उठकर, स्नान करके शिव मंदिरों में जाती हैं। वे 'ओम नमः शिवाय' जैसे मंत्रों का जाप करते हुए शिवलिंग पर बिल्व पत्र, दूध, जल और फूल चढ़ाते हैं। कई लोग कठोर उपवास रखते हैं, केवल फल और दूध का सेवन करते हैं। शाम को भगवान शिव की कथाएं सुनने और भजन गाने में बिताया जाता है।</p><h2>आध्यात्मिक लाभ</h2><p>श्रावण सोमवार का व्रत करने से महान पुण्य प्राप्त होता है। ऐसा कहा जाता है कि जो अविवाहित महिलाएं यह व्रत रखती हैं उन्हें एक आदर्श पति मिलता है, जबकि विवाहित महिलाएं अपने पति और परिवार की लंबी उम्र और कल्याण के लिए प्रार्थना करती हैं। यह आध्यात्मिक शुद्धि, तपस्या और परमात्मा से जुड़ने का समय है।"
+    },
+    "faq": [
+        {
+            "question": {
+                "en": "When is Shravan Somwar?",
+                "hi": "श्रावण सोमवार कब है?"
+            },
+            "answer": {
+                "en": "The first Shravan Somwar vrat in 2026 is on Monday, August 3, 2026.",
+                "hi": "2026 में पहला श्रावण सोमवार व्रत सोमवार, 3 अगस्त, 2026 को है।"
+            }
+        },
+        {
+            "question": {
+                "en": "Why is Shravan Somwar important?",
+                "hi": "श्रावण सोमवार क्यों महत्वपूर्ण है?"
+            },
+            "answer": {
+                "en": "It is a highly auspicious day dedicated to Lord Shiva. Fasting and praying on this day are believed to bring prosperity, happiness, and a good spouse.",
+                "hi": "यह भगवान शिव को समर्पित एक अत्यधिक शुभ दिन है। इस दिन व्रत और प्रार्थना करने से समृद्धि, खुशी और एक अच्छा जीवनसाथी मिलता है।"
+            }
+        },
+        {
+            "question": {
+                "en": "What offerings are made to Lord Shiva?",
+                "hi": "भगवान शिव को क्या चढ़ाया जाता है?"
+            },
+            "answer": {
+                "en": "Common offerings include water, milk, Bilva leaves (bel patra), and flowers. These symbolize purity and devotion.",
+                "hi": "आम प्रसादों में जल, दूध, बिल्व पत्र (बेल पत्र) और फूल शामिल हैं। ये पवित्रता और भक्ति का प्रतीक हैं।"
+            }
+        }
+    ],
+    "schema": {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Shravan Somwar",
+        "description": "An auspicious day for fasting and worship of Lord Shiva during the holy month of Shravan.",
+        "startDate": "2026-08-03",
+        "endDate": "2026-08-03",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+            "@type": "VirtualLocation",
+            "url": "https://festivalcountdown.netlify.app/festivals/shravan-somwar-countdown"
+        },
+        "image": [
+            "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhoB2pU-7B3gU7J_j1_1J3q_r2E9v3Y8F-wB4pI2Q8H7o9c_o_oG9h8Y2k-u_o_y-y8Y5x_j_w_x-h_k_l_m_n_p_q_r_s_t_u/s320/shiva_lingam_pooja.png"
+        ],
+        "organizer": {
+            "@type": "Organization",
+            "name": "Festival Countdown Central",
+            "url": "https://festivalcountdown.netlify.app"
+        }
+    }
+}
+
+    

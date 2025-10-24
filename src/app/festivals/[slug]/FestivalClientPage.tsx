@@ -1,6 +1,7 @@
 
 
 
+
 "use client";
 
 import type { FestivalWithDate } from '@/lib/types';
@@ -138,29 +139,7 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
         }))
     };
 
-    const howToSchema = {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": `How to celebrate ${name}`,
-        "step": [
-            {
-                "@type": "HowToStep",
-                "name": "Visit a Gurdwara",
-                "text": "Participate in prayers and listen to kirtan (devotional songs)."
-            },
-            {
-                "@type": "HowToStep",
-                "name": "Participate in Langar",
-                "text": "Partake in the community meal served at Gurdwaras, symbolizing equality."
-            },
-            {
-                "@type": "HowToStep",
-                "name": "Light up your home",
-                "text": "Decorate your home with lights and candles to mark the festive occasion."
-            }
-        ]
-    };
-
+    const eventSchema = festival.schema;
 
     return (
         <>
@@ -168,14 +147,14 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
                 <title>{name} Countdown</title>
                 <meta name="description" content={`Live countdown to ${name}. Find out the date, time, and traditions of this festival.`} />
                  {festival.faq && (
-                    <>
-                        <script type="application/ld+json">
-                            {JSON.stringify(faqSchema)}
-                        </script>
-                        <script type="application/ld+json">
-                            {JSON.stringify(howToSchema)}
-                        </script>
-                    </>
+                    <script type="application/ld+json">
+                        {JSON.stringify(faqSchema)}
+                    </script>
+                )}
+                {eventSchema && (
+                    <script type="application/ld+json">
+                        {JSON.stringify(eventSchema)}
+                    </script>
                 )}
             </Head>
             <div className="container mx-auto px-4 py-8">
@@ -238,3 +217,5 @@ export function FestivalClientPage({ festival: initialFestival, slug }: Festival
         </>
     );
 }
+
+    

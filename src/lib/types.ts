@@ -1,3 +1,4 @@
+
 export type Language = 'en' | 'hi' | 'bn' | 'mr' | 'te';
 
 export type LocalizedString = {
@@ -22,9 +23,12 @@ export interface Festival {
     [key in Language]?: string;
   };
   faq?: FAQItem[];
+  schema?: object; // For Schema.org markup
   tags?: string[];
 }
 
 export interface FestivalWithDate extends Festival {
   targetDate: Date;
 }
+
+    
