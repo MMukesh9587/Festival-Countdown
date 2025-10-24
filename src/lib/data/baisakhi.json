@@ -1,0 +1,66 @@
+{
+    "blog": {
+        "en": "<h1>Baisakhi: A Vibrant Harvest Festival</h1><p>Baisakhi, also known as Vaisakhi, is a historical and religious festival in Sikhism and Hinduism. It is usually celebrated on April 13th or 14th every year. For Sikhs, it marks the formation of the Khalsa Panth under Guru Gobind Singh in 1699. For Hindus, it is a spring harvest festival that also marks the solar new year.</p><h2>Significance for Sikhs</h2><p>Baisakhi is a day of immense religious significance for Sikhs. It commemorates the day when Guru Gobind Singh, the tenth Sikh Guru, established the Khalsa, the collective body of all initiated Sikhs. This event gave the Sikh community a distinct identity and a commitment to justice and equality.</p><h3>Significance for Hindus</h3><p>For Hindus, Baisakhi marks the Solar New Year and is celebrated with feasting, music, and dancing. It's a time to thank the divine for a bountiful harvest and to pray for prosperity in the coming year. People take holy dips in rivers like the Ganges, which is considered auspicious.</p><h2>How is it Celebrated?</h2><p>Celebrations are vibrant and full of energy. Gurdwaras are decorated, and devotees attend special prayer meetings. Processions called Nagar Kirtans are held, where people sing hymns from the Guru Granth Sahib. The martial art form 'Gatka' is also performed. In the villages of Punjab, people celebrate with the energetic folk dances of Bhangra and Gidda. It's a day that truly captures the joyful and communal spirit of Punjab.</p>",
+        "hi": "<h1>बैसाखी: एक जीवंत फसल उत्सव</h1><p>बैसाखी, जिसे वैसाखी भी कहा जाता है, सिख और हिंदू धर्म में एक ऐतिहासिक और धार्मिक त्योहार है। यह आमतौर पर हर साल 13 या 14 अप्रैल को मनाया जाता है। सिखों के लिए, यह 1699 में गुरु गोबिंद सिंह के अधीन खालसा पंथ के गठन का प्रतीक है। हिंदुओं के लिए, यह एक वसंत फसल उत्सव है जो सौर नव वर्ष का भी प्रतीक है।</p><h2>सिखों के लिए महत्व</h2><p>बैसाखी सिखों के लिए अत्यधिक धार्मिक महत्व का दिन है। यह उस दिन की याद दिलाता है जब दसवें सिख गुरु, गुरु गोबिंद सिंह ने खालसा की स्थापना की, जो सभी दीक्षित सिखों का सामूहिक निकाय है। इस घटना ने सिख समुदाय को एक अलग पहचान और न्याय और समानता के प्रति प्रतिबद्धता दी।</p><h3>हिंदुओं के लिए महत्व</h3><p>हिंदुओं के लिए, बैसाखी सौर नव वर्ष का प्रतीक है और इसे दावत, संगीत और नृत्य के साथ मनाया जाता है। यह एक भरपूर फसल के लिए परमात्मा को धन्यवाद देने और आने वाले वर्ष में समृद्धि के लिए प्रार्थना करने का समय है। लोग गंगा जैसी नदियों में पवित्र डुबकी लगाते हैं, जिसे शुभ माना जाता है।</p><h2>यह कैसे मनाया जाता है?</h2><p>उत्सव जीवंत और ऊर्जा से भरपूर होते हैं। गुरुद्वारों को सजाया जाता है, और भक्त विशेष प्रार्थना सभाओं में भाग लेते हैं। नगर कीर्तन नामक जुलूस आयोजित किए जाते हैं, जहाँ लोग गुरु ग्रंथ साहिब से भजन गाते हैं। 'गतका' नामक मार्शल आर्ट का भी प्रदर्शन किया जाता है। पंजाब के गाँवों में, लोग भंगड़ा और गिद्दा के ऊर्जावान लोक नृत्यों के साथ जश्न मनाते हैं। यह एक ऐसा दिन है जो वास्तव में पंजाब की हर्षित और सामुदायिक भावना को दर्शाता है।"
+    },
+    "faq": [
+        {
+            "question": {
+                "en": "When is Baisakhi?",
+                "hi": "बैसाखी कब है?"
+            },
+            "answer": {
+                "en": "Baisakhi is celebrated annually on April 13th or 14th. In 2026, it falls on Tuesday, April 14th.",
+                "hi": "बैसाखी हर साल 13 या 14 अप्रैल को मनाई जाती है। 2026 में, यह मंगलवार, 14 अप्रैल को पड़ रही है।"
+            }
+        },
+        {
+            "question": {
+                "en": "What is the significance of Baisakhi for Sikhs?",
+                "hi": "सिखों के लिए बैसाखी का क्या महत्व है?"
+            },
+            "answer": {
+                "en": "It marks the day Guru Gobind Singh founded the Khalsa Panth in 1699, giving Sikhs a distinct identity.",
+                "hi": "यह उस दिन को चिह्नित करता है जब गुरु गोबिंद सिंह ने 1699 में खालसा पंथ की स्थापना की, जिससे सिखों को एक अलग पहचान मिली।"
+            }
+        },
+        {
+            "question": {
+                "en": "How is Baisakhi celebrated?",
+                "hi": "बैसाखी कैसे मनाई जाती है?"
+            },
+            "answer": {
+                "en": "It is celebrated with visits to Gurdwaras, processions (Nagar Kirtan), and traditional folk dances like Bhangra and Gidda, especially in Punjab.",
+                "hi": "यह गुरुद्वारों में जाकर, जुलूस (नगर कीर्तन) निकालकर, और विशेष रूप से पंजाब में भंगड़ा और गिद्दा जैसे पारंपरिक लोक नृत्यों के साथ मनाया जाता है।"
+            }
+        }
+    ],
+    "schema": {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Baisakhi",
+        "description": "Baisakhi is a spring harvest festival for Sikhs and Hindus. It marks the Sikh New Year and commemorates the formation of the Khalsa panth.",
+        "startDate": "2026-04-14",
+        "endDate": "2026-04-14",
+        "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": [
+            {
+                "@type": "Place",
+                "name": "Punjab, India"
+            },
+            {
+                "@type": "VirtualLocation",
+                "url": "https://festivalcountdown.netlify.app/festivals/baisakhi-countdown"
+            }
+        ],
+        "image": [
+            "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjExu8Cfr1hNQ6qI-o99bQ6UgwqmQDAcuGlL5e6H95QL8CknX8v-kXa0qgWAw09T1fB-MF3XcBJvjikdTpdfWZYgc99vfgs2EY_acEpa43ECVq8JCJSezSH6ZSxT-focbJNuXSxItRX8xU-vNR8MCuuu06GvOIIT-jicCIomZs7U0Hw6MX6SWwShMFg6AUo/s320/1761284679.png"
+        ],
+        "organizer": {
+            "@type": "Organization",
+            "name": "Festival Countdown Central",
+            "url": "https://festivalcountdown.netlify.app"
+        }
+    }
+}

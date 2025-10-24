@@ -203,6 +203,16 @@ export const festivals: Omit<Festival, 'blog' | 'faq'>[] = [
     image: 'good-friday',
     slug: 'good-friday-countdown',
     tags: ['christian', 'global', 'easter'],
+  },
+  {
+    id: 'baisakhi',
+    name: { en: 'Baisakhi', hi: 'बैसाखी' },
+    description: { en: 'Sikh New Year and harvest festival.', hi: 'सिख नव वर्ष और फसल उत्सव।' },
+    date_rule: '04-14',
+    is_fixed: true,
+    image: 'baisakhi',
+    slug: 'baisakhi-countdown',
+    tags: ['sikh', 'hindu', 'india', 'harvest', 'new year'],
   }
 ];
 
