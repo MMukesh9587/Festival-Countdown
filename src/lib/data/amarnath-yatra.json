@@ -1,0 +1,60 @@
+{
+    "blog": {
+        "en": "<h1>Amarnath Yatra: A Sacred Pilgrimage to the Himalayas</h1><p>The Amarnath Yatra is one of the most revered and challenging Hindu pilgrimages. Every year, thousands of devotees undertake this journey to the Amarnath cave, a holy shrine located in the Himalayas in Jammu and Kashmir, India.</p><h2>The Legend of the Holy Cave</h2><p>According to legend, this is the cave where Lord Shiva explained the secret of life and eternity to his divine consort, Goddess Parvati. The cave houses an ice lingam, a stalagmite that is formed naturally of ice and is believed to be a physical manifestation of Lord Shiva. It waxes and wanes with the phases of the moon.</p><h3>The Rigorous Journey</h3><p>The yatra (pilgrimage) is known for its difficult terrain and high altitude. It takes place during the summer months when the cave is accessible. Devotees brave the cold, mountainous paths to catch a glimpse of the sacred ice lingam. The journey is not just a physical one but is considered a deeply spiritual experience that tests one's faith and endurance.</p><h2>A Symbol of Faith</h2><p>The Amarnath Yatra is a powerful symbol of devotion and the lengths to which people will go for their faith. It represents a journey towards spiritual enlightenment, leaving behind worldly attachments. The challenging trek through the majestic Himalayas makes the final darshan (viewing) of the ice lingam an even more profound and rewarding experience.</p>",
+        "hi": "<h1>अमरनाथ यात्रा: हिमालय की एक पवित्र तीर्थयात्रा</h1><p>अमरनाथ यात्रा सबसे प्रतिष्ठित और चुनौतीपूर्ण हिंदू तीर्थयात्राओं में से एक है। हर साल, हजारों भक्त इस यात्रा को अमरनाथ गुफा तक करते हैं, जो भारत के जम्मू और कश्मीर में हिमालय में स्थित एक पवित्र तीर्थ है।</p><h2>पवित्र गुफा की कथा</h2><p>पौराणिक कथाओं के अनुसार, यह वह गुफा है जहाँ भगवान शिव ने अपनी दिव्य पत्नी, देवी पार्वती को जीवन और अमरता का रहस्य समझाया था। गुफा में एक बर्फ का लिंगम है, जो बर्फ से प्राकृतिक रूप से बना एक स्टैलेग्माइट है और इसे भगवान शिव का भौतिक रूप माना जाता है। यह चंद्रमा के चरणों के साथ बढ़ता और घटता है।</p><h3>कठिन यात्रा</h3><p>यह यात्रा अपने कठिन भूभाग और उच्च ऊंचाई के लिए जानी जाती है। यह गर्मियों के महीनों के दौरान होती है जब गुफा सुलभ होती है। भक्त पवित्र बर्फ लिंगम की एक झलक पाने के लिए ठंडे, पहाड़ी रास्तों का सामना करते हैं। यह यात्रा केवल एक शारीरिक यात्रा नहीं है, बल्कि इसे एक गहरा आध्यात्मिक अनुभव माना जाता है जो किसी के विश्वास और सहनशक्ति की परीक्षा लेता है।</p><h2>आस्था का प्रतीक</h2><p>अमरनाथ यात्रा भक्ति का एक शक्तिशाली प्रतीक है और यह दर्शाता है कि लोग अपने विश्वास के लिए कितनी दूर तक जा सकते हैं। यह सांसारिक मोह को पीछे छोड़कर आध्यात्मिक ज्ञान की ओर एक यात्रा का प्रतिनिधित्व करता है। राजसी हिमालय के माध्यम से चुनौतीपूर्ण यात्रा बर्फ लिंगम के अंतिम दर्शन को और भी गहरा और पुरस्कृत अनुभव बनाती है।"
+    },
+    "faq": [
+        {
+            "question": {
+                "en": "When does the Amarnath Yatra take place?",
+                "hi": "अमरनाथ यात्रा कब होती है?"
+            },
+            "answer": {
+                "en": "The Amarnath Yatra typically starts in late June or early July and concludes in August. The start date for 2026 is July 1st.",
+                "hi": "अमरनाथ यात्रा आमतौर पर जून के अंत या जुलाई की शुरुआत में शुरू होती है और अगस्त में समाप्त होती है। 2026 के लिए प्रारंभ तिथि 1 जुलाई है।"
+            }
+        },
+        {
+            "question": {
+                "en": "What is the significance of the ice lingam?",
+                "hi": "बर्फ लिंगम का क्या महत्व है?"
+            },
+            "answer": {
+                "en": "The ice lingam in the Amarnath cave is considered a natural, miraculous formation and is revered as a physical manifestation of Lord Shiva.",
+                "hi": "अमरनाथ गुफा में बर्फ लिंगम को एक प्राकृतिक, चमत्कारी संरचना माना जाता है और इसे भगवान शिव के भौतिक रूप के रूप में पूजा जाता है।"
+            }
+        },
+        {
+            "question": {
+                "en": "Is the Amarnath Yatra difficult?",
+                "hi": "क्या अमरनाथ यात्रा कठिन है?"
+            },
+            "answer": {
+                "en": "Yes, the pilgrimage involves trekking at high altitudes through challenging mountainous terrain. It requires good physical fitness and acclimatization.",
+                "hi": "हाँ, इस तीर्थयात्रा में चुनौतीपूर्ण पहाड़ी इलाकों से होकर अधिक ऊंचाई पर ट्रैकिंग शामिल है। इसके लिए अच्छी शारीरिक फिटनेस और अनुकूलन की आवश्यकता होती है।"
+            }
+        }
+    ],
+    "schema": {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Amarnath Yatra",
+        "description": "An annual Hindu pilgrimage to the Amarnath cave shrine in Jammu and Kashmir, India.",
+        "startDate": "2026-07-01",
+        "endDate": "2026-08-31",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+            "@type": "Place",
+            "name": "Amarnath Cave, Jammu and Kashmir, India"
+        },
+        "image": [
+            "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEht0CzD2jE3TdWo8xbvvlcaFsKvMMLF-LGv1BTqT_hBK7JJYdMDiyae_hi2eZleNPEXP6gRjNbYLrqK0NrwKYjzB67J3jZCJi717Jq2exmivM_jL8To1c6aulPIf71kquL8Axsg0PrMrmRdhS2BfOale_T_dfaa4Ea3FepyjLpi9kWS0BshyphenhyphenEVEX7xVI0wD/s320/1761285787.png"
+        ],
+        "organizer": {
+            "@type": "Organization",
+            "name": "Festival Countdown Central",
+            "url": "https://festivalcountdown.netlify.app"
+        }
+    }
+}

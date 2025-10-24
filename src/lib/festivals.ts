@@ -213,6 +213,16 @@ export const festivals: Omit<Festival, 'blog' | 'faq'>[] = [
     image: 'baisakhi',
     slug: 'baisakhi-countdown',
     tags: ['sikh', 'hindu', 'india', 'harvest', 'new year'],
+  },
+  {
+    id: 'amarnath-yatra',
+    name: { en: 'Amarnath Yatra', hi: 'अमरनाथ यात्रा' },
+    description: { en: 'Annual pilgrimage to the Amarnath cave.', hi: 'अमरनाथ गुफा की वार्षिक तीर्थयात्रा।' },
+    date_rule: '2026-07-01',
+    is_fixed: false,
+    image: 'amarnath-yatra',
+    slug: 'amarnath-yatra-countdown',
+    tags: ['hindu', 'pilgrimage', 'himalayas', 'shiva'],
   }
 ];
 
