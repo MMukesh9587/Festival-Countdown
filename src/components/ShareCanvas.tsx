@@ -7,34 +7,12 @@ import type { FestivalWithDate } from '@/lib/types';
 import placeholderImagesData from '@/lib/placeholder-images.json';
 import { Button } from './ui/button';
 
-interface ShareCanvasProps {
-  festival: FestivalWithDate;
-  customMessage: string;
-  onImageGenerated: (dataUrl: string) => void;
-}
-
-// Function to fetch image as a blob and create an object URL
-async function getCORSImage(src: string): Promise<string> {
-    try {
-        const response = await fetch(src);
-        if (!response.ok) {
-            throw new Error(`Failed to fetch image: ${response.statusText}`);
-        }
-        const blob = await response.blob();
-        return URL.createObjectURL(blob);
-    } catch (error) {
-        console.error("CORS Image fetch error:", error);
-        // Return original src as fallback, which might fail on canvas but is better than nothing
-        return src;
-    }
-}
-
 
 export function ShareCanvas({ festival, customMessage, onImageGenerated }: ShareCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { language, t } = useLanguage();
 
-  const draw = async () => {
+  const draw = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -104,27 +82,18 @@ export function ShareCanvas({ festival, customMessage, onImageGenerated }: Share
 
     // Background Image
     const bg = new Image();
-    // IMPORTANT: No need for crossOrigin attribute when using a blob URL
-    // bg.crossOrigin = "anonymous"; 
+    bg.crossOrigin = "anonymous"; 
     
     bg.onload = () => {
         drawContent(bg);
-        // Clean up the blob URL after drawing
-        if (bg.src.startsWith('blob:')) {
-            URL.revokeObjectURL(bg.src);
-        }
     };
     bg.onerror = () => {
-        console.error("Failed to load image for canvas.");
+        console.error("Failed to load image for canvas. Drawing with fallback background.");
         drawContent(); // Draw with fallback background
-         if (bg.src.startsWith('blob:')) {
-            URL.revokeObjectURL(bg.src);
-        }
     };
     
-    // Fetch image as a blob to bypass CORS issues for canvas.
-    const imageSrc = await getCORSImage(imageUrl);
-    bg.src = imageSrc;
+    // Set the source to start loading the image
+    bg.src = imageUrl;
   };
 
   useEffect(() => {
