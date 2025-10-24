@@ -132,3 +132,5 @@ export function ShareCanvas({ festival, customMessage, onImageGenerated }: Share
     </div>
   );
 }
+
+    
