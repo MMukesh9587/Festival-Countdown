@@ -1,0 +1,67 @@
+
+{
+    "blog": {
+        "en": "<h1>Good Friday: A Day of Solemn Remembrance</h1><p>Good Friday is a Christian holiday commemorating the crucifixion of Jesus Christ and his death at Calvary. It is observed during Holy Week as part of the Paschal Triduum on the Friday preceding Easter Sunday.</p><h2>The Significance of Good Friday</h2><p>For Christians, Good Friday is a day of deep mourning and quiet reflection. It represents the ultimate sacrifice that Jesus made for humanity. His crucifixion is seen as the culmination of his life's purpose: to bear the sins of the world and offer salvation. The 'goodness' of Good Friday lies in the belief that through his death, Jesus accomplished the salvation of all people.</p><h3>How is it Observed?</h3><p>Unlike other festivals, Good Friday is not a day of celebration but of solemn observance. Many Christians attend church services, where the story of Jesus's passion and crucifixion is read. Stations of the Cross, a devotion that commemorates Jesus's last day on Earth as a man, is a common practice. Many people also observe a fast on this day. The atmosphere is one of reverence and contemplation.</p><h2>A Central Tenet of Christianity</h2><p>The events of Good Friday are central to Christian theology. They are followed by the resurrection of Jesus on Easter Sunday, which is the cornerstone of the Christian faith. Together, they represent the victory of life over death and the promise of eternal life.</p>",
+        "hi": "<h1>गुड फ्राइडे: एक गंभीर स्मरण का दिन</h1><p>गुड फ्राइडे एक ईसाई अवकाश है जो ईसा मसीह के सूली पर चढ़ने और कलवारी में उनकी मृत्यु की याद दिलाता है। यह पवित्र सप्ताह के दौरान पास्का त्रिदuum के हिस्से के रूप में ईस्टर रविवार से पहले शुक्रवार को मनाया जाता है।</p><h2>गुड फ्राइडे का महत्व</h2><p>ईसाइयों के लिए, गुड फ्राइडे गहरे शोक और शांत चिंतन का दिन है। यह उस परम बलिदान का प्रतिनिधित्व करता है जो यीशु ने मानवता के लिए किया था। उनके सूली पर चढ़ने को उनके जीवन के उद्देश्य की परिणति के रूप में देखा जाता है: दुनिया के पापों को सहन करना और मोक्ष प्रदान करना। गुड फ्राइडे की 'अच्छाई' इस विश्वास में निहित है कि उनकी मृत्यु के माध्यम से, यीशु ने सभी लोगों का उद्धार पूरा किया।</p><h3>यह कैसे मनाया जाता है?</h3><p>अन्य त्योहारों के विपरीत, गुड फ्राइडे उत्सव का दिन नहीं बल्कि गंभीर पालन का दिन है। कई ईसाई चर्च सेवाओं में भाग लेते हैं, जहाँ यीशु के जुनून और सूली पर चढ़ने की कहानी पढ़ी जाती है। क्रॉस के स्टेशन, एक भक्ति जो एक व्यक्ति के रूप में पृथ्वी पर यीशु के अंतिम दिन की याद दिलाती है, एक आम प्रथा है। बहुत से लोग इस दिन उपवास भी रखते हैं। वातावरण श्रद्धा और चिंतन का होता है।</p><h2>ईसाई धर्म का एक केंद्रीय सिद्धांत</h2><p>गुड फ्राइडे की घटनाएँ ईसाई धर्मशास्त्र के लिए केंद्रीय हैं। उनके बाद ईस्टर रविवार को यीशु का पुनरुत्थान होता है, जो ईसाई धर्म का आधार है। साथ में, वे मृत्यु पर जीवन की जीत और अनन्त जीवन के वादे का प्रतिनिधित्व करते हैं।"
+    },
+    "faq": [
+        {
+            "question": {
+                "en": "When is Good Friday?",
+                "hi": "गुड फ्राइडे कब है?"
+            },
+            "answer": {
+                "en": "Good Friday is on Friday, April 3, 2026.",
+                "hi": "गुड फ्राइडे शुक्रवार, 3 अप्रैल, 2026 को है।"
+            }
+        },
+        {
+            "question": {
+                "en": "Why is it called Good Friday?",
+                "hi": "इसे गुड फ्राइडे क्यों कहा जाता है?"
+            },
+            "answer": {
+                "en": "The 'goodness' of Good Friday refers to the belief that through Jesus's sacrifice, he accomplished the salvation of humanity. It is good because it led to the resurrection on Easter.",
+                "hi": "गुड फ्राइडे की 'अच्छाई' इस विश्वास को संदर्भित करती है कि यीशु के बलिदान के माध्यम से, उन्होंने मानवता का उद्धार पूरा किया। यह अच्छा है क्योंकि यह ईस्टर पर पुनरुत्थान का कारण बना।"
+            }
+        },
+        {
+            "question": {
+                "en": "How do people observe Good Friday?",
+                "hi": "लोग गुड फ्राइडे कैसे मनाते हैं?"
+            },
+            "answer": {
+                "en": "It is a day of solemn remembrance, often marked by fasting, prayer, and special church services that recount the events of Jesus's crucifixion.",
+                "hi": "यह एक गंभीर स्मरण का दिन है, जिसे अक्सर उपवास, प्रार्थना और विशेष चर्च सेवाओं द्वारा चिह्नित किया जाता है जो यीशु के सूली पर चढ़ने की घटनाओं का वर्णन करते हैं।"
+            }
+        }
+    ],
+    "schema": {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Good Friday",
+        "description": "A Christian holiday commemorating the crucifixion of Jesus and his death at Calvary.",
+        "startDate": "2026-04-03",
+        "endDate": "2026-04-03",
+        "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": [
+            {
+                "@type": "Place",
+                "name": "Churches worldwide"
+            },
+            {
+                "@type": "VirtualLocation",
+                "url": "https://festivalcountdown.netlify.app/festivals/good-friday-countdown"
+            }
+        ],
+        "image": [
+            "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhB_Q8P9lTUJcrW6anMboaE9ulBUy2UKWKWZMa5zGZZvRVsJz27RJUXhmJXnkFO50W2bQnHzSjjYpKNTdi0lb_mckl3oULuGSiD0KdHcTJDN3qbHdvmxqqS6aU1NjE0yAlvjC1m667l1i7pAWm9GG5c076plHKJO511VG5Vb29ivJO7ajb-CN0SgLTWyDQ6/s320/1761283915.png"
+        ],
+        "organizer": {
+            "@type": "Organization",
+            "name": "Festival Countdown Central",
+            "url": "https://festivalcountdown.netlify.app"
+        }
+    }
+}

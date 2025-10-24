@@ -193,6 +193,16 @@ export const festivals: Omit<Festival, 'blog' | 'faq'>[] = [
     image: "hanuman-jayanti",
     slug: "hanuman-jayanti-countdown",
     tags: ["hindu", "india", "hanuman"]
+  },
+  {
+    id: 'good-friday',
+    name: { en: 'Good Friday', hi: 'गुड फ्राइडे' },
+    description: { en: 'Commemorates the crucifixion of Jesus Christ.', hi: 'ईसा मसीह के सूली पर चढ़ने की याद में।' },
+    date_rule: '2026-04-03',
+    is_fixed: false,
+    image: 'good-friday',
+    slug: 'good-friday-countdown',
+    tags: ['christian', 'global', 'easter'],
   }
 ];
 
