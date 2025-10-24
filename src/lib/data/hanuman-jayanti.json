@@ -1,0 +1,61 @@
+
+{
+    "blog": {
+        "en": "<h1>Hanuman Jayanti: Celebrating the Birth of the Mighty Monkey God</h1><p>Hanuman Jayanti is a significant Hindu festival that celebrates the birth of Lord Hanuman, an ardent devotee of Lord Rama. Known for his immense strength, devotion, and humility, Hanuman is one of the most revered figures in Hinduism.</p><h2>The Significance of Hanuman's Birth</h2><p>The festival marks the birth of Hanuman, who is considered a 'Chiranjeevi' (immortal). His life is a symbol of selfless service, unwavering devotion, and courage. Devotees worship him to gain strength, both physical and mental, and to overcome obstacles and evil forces in their lives.</p><h3>How is Hanuman Jayanti Celebrated?</h3><p>On this day, devotees flock to Hanuman temples to offer prayers and seek blessings. They read scriptures like the Hanuman Chalisa and the Ramayana, sing bhajans (devotional songs), and apply sindoor (vermilion) to their foreheads, as it is believed to be dear to Hanuman. Many people also observe a fast. The celebrations are particularly vibrant in temples dedicated to Hanuman, where special pujas and aartis are conducted.</p><h2>Lessons from Lord Hanuman</h2><p>Lord Hanuman's life teaches us the power of devotion, the importance of humility despite having immense strength, and the courage to face any challenge. His unwavering commitment to Lord Rama makes him the epitome of a perfect devotee. Celebrating his birth is a way to remember and imbibe these virtuous qualities.</p>",
+        "hi": "<h1>हनुमान जयंती: शक्तिशाली वानर देवता के जन्म का उत्सव</h1><p>हनुमान जयंती एक महत्वपूर्ण हिंदू त्योहार है जो भगवान राम के एक उत्साही भक्त, भगवान हनुमान के जन्म का जश्न मनाता है। अपनी अपार शक्ति, भक्ति और विनम्रता के लिए जाने जाने वाले हनुमान, हिंदू धर्म में सबसे सम्मानित हस्तियों में से एक हैं।</p><h2>हनुमान के जन्म का महत्व</h2><p>यह त्योहार हनुमान के जन्म का प्रतीक है, जिन्हें 'चिरंजीवी' (अमर) माना जाता है। उनका जीवन निस्वार्थ सेवा, अटूट भक्ति और साहस का प्रतीक है। भक्त उनसे शारीरिक और मानसिक दोनों तरह की शक्ति प्राप्त करने और अपने जीवन में बाधाओं और बुरी शक्तियों को दूर करने के लिए उनकी पूजा करते हैं।</p><h3>हनुमान जयंती कैसे मनाई जाती है?</h3><p>इस दिन, भक्त प्रार्थना करने और आशीर्वाद लेने के लिए हनुमान मंदिरों में उमड़ पड़ते हैं। वे हनुमान चालीसा और रामायण जैसे ग्रंथ पढ़ते हैं, भजन गाते हैं, और अपने माथे पर सिंदूर लगाते हैं, क्योंकि यह माना जाता है कि यह हनुमान को प्रिय है। बहुत से लोग उपवास भी रखते हैं। हनुमान को समर्पित मंदिरों में उत्सव विशेष रूप से जीवंत होते हैं, जहाँ विशेष पूजा और आरती आयोजित की जाती है।</p><h2>भगवान हनुमान से सीख</h2><p>भगवान हनुमान का जीवन हमें भक्ति की शक्ति, अपार शक्ति होने के बावजूद विनम्रता का महत्व, और किसी भी चुनौती का सामना करने का साहस सिखाता है। भगवान राम के प्रति उनकी अटूट प्रतिबद्धता उन्हें एक आदर्श भक्त का प्रतीक बनाती है। उनके जन्म का जश्न इन पुण्य गुणों को याद करने और आत्मसात करने का एक तरीका है।"
+    },
+    "faq": [
+        {
+            "question": {
+                "en": "When is Hanuman Jayanti?",
+                "hi": "हनुमान जयंती कब है?"
+            },
+            "answer": {
+                "en": "Hanuman Jayanti is on Thursday, April 2, 2026.",
+                "hi": "हनुमान जयंती गुरुवार, 2 अप्रैल, 2026 को है।"
+            }
+        },
+        {
+            "question": {
+                "en": "Why is Hanuman Jayanti celebrated?",
+                "hi": "हनुमान जयंती क्यों मनाई जाती है?"
+            },
+            "answer": {
+                "en": "It celebrates the birth of Lord Hanuman, who is a symbol of strength, devotion, and selfless service.",
+                "hi": "यह भगवान हनुमान के जन्म का जश्न मनाता है, जो शक्ति, भक्ति और निस्वार्थ सेवा के प्रतीक हैं।"
+            }
+        },
+        {
+            "question": {
+                "en": "What is the Hanuman Chalisa?",
+                "hi": "हनुमान चालीसा क्या है?"
+            },
+            "answer": {
+                "en": "The Hanuman Chalisa is a Hindu devotional hymn of 40 verses addressed to Lord Hanuman. It is one of the most popular hymns and is recited by millions of devotees to seek his blessings.",
+                "hi": "हनुमान चालीसा भगवान हनुमान को संबोधित 40 छंदों का एक हिंदू भक्ति भजन है। यह सबसे लोकप्रिय भजनों में से एक है और लाखों भक्तों द्वारा उनका आशीर्वाद प्राप्त करने के लिए इसका पाठ किया जाता है।"
+            }
+        }
+    ],
+    "schema": {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Hanuman Jayanti",
+        "description": "Celebration of the birth of Lord Hanuman, a central figure in the Ramayana.",
+        "startDate": "2026-04-02",
+        "endDate": "2026-04-02",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+            "@type": "VirtualLocation",
+            "url": "https://festivalcountdown.netlify.app/festivals/hanuman-jayanti-countdown"
+        },
+        "image": [
+            "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgV-4A0Lw8G6q0y-FmQ9Y4L-e2q8Wk3n2f9D0X7V5c8O6c5c-3f9j9P8n8P6q-7L3r-F5C_yWc_w-l_k_j-h_g-f_e_d-c_b_a/s320/1761350410.png"
+        ],
+        "organizer": {
+            "@type": "Organization",
+            "name": "Festival Countdown Central",
+            "url": "https://festivalcountdown.netlify.app"
+        }
+    }
+}

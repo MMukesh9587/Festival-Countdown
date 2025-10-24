@@ -183,6 +183,16 @@ export const festivals: Omit<Festival, 'blog' | 'faq'>[] = [
     image: "shravan-somwar",
     slug: "shravan-somwar-countdown",
     tags: ["hindu", "india", "shiva", "fasting"]
+  },
+  {
+    id: 'hanuman-jayanti',
+    name: { "en": "Hanuman Jayanti", "hi": "हनुमान जयंती" },
+    description: { "en": "Celebrates the birth of Lord Hanuman.", "hi": "भगवान हनुमान के जन्म का उत्सव।" },
+    date_rule: "2026-04-02",
+    is_fixed: false,
+    image: "hanuman-jayanti",
+    slug: "hanuman-jayanti-countdown",
+    tags: ["hindu", "india", "hanuman"]
   }
 ];
 
