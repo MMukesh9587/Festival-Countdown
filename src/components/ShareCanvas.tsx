@@ -13,11 +13,28 @@ interface ShareCanvasProps {
   onImageGenerated: (dataUrl: string) => void;
 }
 
+// Function to fetch image as a blob and create an object URL
+async function getCORSImage(src: string): Promise<string> {
+    try {
+        const response = await fetch(src);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch image: ${response.statusText}`);
+        }
+        const blob = await response.blob();
+        return URL.createObjectURL(blob);
+    } catch (error) {
+        console.error("CORS Image fetch error:", error);
+        // Return original src as fallback, which might fail on canvas but is better than nothing
+        return src;
+    }
+}
+
+
 export function ShareCanvas({ festival, customMessage, onImageGenerated }: ShareCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { language, t } = useLanguage();
 
-  const draw = () => {
+  const draw = async () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -33,90 +50,81 @@ export function ShareCanvas({ festival, customMessage, onImageGenerated }: Share
     const imagePlaceholder = placeholderImagesData.placeholderImages.find(p => p.id === festival.image);
     
     let imageUrl: string;
-    if (festival.image.startsWith('http')) {
+    if (festival.custom && festival.image.startsWith('http')) {
         imageUrl = festival.image;
     } else {
         imageUrl = imagePlaceholder?.imageUrl || "https://picsum.photos/seed/default/1200/630";
     }
 
-
-    // Background
-    const bg = new Image();
-    bg.crossOrigin = "anonymous";
-    bg.src = imageUrl;
-    
-    bg.onload = () => {
-      ctx.drawImage(bg, 0, 0, width, height);
-      // Overlay
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
-      ctx.fillRect(0, 0, width, height);
-
-      // Festival Name
-      ctx.fillStyle = '#FFD700'; // primary
-      ctx.font = 'bold 96px "Playfair Display", serif';
-      ctx.textAlign = 'center';
-      ctx.fillText(name || '', width / 2, 180);
-
-      // Countdown Days
-      if (!remaining.expired) {
-        ctx.fillStyle = '#FFFFFF';
-        ctx.font = 'bold 180px "PT Sans", sans-serif';
-        ctx.fillText(String(remaining.days), width / 2, 380);
-        ctx.font = '48px "PT Sans", sans-serif';
-        ctx.fillText(t('days'), width / 2, 450);
-      } else {
-        ctx.fillStyle = '#FF8C00'; // accent
-        ctx.font = 'bold 96px "PT Sans", sans-serif';
-        ctx.fillText(t('happening_now'), width / 2, 380);
-      }
-
-      // Custom Message
-      if (customMessage) {
-        ctx.fillStyle = '#FFFFFF';
-        ctx.font = 'italic 36px "PT Sans", sans-serif';
-        ctx.fillText(customMessage, width / 2, 520);
-      }
-      
-      // Footer
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-      ctx.font = '28px "PT Sans", sans-serif';
-      ctx.fillText('festivalcountdown.netlify.app', width / 2, 590);
-
-      onImageGenerated(canvas.toDataURL('image/png'));
-    };
-    bg.onerror = () => {
-        // Fallback drawing if image fails
-        ctx.fillStyle = '#222222';
+    const drawContent = (bgImage?: HTMLImageElement) => {
+        // Clear canvas and set background
+        ctx.fillStyle = '#222222'; // fallback background
         ctx.fillRect(0, 0, width, height);
-        // ... draw text as above
-        ctx.fillStyle = '#FFD700';
+
+        if (bgImage) {
+            ctx.drawImage(bgImage, 0, 0, width, height);
+            // Overlay
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
+            ctx.fillRect(0, 0, width, height);
+        }
+
+        // Festival Name
+        ctx.fillStyle = '#FFD700'; // primary
         ctx.font = 'bold 96px "Playfair Display", serif';
         ctx.textAlign = 'center';
         ctx.fillText(name || '', width / 2, 180);
-        //... and so on
+
+        // Countdown
         if (!remaining.expired) {
-          ctx.fillStyle = '#FFFFFF';
-          ctx.font = 'bold 180px "PT Sans", sans-serif';
-          ctx.fillText(String(remaining.days), width / 2, 380);
-          ctx.font = '48px "PT Sans", sans-serif';
-          ctx.fillText(t('days'), width / 2, 450);
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 180px "PT Sans", sans-serif';
+            ctx.fillText(String(remaining.days), width / 2, 380);
+            ctx.font = '48px "PT Sans", sans-serif';
+            ctx.fillText(t('days'), width / 2, 450);
         } else {
-          ctx.fillStyle = '#FF8C00'; // accent
-          ctx.font = 'bold 96px "PT Sans", sans-serif';
-          ctx.fillText(t('happening_now'), width / 2, 380);
+            ctx.fillStyle = '#FF8C00'; // accent
+            ctx.font = 'bold 96px "PT Sans", sans-serif';
+            ctx.fillText(t('happening_now'), width / 2, 380);
         }
 
+        // Custom Message
         if (customMessage) {
-          ctx.fillStyle = '#FFFFFF';
-          ctx.font = 'italic 36px "PT Sans", sans-serif';
-          ctx.fillText(customMessage, width / 2, 520);
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'italic 36px "PT Sans", sans-serif';
+            ctx.fillText(`"${customMessage}"`, width / 2, 520);
         }
         
+        // Footer
         ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
         ctx.font = '28px "PT Sans", sans-serif';
         ctx.fillText('festivalcountdown.netlify.app', width / 2, 590);
+
         onImageGenerated(canvas.toDataURL('image/png'));
-    }
+    };
+
+    // Background Image
+    const bg = new Image();
+    // IMPORTANT: No need for crossOrigin attribute when using a blob URL
+    // bg.crossOrigin = "anonymous"; 
+    
+    bg.onload = () => {
+        drawContent(bg);
+        // Clean up the blob URL after drawing
+        if (bg.src.startsWith('blob:')) {
+            URL.revokeObjectURL(bg.src);
+        }
+    };
+    bg.onerror = () => {
+        console.error("Failed to load image for canvas.");
+        drawContent(); // Draw with fallback background
+         if (bg.src.startsWith('blob:')) {
+            URL.revokeObjectURL(bg.src);
+        }
+    };
+    
+    // Fetch image as a blob to bypass CORS issues for canvas.
+    const imageSrc = await getCORSImage(imageUrl);
+    bg.src = imageSrc;
   };
 
   useEffect(() => {
@@ -132,5 +140,3 @@ export function ShareCanvas({ festival, customMessage, onImageGenerated }: Share
     </div>
   );
 }
-
-    
